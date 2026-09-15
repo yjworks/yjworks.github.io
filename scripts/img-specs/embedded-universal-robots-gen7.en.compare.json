@@ -1,0 +1,4 @@
+{"title": "UR10e vs UR17g-1300 (same 1300 mm reach)", "a": "UR17g-1300 (Gen 7)", "b": "UR10e (previous gen)",
+ "rows": [{"label": "Payload (kg)", "a": 15, "b": 12.5},
+          {"label": "Top speed (m/s)", "a": 5, "b": 4}],
+ "note": "Weight/power excluded (lower is better) · Source: UR launch, IMTS 2026"}
