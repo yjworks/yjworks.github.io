@@ -28,7 +28,7 @@ The rules this site holds to:
 
 ## Who writes this
 
-Yunjai Lee. I work with embedded software and computer vision, and I have built boards and robots myself. That background is why these posts care less about the spec sheet and more about whether a thing actually behaves the way it is advertised.
+I write here as yjworks. I work with embedded software and computer vision, and I have built boards and robots myself. That background is why these posts care less about the spec sheet and more about whether a thing actually behaves the way it is advertised.
 
 This is a personal blog. It is not affiliated with any company or manufacturer, and every opinion here is my own.
 

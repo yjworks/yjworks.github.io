@@ -74,7 +74,7 @@ Google의 데이터 사용에 대한 자세한 내용은 [Google 파트너 사�
 
 개인정보 관련 문의는 아래로 연락해 주세요.
 
-- 운영자: 이윤재
+- 운영자: yjworks
 - 이메일: [leeyunjai1982@gmail.com](mailto:leeyunjai1982@gmail.com)
 - GitHub: [yjworks/yjworks.github.io](https://github.com/yjworks/yjworks.github.io)
 
