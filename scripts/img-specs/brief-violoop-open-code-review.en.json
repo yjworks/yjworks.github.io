@@ -1,0 +1,23 @@
+{
+ "kicker": "Weekly Brief · Global · Software",
+ "date": "2026.09.18",
+ "stats": [
+  {
+   "value": "$399",
+   "label": "Violoop early bird"
+  },
+  {
+   "value": "$699",
+   "label": "Violoop retail"
+  },
+  {
+   "value": "34.4k",
+   "label": "open-code-review stars"
+  },
+  {
+   "value": "+8.5k",
+   "label": "gained this week"
+  }
+ ],
+ "accent": "brief"
+}
