@@ -1,0 +1,50 @@
+{{- /* 같은 태그를 공유하는 글 3편. 자기 자신과 다른 언어판은 뺀다. */}}
+{{- $cur := . }}
+{{- /* 지역 태그(국내/해외)는 거의 모든 글에 붙어 있어 관련도 계산에 쓰면 무작위가 된다.
+       data/topics.yaml 의 주제 태그로만 묶는다. */}}
+{{- $topics := slice }}
+{{- range (index site.Data "topics").topics }}{{ $topics = $topics | append .term }}{{ end }}
+{{- $tags := slice }}
+{{- range (.Params.tags | default slice) }}{{ if in $topics . }}{{ $tags = $tags | append . }}{{ end }}{{ end }}
+{{- $pool := where (where site.RegularPages "Type" "in" site.Params.mainSections) "Permalink" "!=" .Permalink }}
+{{- $scored := slice }}
+{{- range $pool }}
+  {{- $hit := 0 }}
+  {{- range .Params.tags }}{{ if in $tags . }}{{ $hit = add $hit 1 }}{{ end }}{{ end }}
+  {{- if gt $hit 0 }}
+  {{- $scored = $scored | append (dict "p" . "hit" $hit "date" .Date) }}
+  {{- end }}
+{{- end }}
+{{- $scored = sort (sort $scored "date" "desc") "hit" "desc" }}
+{{- /* 주제가 겹치는 글이 3편이 안 되면 최신 글로 채운다. 한 줄만 있는 칸은 비어 보인다. */}}
+{{- $picked := slice }}
+{{- range first 3 $scored }}{{ $picked = $picked | append .p }}{{ end }}
+{{- if lt (len $picked) 3 }}
+  {{- range (sort $pool "Date" "desc") }}
+    {{- if and (lt (len $picked) 3) (not (in $picked .)) }}{{ $picked = $picked | append . }}{{ end }}
+  {{- end }}
+{{- end }}
+{{- with $picked }}
+<aside class="td-related">
+  <h2 class="td-section">{{ if eq $cur.Language.Lang "ko" }}이어서 볼 글{{ else }}Read next{{ end }}</h2>
+  <ul>
+    {{- range . }}
+    {{- $p := . }}
+    <li>
+      <a href="{{ $p.Permalink }}">
+        {{- with $p.Params.cover.image }}<img src="{{ . }}" alt="" loading="lazy">{{ end }}
+        <span class="td-related-body">
+          {{- $k := "" }}
+          {{- range ($p.Params.tags | default slice) }}{{ if and (eq $k "") (in $topics .) }}{{ $k = . }}{{ end }}{{ end }}
+          {{- with $k }}
+          <span class="td-related-kicker">{{ partial "term_label.html" . }}</span>
+          {{- end }}
+          <span class="td-related-title">{{ $p.Title }}</span>
+          <span class="td-related-date">{{ $p.Date | time.Format (i18n "date_format" | default ":date_medium") }}</span>
+        </span>
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+</aside>
+{{- end }}

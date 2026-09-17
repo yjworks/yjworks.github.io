@@ -1,6 +1,5 @@
 {
  "kicker": "Deep Dive · Wearables · Global",
- "title": "Huawei Watch 6: Brighter Screen, Narrower World",
  "date": "Sep 3, 2026",
  "stats": [
   {
@@ -19,5 +18,6 @@
    "value": "Sep 23",
    "label": "UK on sale"
   }
- ]
+ ],
+ "accent": "wearable"
 }

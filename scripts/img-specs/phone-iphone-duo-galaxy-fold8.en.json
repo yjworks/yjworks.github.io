@@ -1,7 +1,23 @@
-{"kicker": "Deep Dive · Smartphone · Global",
- "title": "iPhone Duo Folds Late, Costs More",
+{
+ "kicker": "Deep Dive · Smartphone · Global",
  "date": "2026.09.14",
- "stats": [{"value": "3,000 nits", "label": "Peak brightness"},
-           {"value": "IP68", "label": "Water/dust rating"},
-           {"value": "$1,999", "label": "US price (256GB)"},
-           {"value": "Oct 23", "label": "Korea launch date"}]}
+ "stats": [
+  {
+   "value": "3,000 nits",
+   "label": "Peak brightness"
+  },
+  {
+   "value": "IP68",
+   "label": "Water/dust rating"
+  },
+  {
+   "value": "$1,999",
+   "label": "US price (256GB)"
+  },
+  {
+   "value": "Oct 23",
+   "label": "Korea launch date"
+  }
+ ],
+ "accent": "phone"
+}

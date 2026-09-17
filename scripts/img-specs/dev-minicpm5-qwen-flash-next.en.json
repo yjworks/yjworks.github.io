@@ -1,7 +1,23 @@
-{"kicker": "Dev Picks · Hugging Face",
- "title": "MiniCPM5 Wins Big, Flash-Next Spends Small",
+{
+ "kicker": "Dev Picks · Hugging Face",
  "date": "2026.09.17",
- "stats": [{"value": "2.52B", "label": "MiniCPM5-2B size"},
-           {"value": "53.9", "label": "34-bench average"},
-           {"value": "125B", "label": "Flash-Next total"},
-           {"value": "6B", "label": "active per token"}]}
+ "stats": [
+  {
+   "value": "2.52B",
+   "label": "MiniCPM5-2B size"
+  },
+  {
+   "value": "53.9",
+   "label": "34-bench average"
+  },
+  {
+   "value": "125B",
+   "label": "Flash-Next total"
+  },
+  {
+   "value": "6B",
+   "label": "active per token"
+  }
+ ],
+ "accent": "ai"
+}

@@ -1,7 +1,23 @@
-{"kicker": "Deep Dive · Robots · Global",
- "title": "UR Gen 7: Quicker Arm, Smaller Brain",
+{
+ "kicker": "Deep Dive · Robots · Global",
  "date": "2026.09.16",
- "stats": [{"value": "+40%", "label": "CB7 Core compute"},
-           {"value": "-30%", "label": "controller footprint"},
-           {"value": "5 m/s", "label": "UR17g-1300 top speed"},
-           {"value": "Sep 14, IMTS", "label": "unveiled in Chicago"}]}
+ "stats": [
+  {
+   "value": "+40%",
+   "label": "CB7 Core compute"
+  },
+  {
+   "value": "-30%",
+   "label": "controller footprint"
+  },
+  {
+   "value": "5 m/s",
+   "label": "UR17g-1300 top speed"
+  },
+  {
+   "value": "Sep 14, IMTS",
+   "label": "unveiled in Chicago"
+  }
+ ],
+ "accent": "robot"
+}

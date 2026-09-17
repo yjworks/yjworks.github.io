@@ -1,7 +1,23 @@
-{"kicker": "Dev Picks · Hugging Face",
- "title": "미니CPM5는 이기고, 플래시넥스트는 아낀다",
+{
+ "kicker": "Dev Picks · Hugging Face",
  "date": "2026.09.17",
- "stats": [{"value": "2.52B", "label": "MiniCPM5-2B 파라미터"},
-           {"value": "53.9", "label": "34개 벤치마크 평균"},
-           {"value": "125B", "label": "Flash-Next 총 파라미터"},
-           {"value": "6B", "label": "토큰당 활성 파라미터"}]}
+ "stats": [
+  {
+   "value": "2.52B",
+   "label": "MiniCPM5-2B 파라미터"
+  },
+  {
+   "value": "53.9",
+   "label": "34개 벤치마크 평균"
+  },
+  {
+   "value": "125B",
+   "label": "Flash-Next 총 파라미터"
+  },
+  {
+   "value": "6B",
+   "label": "토큰당 활성 파라미터"
+  }
+ ],
+ "accent": "ai"
+}

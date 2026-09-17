@@ -1,6 +1,5 @@
 {
  "kicker": "Weekly Brief · Korea · Global",
- "title": "Galaxy S26 FE Costs Less, a Wearable Reads More",
  "date": "Sep 4, 2026",
  "stats": [
   {
@@ -19,5 +18,6 @@
    "value": "250B",
    "label": "Solar Open2 params"
   }
- ]
+ ],
+ "accent": "brief"
 }

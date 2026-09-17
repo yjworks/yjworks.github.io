@@ -1,6 +1,5 @@
 {
  "kicker": "심층 리뷰 · SBC · 로봇",
- "title": "Jetson Orin Nano 2, 두 배는 두 배가 아니다",
  "date": "2026.09.02",
  "stats": [
   {
@@ -19,5 +18,6 @@
    "value": "2027 상반기",
    "label": "출하"
   }
- ]
+ ],
+ "accent": "sbc"
 }

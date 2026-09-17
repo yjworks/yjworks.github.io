@@ -1,7 +1,23 @@
-{"kicker": "심층 리뷰 · 로봇 · 해외",
- "title": "UR Gen 7, 빨라지고 작아졌다",
+{
+ "kicker": "심층 리뷰 · 로봇 · 해외",
  "date": "2026.09.16",
- "stats": [{"value": "+40%", "label": "CB7 Core 연산 성능"},
-           {"value": "-30%", "label": "컨트롤러 크기"},
-           {"value": "5 m/s", "label": "UR17g-1300 최고 속도"},
-           {"value": "9/14 IMTS", "label": "공개 (시카고)"}]}
+ "stats": [
+  {
+   "value": "+40%",
+   "label": "CB7 Core 연산 성능"
+  },
+  {
+   "value": "-30%",
+   "label": "컨트롤러 크기"
+  },
+  {
+   "value": "5 m/s",
+   "label": "UR17g-1300 최고 속도"
+  },
+  {
+   "value": "9/14 IMTS",
+   "label": "공개 (시카고)"
+  }
+ ],
+ "accent": "robot"
+}

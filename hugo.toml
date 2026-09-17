@@ -53,7 +53,7 @@ buildExpired = false
   googleAnalytics = ""
 
   [params.cover]
-    hiddenInList = true       # 목록은 글자 위주로. 커버는 본문 상단과 공유 미리보기(OG)에만.
+    hiddenInList = false      # 목록에 썸네일로 노출. 글자만 있으면 자동 생성된 로그처럼 읽힌다.
     hiddenInSingle = false
     responsiveImages = false
     linkFullImages = false

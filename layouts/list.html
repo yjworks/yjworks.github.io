@@ -56,9 +56,10 @@
 
 {{- $class := "post-entry" }}
 
-{{- $user_preferred := or site.Params.disableSpecial1stPost site.Params.homeInfoParams }}
-{{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) (not $user_preferred)) }}
-{{- $class = "first-entry" }}
+{{- /* 홈 1페이지의 맨 위 글은 히어로로 크게 건다. 목록이 전부 같은 크기면
+       편집자가 고른 티가 안 나고 자동 생성 로그처럼 읽힌다. */}}
+{{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0)) }}
+{{- $class = "post-entry td-hero" }}
 {{- else if $term }}
 {{- $class = "post-entry tag-entry" }}
 {{- end }}

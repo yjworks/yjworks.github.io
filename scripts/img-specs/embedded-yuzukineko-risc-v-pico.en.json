@@ -1,6 +1,5 @@
 {
  "kicker": "Deep Dive · SBC · Global",
- "title": "YuzukiNeko, Pico's Size With a Linux Brain",
  "date": "2026.09.09",
  "stats": [
   {
@@ -19,5 +18,6 @@
    "value": "TBC",
    "label": "Price / launch"
   }
- ]
+ ],
+ "accent": "sbc"
 }

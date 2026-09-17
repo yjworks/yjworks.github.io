@@ -13,6 +13,20 @@ from PIL import Image, ImageDraw, ImageFont
 FONTS = Path(__file__).resolve().parent / "fonts"
 BG, TILE, BORDER = (29, 30, 32), (40, 41, 45), (58, 59, 63)
 FG, SEC, TER, ACCENT = (232, 232, 234), (160, 161, 165), (110, 111, 116), (47, 111, 237)
+
+# 주제별 액센트. 36장이 전부 같은 파랑이면 목록에서 한 틀로 찍어낸 티가 난다.
+# spec 의 "accent" 에 아래 키를 넣으면 그 색을 쓴다. 없으면 기본 파랑.
+ACCENTS = {
+    "laptop":    (47, 111, 237),
+    "phone":     (109, 90, 230),
+    "appliance": (14, 147, 132),
+    "wearable":  (194, 65, 12),
+    "sbc":       (3, 105, 161),
+    "robot":     (185, 28, 28),
+    "github":    (100, 116, 139),
+    "ai":        (161, 98, 7),
+    "brief":     (71, 85, 105),
+}
 W, H = 1200, 630
 SITE = "yjworks.github.io"
 
@@ -53,43 +67,42 @@ def brand(draw, x, y):
     draw.text((x + 58, y + 2), "DigitalBrain", font=font(700, 34), fill=FG)
 
 def cover(spec, out):
+    """커버 카드. 제목은 넣지 않는다.
+
+    제목은 목록과 글 상단에 이미 큰 글씨로 나온다. 카드에까지 넣으면 같은 문장이 두 번
+    보이고, 36장이 전부 '제목 슬라이드' 한 틀로 읽힌다. 카드가 보여줄 것은 이 블로그가
+    실제로 파는 것 - 출처로 확인된 수치다.
+    """
+    accent = ACCENTS.get(spec.get("accent", ""), ACCENT)
     img = Image.new("RGB", (W, H), BG); d = ImageDraw.Draw(img)
     pad = 72
-    brand(d, pad, 60)
-    # 상단 오른쪽: 날짜
+    brand(d, pad, 56)
     if spec.get("date"):
         f = font(400, 24); tw = d.textlength(spec["date"], font=f)
-        d.text((W - pad - tw, 70), spec["date"], font=f, fill=SEC)
-    # 제목: 2줄까지, 넘치면 폰트 축소
-    for size in (62, 56, 50, 44):
-        f = font(700, size); lines = wrap(d, spec["title"], f, W - pad * 2)
-        if len(lines) <= 2: break
-    lines = lines[:2]
-    # 킥커 + 제목 블록을 헤더(약 130)와 타일(440) 사이에서 세로 가운데 정렬
-    block = (48 if spec.get("kicker") else 0) + len(lines) * int(size * 1.28)
-    y = 140 + max(0, (410 - 140 - block) // 2)
+        d.text((W - pad - tw, 66), spec["date"], font=f, fill=SEC)
+
+    # 킥커: 주제 색을 쓰는 유일한 텍스트
     if spec.get("kicker"):
-        d.text((pad, y), spec["kicker"], font=font(700, 26), fill=ACCENT); y += 48
-    for ln in lines:
-        d.text((pad, y), ln, font=f, fill=FG); y += int(size * 1.28)
-    # 하단 스탯 타일 (최대 4개)
+        d.text((pad, 150), spec["kicker"], font=font(700, 30), fill=accent)
+
+    # 수치: 이 카드의 주인공. 크게, 최대 4개.
     stats = spec.get("stats", [])[:4]
     if stats:
-        n = len(stats); gap = 18
+        n = len(stats); gap = 20
         tw_ = (W - pad * 2 - gap * (n - 1)) // n
-        ty = H - 72 - 118
-        for i, s in enumerate(stats):
+        top, height = 252, 262
+        for i, st in enumerate(stats):
             x = pad + i * (tw_ + gap)
-            d.rounded_rectangle([x, ty, x + tw_, ty + 118], radius=12, fill=TILE, outline=BORDER)
-            vf = font(700, 38)
-            # 값이 타일보다 길면 축소
-            for vs in (38, 32, 28, 24):
+            d.rounded_rectangle([x, top, x + tw_, top + height], radius=14, fill=TILE, outline=BORDER)
+            d.rectangle([x, top + 18, x + 5, top + height - 18], fill=accent)  # 왼쪽 액센트 바(모서리 곡선 피해 안쪽으로)
+            for vs in (58, 50, 44, 38, 32, 27):
                 vf = font(700, vs)
-                if d.textlength(s["value"], font=vf) <= tw_ - 40: break
-            d.text((x + 20, ty + 18), s["value"], font=vf, fill=FG)
-            lf = font(400, 20)
-            d.text((x + 20, ty + 72), fit(d, s.get("label", ""), lf, tw_ - 40), font=lf, fill=SEC)
-    # 하단 사이트 표기
+                if d.textlength(st["value"], font=vf) <= tw_ - 52: break
+            d.text((x + 26, top + 74), st["value"], font=vf, fill=FG)
+            lf = font(400, 21)
+            for ln_i, ln in enumerate(wrap(d, st.get("label", ""), lf, tw_ - 52)[:2]):
+                d.text((x + 26, top + 168 + ln_i * 29), ln, font=lf, fill=SEC)
+
     f = font(400, 20); tw = d.textlength(SITE, font=f)
     d.text((W - pad - tw, H - 48), SITE, font=f, fill=TER)
     img.save(out, optimize=True)

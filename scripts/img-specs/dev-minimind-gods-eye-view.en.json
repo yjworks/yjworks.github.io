@@ -1,6 +1,5 @@
 {
  "kicker": "Dev Picks · GitHub Trending",
- "title": "MiniMind Thinks Small, God's Eye Sees Big",
  "date": "Sep 3, 2026",
  "stats": [
   {
@@ -19,5 +18,6 @@
    "value": "+12,042",
    "label": "God's Eye stars/wk"
   }
- ]
+ ],
+ "accent": "github"
 }

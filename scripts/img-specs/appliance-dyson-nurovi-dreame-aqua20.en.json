@@ -1,7 +1,23 @@
-{"kicker": "Deep Dive · Home Appliance · Global",
- "title": "Nurovi's UV Light Meets Aqua20's 180°C Steam",
+{
+ "kicker": "Deep Dive · Home Appliance · Global",
  "date": "2026.09.15",
- "stats": [{"value": "30,000Pa", "label": "Dyson R3 suction"},
-           {"value": "40,000Pa", "label": "Aqua20 suction"},
-           {"value": "180°C", "label": "Aqua20 steam temp"},
-           {"value": "$1,199", "label": "Dyson R3 price"}]}
+ "stats": [
+  {
+   "value": "30,000Pa",
+   "label": "Dyson R3 suction"
+  },
+  {
+   "value": "40,000Pa",
+   "label": "Aqua20 suction"
+  },
+  {
+   "value": "180°C",
+   "label": "Aqua20 steam temp"
+  },
+  {
+   "value": "$1,199",
+   "label": "Dyson R3 price"
+  }
+ ],
+ "accent": "appliance"
+}
