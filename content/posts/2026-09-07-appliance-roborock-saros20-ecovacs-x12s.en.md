@@ -9,6 +9,7 @@ cover:
   image: "/images/posts/appliance-roborock-saros20-ecovacs-x12s.en.png"
   alt: "Cover card: Roborock at 36,000Pa suction, Ecovacs at 27,000Pa, 8.8cm threshold clearance, 497 minutes of Ecovacs runtime"
   relative: false
+featured: true
 draft: false
 ---
 

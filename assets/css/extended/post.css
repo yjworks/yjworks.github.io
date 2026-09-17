@@ -55,3 +55,37 @@
   .td-related a { grid-template-columns: 84px 1fr; gap: 12px; }
   .td-related img { width: 84px; }
 }
+
+/* 공유 */
+.td-share { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 26px 0 0; }
+.td-share-label { font-size: 12px; font-weight: 600; letter-spacing: .06em; color: var(--tertiary);
+  text-transform: uppercase; margin-inline-end: 4px; }
+.td-share-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; font: inherit;
+  font-size: 13px; font-weight: 500; line-height: 1.4; color: var(--primary); background: transparent;
+  border: 1px solid var(--border); border-radius: 6px; cursor: pointer; text-decoration: none;
+  transition: border-color .15s, background .15s; }
+.td-share-btn:hover { border-color: var(--td-accent); background: var(--code-bg); color: var(--td-accent); }
+.td-share-btn .icon { opacity: .65; }
+.td-share-btn:hover .icon { opacity: 1; }
+
+/* 구독 */
+.td-sub { display: flex; gap: 14px; align-items: flex-start; margin: 32px 0 0; padding: 20px 22px;
+  border: 1px solid var(--border); border-radius: 10px; }
+.td-sub > .icon { flex: 0 0 auto; color: var(--td-accent); margin-top: 3px; }
+.td-sub-body { min-width: 0; flex: 1; }
+.td-sub-title { margin: 0 0 5px; font-size: 15px; font-weight: 700; color: var(--primary); }
+.td-sub-note { margin: 0 0 12px; font-size: 14px; line-height: 1.65; color: var(--secondary); word-break: keep-all; }
+.td-sub-form { display: flex; gap: 8px; flex-wrap: wrap; }
+.td-sub-form input { flex: 1 1 220px; min-width: 0; padding: 9px 12px; font: inherit; font-size: 14px;
+  color: var(--primary); background: var(--theme); border: 1px solid var(--border); border-radius: 6px; }
+.td-sub-form input:focus { outline: 2px solid var(--td-accent); outline-offset: -1px; border-color: transparent; }
+.td-sub-form button { padding: 9px 18px; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer;
+  color: #fff; background: var(--td-accent); border: 0; border-radius: 6px; }
+.td-sub-form button:hover { filter: brightness(1.08); }
+.td-sub-links { margin: 0; display: flex; gap: 14px; font-size: 13px; font-weight: 500; }
+.td-sub-links a { color: var(--td-accent); text-decoration: none; }
+.td-sub-links a:hover { text-decoration: underline; }
+
+/* 댓글 */
+.td-comments { margin: 48px 0 0; }
+.td-comments .td-section { margin-bottom: 18px; }

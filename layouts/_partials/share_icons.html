@@ -1,0 +1,75 @@
+{{- /* 공유. 카카오는 JS SDK 앱 키가 있어야 동작하므로 params.kakao.jsKey 가 있을 때만 나온다. */}}
+{{- $ko := eq .Language.Lang "ko" }}
+{{- $u := .Permalink }}
+{{- $t := .Title }}
+<div class="td-share" data-url="{{ $u }}" data-title="{{ $t }}">
+  <span class="td-share-label">{{ if $ko }}공유{{ else }}Share{{ end }}</span>
+  <button type="button" class="td-share-btn td-share-native" hidden
+          aria-label="{{ if $ko }}공유하기{{ else }}Share{{ end }}">
+    {{- partial "icon.html" (dict "name" "share" "size" 16) }}<span>{{ if $ko }}공유{{ else }}Share{{ end }}</span>
+  </button>
+  <button type="button" class="td-share-btn td-share-copy"
+          data-done="{{ if $ko }}복사됨{{ else }}Copied{{ end }}"
+          aria-label="{{ if $ko }}링크 복사{{ else }}Copy link{{ end }}">
+    {{- partial "icon.html" (dict "name" "link" "size" 16) }}<span>{{ if $ko }}링크 복사{{ else }}Copy link{{ end }}</span>
+  </button>
+  <a class="td-share-btn" rel="noopener noreferrer" target="_blank"
+     href="https://x.com/intent/tweet?url={{ $u | urlquery }}&text={{ $t | urlquery }}">X</a>
+  <a class="td-share-btn" rel="noopener noreferrer" target="_blank"
+     href="https://www.facebook.com/sharer/sharer.php?u={{ $u | urlquery }}">Facebook</a>
+  <a class="td-share-btn" rel="noopener noreferrer" target="_blank"
+     href="https://www.linkedin.com/sharing/share-offsite/?url={{ $u | urlquery }}">LinkedIn</a>
+  {{- with site.Params.kakao.jsKey }}
+  <button type="button" class="td-share-btn td-share-kakao" data-key="{{ . }}">KakaoTalk</button>
+  {{- end }}
+</div>
+<script>
+(function () {
+  var box = document.currentScript.previousElementSibling;
+  if (!box) return;
+  var url = box.dataset.url, title = box.dataset.title;
+
+  var native = box.querySelector('.td-share-native');
+  if (native && navigator.share) {
+    native.hidden = false;
+    native.addEventListener('click', function () {
+      navigator.share({ title: title, url: url }).catch(function () {});
+    });
+  }
+
+  var copy = box.querySelector('.td-share-copy');
+  if (copy) copy.addEventListener('click', function () {
+    var label = copy.querySelector('span'), was = label.textContent;
+    function done() { label.textContent = copy.dataset.done; setTimeout(function () { label.textContent = was; }, 1600); }
+    if (navigator.clipboard) { navigator.clipboard.writeText(url).then(done, function () {}); return; }
+    var ta = document.createElement('textarea');           /* clipboard API 가 없거나 막힌 경우 */
+    ta.value = url; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); done(); } catch (e) {}
+    document.body.removeChild(ta);
+  });
+})();
+</script>
+{{- with site.Params.kakao.jsKey }}
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" defer
+        integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
+<script>
+window.addEventListener('load', function () {
+  var btn = document.querySelector('.td-share-kakao');
+  if (!btn || !window.Kakao) return;
+  if (!Kakao.isInitialized()) Kakao.init(btn.dataset.key);
+  btn.addEventListener('click', function () {
+    var box = btn.closest('.td-share');
+    Kakao.Share.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: box.dataset.title,
+        description: document.querySelector('meta[name="description"]') ? document.querySelector('meta[name="description"]').content : '',
+        imageUrl: document.querySelector('meta[property="og:image"]') ? document.querySelector('meta[property="og:image"]').content : '',
+        link: { mobileWebUrl: box.dataset.url, webUrl: box.dataset.url }
+      }
+    });
+  });
+});
+</script>
+{{- end }}

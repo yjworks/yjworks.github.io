@@ -9,6 +9,7 @@ cover:
   image: "/images/posts/phone-iphone-duo-galaxy-fold8.en.png"
   alt: "Cover card: iPhone Duo peak outdoor brightness 3,000 nits, IP68 rating, US price $1,999, Korea launch date October 23"
   relative: false
+featured: true
 draft: false
 ---
 

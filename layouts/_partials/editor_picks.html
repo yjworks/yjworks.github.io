@@ -1,0 +1,29 @@
+{{- /* 처음 온 사람에게 먼저 보여줄 글. front matter 의 featured: true 로 고른다.
+       "인기 글"이 아니다 - 이 사이트에는 조회수 데이터가 없고, 없는 데이터를 있는 척할 수 없다.
+       고른 사람이 있다는 것이 자동 집계보다 이 블로그에 맞기도 하다. */}}
+{{- /* home_info.html 안의 `with` 블록에서 불리므로 `.` 은 페이지가 아니다. site 로 읽는다. */}}
+{{- $ko := eq site.Language.Lang "ko" }}
+{{- $picks := where (where site.RegularPages "Type" "in" site.Params.mainSections) "Params.featured" true }}
+{{- with first 3 (sort $picks "Date" "desc") }}
+<section class="td-picks">
+  <h2 class="td-section">{{ if $ko }}처음 오셨다면{{ else }}Start here{{ end }}</h2>
+  <ul>
+    {{- range . }}
+    {{- $topics := slice }}
+    {{- range (index site.Data "topics").topics }}{{ $topics = $topics | append .term }}{{ end }}
+    {{- $k := "" }}
+    {{- range (.Params.tags | default slice) }}{{ if and (eq $k "") (in $topics .) }}{{ $k = . }}{{ end }}{{ end }}
+    <li>
+      <a href="{{ .Permalink }}">
+        {{- with .Params.cover.image }}<img src="{{ . }}" alt="" loading="lazy">{{ end }}
+        <span class="td-pick-body">
+          {{- with $k }}<span class="td-pick-kicker">{{ partial "term_label.html" . }}</span>{{ end }}
+          <span class="td-pick-title">{{ .Title }}</span>
+          <span class="td-pick-sum">{{ .Summary | plainify | htmlUnescape | truncate 76 }}</span>
+        </span>
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}

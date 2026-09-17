@@ -1,0 +1,33 @@
+{{- /* 구독 유도. 정적 사이트라 백엔드가 없으므로 폼 action 은 외부 서비스(Buttondown/Mailchimp 등)
+       를 params.newsletter.action 에 넣어야 동작한다. 비어 있으면 RSS 안내만 내보낸다.
+       AdSense 와 같은 방식이다 - 값이 없을 때 있는 척하지 않는다. */}}
+{{- $ko := eq .Language.Lang "ko" }}
+{{- $rss := "/index.xml" }}{{ if not $ko }}{{ $rss = "/en/index.xml" }}{{ end }}
+<aside class="td-sub">
+  {{- partial "icon.html" (dict "name" "mail" "size" 20) }}
+  <div class="td-sub-body">
+    {{- with site.Params.newsletter.action }}
+    <p class="td-sub-title">{{ if $ko }}새 글이 올라오면 메일로 받기{{ else }}Get new posts by email{{ end }}</p>
+    <p class="td-sub-note">{{ if $ko }}평일 하루 한 편. 광고 메일은 보내지 않고, 언제든 해지할 수 있습니다.{{ else }}One post each weekday. No marketing mail, unsubscribe anytime.{{ end }}</p>
+    <form class="td-sub-form" action="{{ . }}" method="post" target="_blank">
+      <input type="email" name="email" required
+             placeholder="{{ if $ko }}이메일 주소{{ else }}your@email.com{{ end }}"
+             aria-label="{{ if $ko }}이메일 주소{{ else }}Email address{{ end }}">
+      <button type="submit">{{ if $ko }}구독{{ else }}Subscribe{{ end }}</button>
+    </form>
+    {{- else }}
+    <p class="td-sub-title">{{ if $ko }}새 글 놓치지 않기{{ else }}Keep up with new posts{{ end }}</p>
+    <p class="td-sub-note">
+      {{- if $ko -}}
+      평일 하루 한 편 올라옵니다. RSS로 구독하시면 새 글이 바로 갑니다.
+      {{- else -}}
+      A new post every weekday. Subscribe by RSS and each one lands as it goes up.
+      {{- end -}}
+    </p>
+    <p class="td-sub-links">
+      <a href="{{ $rss }}">RSS</a>
+      <a href="https://github.com/yjworks" rel="me">GitHub</a>
+    </p>
+    {{- end }}
+  </div>
+</aside>

@@ -9,6 +9,7 @@ cover:
   image: "/images/posts/embedded-jetson-orin-nano-2.ko.png"
   alt: "커버 카드: Jetson Orin Nano 2는 AI 연산 78 TOPS, 메모리 8GB로 변화 없음, 전력 15~40W, 2027년 상반기 출하"
   relative: false
+featured: true
 draft: false
 ---
 

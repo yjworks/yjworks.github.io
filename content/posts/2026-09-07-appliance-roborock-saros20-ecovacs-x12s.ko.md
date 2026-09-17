@@ -9,6 +9,7 @@ cover:
   image: "/images/posts/appliance-roborock-saros20-ecovacs-x12s.ko.png"
   alt: "커버 카드: 로보락 흡입력 36,000Pa, 에코백스 27,000Pa, 문턱 통과 높이 8.8cm, 에코백스 연속 주행 497분"
   relative: false
+featured: true
 draft: false
 ---
 

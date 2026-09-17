@@ -9,6 +9,7 @@ cover:
   image: "/images/posts/embedded-jetson-orin-nano-2.en.png"
   alt: "Cover card: Jetson Orin Nano 2 at 78 TOPS, memory unchanged at 8GB, 15–40W power range, shipping H1 2027"
   relative: false
+featured: true
 draft: false
 ---
 

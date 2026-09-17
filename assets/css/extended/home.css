@@ -70,3 +70,24 @@ body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSy
   .post-entry .entry-cover { margin: 0 0 14px; }
   .td-hero .entry-header h2 { font-size: 24px; }
 }
+
+/* 처음 오셨다면 (에디터 픽) */
+.td-picks { margin: 0 0 40px; }
+.td-picks ul { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 14px;
+  grid-template-columns: repeat(3, 1fr); }
+.td-picks a { display: block; text-decoration: none; }
+.td-picks img { width: 100%; aspect-ratio: 1200 / 630; object-fit: cover; display: block;
+  border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px; transition: border-color .15s; }
+.td-picks a:hover img { border-color: var(--td-accent); }
+.td-pick-kicker { display: block; font-size: 11.5px; font-weight: 600; color: var(--td-accent); margin-bottom: 3px; }
+.td-pick-title { display: block; font-size: 15.5px; font-weight: 600; line-height: 1.45; color: var(--primary);
+  word-break: keep-all; }
+.td-picks a:hover .td-pick-title { color: var(--td-accent); }
+.td-pick-sum { display: block; margin-top: 5px; font-size: 13px; line-height: 1.55; color: var(--secondary);
+  word-break: keep-all; }
+@media (max-width: 720px) {
+  .td-picks ul { grid-template-columns: 1fr; gap: 16px; }
+  .td-picks a { display: grid; grid-template-columns: 104px 1fr; gap: 13px; align-items: center; }
+  .td-picks img { margin-bottom: 0; }
+  .td-pick-sum { display: none; }
+}

@@ -9,6 +9,7 @@ cover:
   image: "/images/posts/phone-iphone-duo-galaxy-fold8.ko.png"
   alt: "커버 카드: 아이폰 듀오 야외 최대 밝기 3,000니트, 방수·방진 IP68, 미국 출시가 1,999달러, 국내 출시일 10월 23일"
   relative: false
+featured: true
 draft: false
 ---
 

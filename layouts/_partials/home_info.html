@@ -9,5 +9,6 @@
     </div>
     {{ partial "topic_chips.html" (dict "showCount" false) }}
 </section>
+{{ partial "editor_picks.html" . }}
 <h2 class="td-section">{{ if $ko }}최신 글{{ else }}Latest{{ end }}</h2>
 {{- end -}}

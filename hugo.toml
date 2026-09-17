@@ -33,7 +33,7 @@ buildExpired = false
   disableLangToggle = false
 
   ShowReadingTime = true
-  ShowShareButtons = false
+  ShowShareButtons = true
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
@@ -51,6 +51,23 @@ buildExpired = false
 
   # Google Analytics 4 measurement ID (예: "G-XXXXXXXXXX")
   googleAnalytics = ""
+
+  # 뉴스레터: 정적 사이트라 백엔드가 없다. 외부 서비스(Buttondown/Mailchimp 등)의
+  # 폼 action URL 을 넣으면 구독 폼이 나오고, 비어 있으면 RSS 안내만 나온다.
+  [params.newsletter]
+    action = ""
+
+  # 댓글(giscus). https://giscus.app 에서 저장소를 넣으면 네 값이 나온다.
+  # 사전 조건: 저장소 Settings 에서 Discussions 활성화 + giscus 앱 설치.
+  [params.giscus]
+    repo = ""
+    repoId = ""
+    category = ""
+    categoryId = ""
+
+  # 카카오톡 공유. developers.kakao.com 앱의 JavaScript 키. 비면 버튼이 안 나온다.
+  [params.kakao]
+    jsKey = ""
 
   [params.cover]
     hiddenInList = false      # 목록에 썸네일로 노출. 글자만 있으면 자동 생성된 로그처럼 읽힌다.
