@@ -1,0 +1,7 @@
+{"kicker": "Deep Dive · SBC · Global",
+ "date": "2026.09.23",
+ "accent": "sbc",
+ "stats": [{"value": "$19.25", "label": "Media Carrier price"},
+           {"value": "-10 to 60C", "label": "Operating range"},
+           {"value": "2 cameras", "label": "MIPI-CSI inputs"},
+           {"value": "Sept 9", "label": "Announced"}]}
