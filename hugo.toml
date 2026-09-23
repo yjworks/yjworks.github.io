@@ -50,7 +50,7 @@ buildExpired = false
   adsense = ""
 
   # Google Analytics 4 measurement ID (예: "G-XXXXXXXXXX")
-  googleAnalytics = ""
+  googleAnalytics = "G-3MH93TXQTM"
 
   # 뉴스레터: 정적 사이트라 백엔드가 없다. 외부 서비스(Buttondown/Mailchimp 등)의
   # 폼 action URL 을 넣으면 구독 폼이 나오고, 비어 있으면 RSS 안내만 나온다.
