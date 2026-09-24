@@ -49,10 +49,16 @@ jobs:
           HUGO_ENV: production
           TZ: Asia/Seoul
         run: |
+          # Pages reports http:// until "Enforce HTTPS" is on, and a build taken in that
+          # window would print http canonicals, sitemap and OG URLs. The site is only ever
+          # served over HTTPS (.dev is HSTS-preloaded), so pin the scheme.
+          BASE="${{ steps.pages.outputs.base_url }}"
+          BASE="${BASE/#http:\/\//https://}"
+          echo "baseURL: ${BASE}/"
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "${BASE}/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
