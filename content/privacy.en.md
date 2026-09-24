@@ -6,7 +6,7 @@ ShowBreadCrumbs: false
 ShowReadingTime: false
 ---
 
-DigitalBrain ("this site", https://yjworks.github.io/) respects your privacy. This policy explains what information is collected when you visit this site, how it is used, and the choices you have.
+DigitalBrain ("this site", https://dibrain.dev/) respects your privacy. This policy explains what information is collected when you visit this site, how it is used, and the choices you have.
 
 ## 1. Information We Collect
 

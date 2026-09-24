@@ -28,7 +28,7 @@ ACCENTS = {
     "brief":     (71, 85, 105),
 }
 W, H = 1200, 630
-SITE = "yjworks.github.io"
+SITE = "dibrain.dev"
 
 def font(weight, size):
     return ImageFont.truetype(str(FONTS / f"NotoSansKR-{weight}.ttf"), size)

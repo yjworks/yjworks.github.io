@@ -6,7 +6,7 @@ ShowBreadCrumbs: false
 ShowReadingTime: false
 ---
 
-DigitalBrain(이하 "본 사이트", https://yjworks.github.io/)은 방문자의 개인정보를 중요하게 생각하며, 「개인정보 보호법」 및 관련 법령을 준수합니다. 본 방침은 본 사이트가 어떤 정보를 어떤 목적으로 수집·이용하는지 안내합니다.
+DigitalBrain(이하 "본 사이트", https://dibrain.dev/)은 방문자의 개인정보를 중요하게 생각하며, 「개인정보 보호법」 및 관련 법령을 준수합니다. 본 방침은 본 사이트가 어떤 정보를 어떤 목적으로 수집·이용하는지 안내합니다.
 
 ## 1. 수집하는 정보
 

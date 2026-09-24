@@ -1,6 +1,6 @@
 # DigitalBrain
 
-Hugo + PaperMod 한/영 기술 블로그. https://yjworks.github.io/
+Hugo + PaperMod 한/영 기술 블로그. https://dibrain.dev/
 
 - 글: `content/posts/YYYY-MM-DD-<slug>.ko.md` / `.en.md`
 - 배포: `main` push 시 GitHub Actions → GitHub Pages
