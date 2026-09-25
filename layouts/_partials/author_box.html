@@ -3,6 +3,18 @@
 <aside class="td-author">
   {{- partial "icon.html" (dict "name" "sparkles" "size" 36) }}
   <div>
+    {{- if in (.Params.categories | default slice) "Code Notes" }}
+    <p class="td-author-name">{{ if $ko }}코드는 운영자가, 글은 AI가 썼습니다{{ else }}Our code, written up by AI{{ end }}</p>
+    <p class="td-author-bio">
+      {{- if $ko -}}
+      이 글의 코드는 DigitalBrain 운영자가 직접 만든 것이고, 설명은 AI(Anthropic Claude)가 코드를 읽고 정리했습니다.
+      글에 적힌 동작 확인 범위를 넘어서는 부분은 직접 시험해 보고 쓰세요.
+      {{- else -}}
+      The code in this post was written by the DigitalBrain operator; the explanation was written by an AI
+      (Anthropic's Claude) from reading that code. Test anything beyond what the post says was verified.
+      {{- end -}}
+    </p>
+    {{- else }}
     <p class="td-author-name">{{ if $ko }}이 글은 AI가 썼습니다{{ else }}This post was written by AI{{ end }}</p>
     <p class="td-author-bio">
       {{- if $ko -}}
@@ -15,6 +27,7 @@
       post. Tell us about an error and we'll fix it and log the correction at the end of the post.
       {{- end -}}
     </p>
+    {{- end }}
     <p class="td-author-links">
       <a href="{{ if $ko }}/about/{{ else }}/en/about/{{ end }}">{{ if $ko }}어떻게 만드나{{ else }}How this site works{{ end }}</a>
       <a href="mailto:leeyunjai1982@gmail.com">{{ if $ko }}제보·정정{{ else }}Report an error{{ end }}</a>

@@ -74,7 +74,7 @@ This policy may be updated to reflect changes in law or services. Any changes wi
 
 For privacy-related questions, please contact:
 
-- Operator: yjworks
+- Operator: DigitalBrain
 - Email: [leeyunjai1982@gmail.com](mailto:leeyunjai1982@gmail.com)
 
 - Effective date: September 2, 2026

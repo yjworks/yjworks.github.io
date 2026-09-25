@@ -33,6 +33,8 @@ description: DigitalBrain 블로그 자동 작성. 평일 하루 한 번이며 �
 > 소개 페이지와 모든 글에 "AI 작성"이 표시됩니다. 그러니 **사람인 척 쓰지 않습니다.**
 > "제가 써 보니", "직접 만져 보니", "저는 ~를 쓰고 있는데" 같은 1인칭 경험, 지어낸 일화, 운영자 의견처럼 읽히는
 > 문장을 쓰지 않습니다. 판단은 "공개된 수치로 보면 ~"처럼 근거를 앞에 두고 씁니다.
+>
+> `categories: ["Code Notes"]` 인 글(slug `code-`)은 운영자 코드로 따로 올리는 글입니다. 읽기만 하고 고치지 않습니다.
 
 ## 0. 모드 — 요일이 결정한다
 
@@ -108,7 +110,7 @@ GitHub와 Hugging Face를 격주로 번갈아 간다. `ls content/posts` 에서 
 
    ```bash
    TODAY=$(TZ=Asia/Seoul date +%F)
-   ls content/posts/$TODAY-*.ko.md 2>/dev/null
+   ls content/posts/$TODAY-*.ko.md 2>/dev/null | grep -v -- '-code-'   # 코드 노트는 세지 않는다
    grep -l "^lastmod: $TODAY" content/guides/*.ko.md 2>/dev/null
    ```
 

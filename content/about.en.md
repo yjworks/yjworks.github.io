@@ -27,6 +27,9 @@ It covers newly released hardware and software with key specs, prices, and relea
 | Thursday | Dev picks (trending GitHub repositories / Hugging Face models) |
 | Friday | [Buying guide](/en/guides/) update: one comparison table revised for new products |
 
+**Code Notes** are the exception: code the operator wrote, explained by the AI after reading it, posted whenever there is something to share.
+Each one says which part a person wrote and which part the AI wrote.
+
 ## Rules the AI follows
 
 - Only products and projects that were actually announced. Rumors and leaks don't count.
@@ -43,7 +46,7 @@ If you spot an error, email us with a source. We'll fix it and log the change.
 
 ## Who runs this
 
-yjworks runs this site: sets the rules for the automation and handles error reports.
+The DigitalBrain operator sets the rules for the automation and handles error reports.
 It isn't affiliated with any company or manufacturer. If a post ever carries affiliate links, it will say so at the top.
 
 - Email: [leeyunjai1982@gmail.com](mailto:leeyunjai1982@gmail.com)

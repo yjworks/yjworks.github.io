@@ -19,10 +19,13 @@
 {{- /* 이 사이트의 글과 가이드는 AI가 쓴다. 숨기지 않고 글마다 밝힌다. */}}
 {{- if in (slice "posts" "guides") .Section }}
   {{- $ko := eq .Language.Lang "ko" }}
+  {{- /* 코드 노트는 코드는 운영자가, 설명은 AI가 썼다. 둘을 구분해 밝힌다. */}}
+  {{- $label := cond $ko "AI 작성" "Written by AI" }}
+  {{- if in (.Params.categories | default slice) "Code Notes" }}{{ $label = cond $ko "운영자 코드 · AI 정리" "Our code, written up by AI" }}{{ end }}
   {{- $items = $items | append (printf `<a class="meta-item meta-ai" href="%s">%s%s</a>`
       (cond $ko "/about/" "/en/about/")
       (partial "icon.html" (dict "name" "sparkles" "size" 14))
-      (cond $ko "AI 작성" "Written by AI")) }}
+      $label) }}
 {{- end }}
 
 {{- if (.Param "ShowReadingTime") }}
