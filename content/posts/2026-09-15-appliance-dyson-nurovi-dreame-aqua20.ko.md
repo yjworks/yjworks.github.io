@@ -1,5 +1,6 @@
 ---
 title: "누로비의 자외선, 아쿠아20의 180도"
+seoTitle: "다이슨 누로비 vs 드리미 아쿠아20 프로 울트라: 흡입력·얼룩 제거 비교"
 date: 2026-09-15T03:08:25+09:00
 slug: "appliance-dyson-nurovi-dreame-aqua20"
 summary: "다이슨이 IFA 2026에서 공개한 로봇청소기 '누로비' 3종과, 드리미가 같은 자리에서 선보인 '아쿠아20 프로 울트라 롤러 X 컴플리트'를 흡입력, 얼룩 제거 방식, 내비게이션 기준으로 비교했습니다."
@@ -14,6 +15,8 @@ cover:
 
 다이슨과 드리미가 나란히 IFA 2026(9월 4일~8일, 베를린)에서 프리미엄 로봇청소기 신제품을 내놓았습니다. 다이슨은 UV·그린라이트 센서로 눈에 안 보이는 얼룩까지 찾아내는 '누로비(Nurovi)' 3종을, 드리미는 180°C 고온 스팀과 확장형 롤러 걸레를 결합한 '아쿠아20 프로 울트라 롤러 X 컴플리트'를 공개했습니다. 둘 다 흡입·물걸레를 한 대에 담은 올인원 제품이라 정면으로 비교됩니다.
 
+출처: [IFA Berlin](https://www.ifa-berlin.com/visit), [Il Sole 24 ORE](https://en.ilsole24ore.com/art/dyson-equips-its-home-appliances-with-sensors-and-algorithms-new-products-at-ifa-2026-AJqdxZ2), [Goosed.ie](https://goosed.ie/news/tech-news/ifa-berlin/dyson-unveiled-2026/), [Forbes](https://www.forbes.com/sites/bennyhareven/2026/09/07/dreame-aqua20-pro-ultra-roller-x-vacuum-can-now-climb-up-to-10cm/)
+
 ## 다이슨 누로비 (Nurovi)
 
 다이슨은 '누로비'라는 이름이 새로운 신경망 기반 지능(Neural Intelligence)과 최신 비전 시스템을 합친 것이라고 설명합니다. 세 가지 등급으로 나왔습니다.
@@ -26,6 +29,8 @@ cover:
 
 R3는 기존 모델 Spot+Scrub Ai 대비 흡입력이 65% 올랐다고 다이슨은 밝혔습니다.
 
+출처: [Dyson](https://www.dyson.com/vacuum-cleaners/robot/r3-nurovi-spot-scrub-uv), [Dyson 뉴스룸](https://www.dyson.com/discover/news/latest/introducing-r1-nurovi-r2-nurovi), [Costco](https://www.costco.com/p/-/dyson-r2-nurovi-wash-dry-robot-vacuum/4201044416), [Vacuum Wars](https://vacuumwars.com/dysons-2026-product-news/), [Vacuum Wars 인터뷰](https://vacuumwars.com/dyson-new-2026/)
+
 ## 드리미 아쿠아20 프로 울트라 롤러 X 컴플리트
 
 - **흡입력**: 40,000Pa, 엉킴 방지 브러시 'HyperStream 2.0' 적용
@@ -35,6 +40,8 @@ R3는 기존 모델 Spot+Scrub Ai 대비 흡입력이 65% 올랐다고 다이슨
 - **문턱 극복**: 'ProLeap' 기술로 최대 10cm 문턱까지 넘습니다
 - **스마트홈**: Matter 호환 인증
 - **가격·출시**: 독일·오스트리아·스페인·포르투갈 1,499유로, 영국 1,299파운드, 9월 21일 출시. 미국 가격은 확인 필요
+
+출처: [HomeKit News](https://homekitnews.com/2026/09/07/dreame-unveils-matter-compatible-aqua20-pro-ultra-roller-x/), [Forbes](https://www.forbes.com/sites/bennyhareven/2026/09/07/dreame-aqua20-pro-ultra-roller-x-vacuum-can-now-climb-up-to-10cm/), [Fonearena](https://www.fonearena.com/blog/491416/dreame-aqua20-pro-ultra-roller-x-complete-leaptic-cube-t-series-wet-dry-vacuums.html), [Notebookcheck](https://www.notebookcheck.com/Erstmals-mit-Dampfwischen-Dreame-Aqua20-Pro-Ultra-Roller-X-Complete-startet-mit-300-Euro-Rabatt.1404412.0.html), [TopTechNews](https://www.toptechnews.de/2026/09/21/dreame-aqua20-pro-ultra-roller-x-complete-ab-sofort-online-im-handel-erhaeltlich/)
 
 ## 비교
 
@@ -46,6 +53,8 @@ R3는 기존 모델 Spot+Scrub Ai 대비 흡입력이 65% 올랐다고 다이슨
 | 스마트홈 연동 | 확인 필요 | Matter 호환 |
 | 가격 | 1,199달러(미국) | 1,499유로 / 1,299파운드 |
 | 출시일 | 9월 15일(미국) | 9월 21일(유럽) |
+
+출처: [Dyson](https://www.dyson.com/vacuum-cleaners/robot/r3-nurovi-spot-scrub-uv), [HomeKit News](https://homekitnews.com/2026/09/07/dreame-unveils-matter-compatible-aqua20-pro-ultra-roller-x/), [Forbes](https://www.forbes.com/sites/bennyhareven/2026/09/07/dreame-aqua20-pro-ultra-roller-x-vacuum-can-now-climb-up-to-10cm/), [Notebookcheck](https://www.notebookcheck.com/Erstmals-mit-Dampfwischen-Dreame-Aqua20-Pro-Ultra-Roller-X-Complete-startet-mit-300-Euro-Rabatt.1404412.0.html)
 
 두 수치 다 "Pa"로 단위가 같고 높을수록 흡입력이 좋다는 뜻이라 직접 비교할 수 있지만, 나머지 항목은 서로 확인된 수치가 갖춰지지 않아 비교 차트 대신 표로만 정리했습니다.
 
@@ -59,7 +68,9 @@ R3는 기존 모델 Spot+Scrub Ai 대비 흡입력이 65% 올랐다고 다이슨
 
 ## 국내 출시 여부
 
-이 글 작성 시점 기준, 두 제품 모두 한국 정식 출시 일정이 확인되지 않았습니다(확인 필요). 다이슨코리아 로봇청소기 페이지에는 아직 누로비가 등재되지 않았습니다. 드리미의 전작인 '아쿠아10 울트라 롤러'는 국내에 89만~94만 원대로 판매 중이지만, 이번 '아쿠아20 프로 울트라 롤러 X 컴플리트'의 국내 출시 여부와 가격은 별도로 확인이 필요합니다.
+이 글 작성 시점 기준, 두 제품 모두 한국 정식 출시 일정이 확인되지 않았습니다(확인 필요). 다이슨코리아 로봇청소기 페이지에는 아직 누로비가 등재되지 않았습니다. 드리미의 전작인 '아쿠아10 울트라 롤러'는 국내에 정식 출시돼 판매 중이지만(국내 가격은 확인 필요), 이번 '아쿠아20 프로 울트라 롤러 X 컴플리트'의 국내 출시 여부와 가격은 별도로 확인이 필요합니다.
+
+출처: [드리미 코리아](https://kr.dreametech.com/news?no=98)
 
 ## 총평
 

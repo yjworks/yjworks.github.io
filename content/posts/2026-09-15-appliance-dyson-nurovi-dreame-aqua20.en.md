@@ -1,5 +1,6 @@
 ---
 title: "Nurovi's UV Light Meets Aqua20's 180°C Steam"
+seoTitle: "Dyson Nurovi vs Dreame Aqua20 Pro Ultra: Suction and Stain Removal"
 date: 2026-09-15T03:08:25+09:00
 slug: "appliance-dyson-nurovi-dreame-aqua20"
 summary: "Dyson unveiled its 'Nurovi' robot vacuum lineup at IFA 2026, while Dreame showed off the Aqua20 Pro Ultra Roller X Complete at the same show. We compare suction power, stain removal, and navigation."
@@ -13,6 +14,8 @@ cover:
 ---
 
 Dyson and Dreame both used IFA 2026 (September 4–8, Berlin) to reveal new premium robot vacuums. Dyson brought "Nurovi," a three-model lineup that uses UV and green-light sensors to spot stains invisible to the naked eye. Dreame countered with the Aqua20 Pro Ultra Roller X Complete, which pairs 180°C steam with an extending roller mop. Both are all-in-one suction-plus-mop machines, so they land in direct competition, and both are shipping within days of each other in September 2026 rather than sitting on a roadmap.
+
+Sources: [IFA Berlin](https://www.ifa-berlin.com/visit), [Il Sole 24 ORE](https://en.ilsole24ore.com/art/dyson-equips-its-home-appliances-with-sensors-and-algorithms-new-products-at-ifa-2026-AJqdxZ2), [Goosed.ie](https://goosed.ie/news/tech-news/ifa-berlin/dyson-unveiled-2026/), [Forbes](https://www.forbes.com/sites/bennyhareven/2026/09/07/dreame-aqua20-pro-ultra-roller-x-vacuum-can-now-climb-up-to-10cm/)
 
 It's a useful pairing because the two companies are chasing the same problem — dried-on stains that a plain mop pass leaves behind — from opposite directions. Dyson is spending its engineering budget on finding the stain; Dreame is spending it on destroying the stain once found. That split shows up clearly once you line up the actual hardware.
 
@@ -28,6 +31,8 @@ Dyson says the Nurovi name blends its new Neural Intelligence tech with its late
 
 Dyson claims the R3's suction is 65% higher than its existing Spot+Scrub Ai model.
 
+Sources: [Dyson](https://www.dyson.com/vacuum-cleaners/robot/r3-nurovi-spot-scrub-uv), [Dyson Newsroom](https://www.dyson.com/discover/news/latest/introducing-r1-nurovi-r2-nurovi), [Costco](https://www.costco.com/p/-/dyson-r2-nurovi-wash-dry-robot-vacuum/4201044416), [Vacuum Wars](https://vacuumwars.com/dysons-2026-product-news/), [Vacuum Wars interview](https://vacuumwars.com/dyson-new-2026/)
+
 ## Dreame Aqua20 Pro Ultra Roller X Complete
 
 - **Suction**: 40,000Pa, paired with the "HyperStream Detangling Floor Brush 2.0"
@@ -37,6 +42,8 @@ Dyson claims the R3's suction is 65% higher than its existing Spot+Scrub Ai mode
 - **Obstacle clearance**: "ProLeap" tech lets it climb thresholds up to 10cm
 - **Smart home**: Matter-certified
 - **Price and launch**: €1,499 in Germany, Austria, Spain, and Portugal; £1,299 in the UK; launching September 21. US pricing is TBC
+
+Sources: [HomeKit News](https://homekitnews.com/2026/09/07/dreame-unveils-matter-compatible-aqua20-pro-ultra-roller-x/), [Forbes](https://www.forbes.com/sites/bennyhareven/2026/09/07/dreame-aqua20-pro-ultra-roller-x-vacuum-can-now-climb-up-to-10cm/), [Fonearena](https://www.fonearena.com/blog/491416/dreame-aqua20-pro-ultra-roller-x-complete-leaptic-cube-t-series-wet-dry-vacuums.html), [Notebookcheck](https://www.notebookcheck.com/Erstmals-mit-Dampfwischen-Dreame-Aqua20-Pro-Ultra-Roller-X-Complete-startet-mit-300-Euro-Rabatt.1404412.0.html), [TopTechNews](https://www.toptechnews.de/2026/09/21/dreame-aqua20-pro-ultra-roller-x-complete-ab-sofort-online-im-handel-erhaeltlich/)
 
 ## Head to head
 
@@ -48,6 +55,8 @@ Dyson claims the R3's suction is 65% higher than its existing Spot+Scrub Ai mode
 | Smart home | TBC | Matter-certified |
 | Price | $1,199 (US) | €1,499 / £1,299 |
 | Launch | September 15 (US) | September 21 (Europe) |
+
+Sources: [Dyson](https://www.dyson.com/vacuum-cleaners/robot/r3-nurovi-spot-scrub-uv), [HomeKit News](https://homekitnews.com/2026/09/07/dreame-unveils-matter-compatible-aqua20-pro-ultra-roller-x/), [Forbes](https://www.forbes.com/sites/bennyhareven/2026/09/07/dreame-aqua20-pro-ultra-roller-x-vacuum-can-now-climb-up-to-10cm/), [Notebookcheck](https://www.notebookcheck.com/Erstmals-mit-Dampfwischen-Dreame-Aqua20-Pro-Ultra-Roller-X-Complete-startet-mit-300-Euro-Rabatt.1404412.0.html)
 
 Suction is the one metric with matching units and a clear "higher is better" reading, so it's directly comparable. The rest of the specs aren't confirmed on both sides yet, so we kept this as a table rather than a bar chart.
 
@@ -65,7 +74,9 @@ Maintenance is worth weighing too, even though neither company has published ful
 
 ## Korea availability
 
-As of this writing, neither product has a confirmed Korean launch date (TBC). Nurovi isn't yet listed on Dyson Korea's robot vacuum page. Dreame's previous-generation Aqua10 Ultra Roller sells in Korea for roughly ₩890,000–940,000, but pricing and availability for the new Aqua20 Pro Ultra Roller X Complete remain unconfirmed.
+As of this writing, neither product has a confirmed Korean launch date (TBC). Nurovi isn't yet listed on Dyson Korea's robot vacuum page. Dreame's previous-generation Aqua10 Ultra Roller has officially launched in Korea (Korean price TBC), but pricing and availability for the new Aqua20 Pro Ultra Roller X Complete remain unconfirmed.
+
+Sources: [Dreame Korea](https://kr.dreametech.com/news?no=98)
 
 ## Verdict
 

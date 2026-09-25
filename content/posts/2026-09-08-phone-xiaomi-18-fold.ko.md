@@ -1,5 +1,6 @@
 ---
 title: "샤오미 18 폴드, 얇아진 몸에 커진 배터리"
+seoTitle: "샤오미 18 폴드 vs 갤럭시 Z 폴드7 스펙 비교: 두께·6000mAh 배터리"
 date: 2026-09-08T03:08:41+09:00
 slug: "phone-xiaomi-18-fold"
 summary: "샤오미가 중국에서 첫 와이드 폴더블 샤오미 18 폴드를 공식 출시했습니다. 얇은 두께와 6000mAh 배터리를 앞세워 갤럭시 Z 폴드7과 정면으로 비교됩니다."
@@ -79,7 +80,7 @@ draft: false
 스펙만 보면 갤럭시 Z 폴드7을 넘어서는 항목이 여럿이지만, 글로벌 유통과 내구성 검증이라는
 숙제가 남아 있어 실제 구매 판단은 정식 출시 소식을 더 지켜본 뒤 내리는 편이 안전합니다.
 
-Sources:
+출처:
 - [Xiaomi 18 Fold Launched: Price, specs and features - SoyaCincau](https://soyacincau.com/2026/09/07/xiaomi-18-fold-launch-price-specs-rival-z-fold-8-iphone-ultra/)
 - [Xiaomi 18 Fold gets its first official look ahead of September 7 launch - GSMArena](https://www.gsmarena.com/xiaomi_18_fold_gets_its_first_official_look_ahead_of_september_7_launch-news-74446.php)
 - [Xiaomi Just Launched Its First Wide Foldable - Android Headlines](https://www.androidheadlines.com/xiaomi-18-fold-official-specs-features-price-buy)

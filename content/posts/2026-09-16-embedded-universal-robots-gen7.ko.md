@@ -1,5 +1,6 @@
 ---
 title: "UR Gen 7, 빨라지고 작아졌다"
+seoTitle: "UR Gen 7 UR17g-1300 vs UR10e 협동로봇 스펙 비교"
 date: 2026-09-16T03:08:05+09:00
 slug: "embedded-universal-robots-gen7"
 summary: "유니버설로봇이 IMTS 2026에서 공개한 7세대 협동로봇 플랫폼 UR Gen 7을 살펴보고, 같은 1300mm 리치를 쓰는 이전 세대 UR10e와 스펙을 비교했습니다."
@@ -22,9 +23,13 @@ draft: false
 |---|---|---|---|---|---|
 | UR10g-1750 | 8kg(확장 시 10kg) | 1750mm | 44.7kg | ±0.08mm | 5m/s |
 | UR17g-1300 | 15kg(확장 시 17.5kg) | 1300mm | 40.7kg | ±0.05mm | 5m/s |
-| UR18g-950 | 18kg | 950mm | 39.2kg | ±0.05mm | 4m/s |
+| UR18g-950 | 18kg | 950mm | 확인 필요 | ±0.05mm | 4m/s |
+
+출처: [Universal Robots 보도자료](https://www.universal-robots.com/news-and-media/news-center/universal-robots-unveils-gen-7-new-platform-industrial-automation-physical-ai/), [The Robot Report](https://www.therobotreport.com/universal-robots-launches-its-seventh-generation-robot-platform-at-imts/), [Unite.AI](https://www.unite.ai/universal-robots-debuts-gen-7-cobot-platform-for-physical-ai/)
 
 컨트롤러는 'CB7 Core'로 교체됐습니다. 이전 세대 대비 연산 성능이 40% 높아졌고, 크기는 30% 작아졌다고 밝혔습니다. 임베디드 관점에서 더 눈에 띄는 것은 새 g-시리즈 툴 플랜지입니다. 카메라나 힘센서 같은 엔드이펙터에 데이터·전원·안전 신호를 플랜지 한 곳에서 바로 공급해, 별도 케이블을 팔 바깥으로 감아 배선하지 않아도 되게 했습니다. 로봇팔 자체에도 힘-토크 센싱과 임피던스 제어, 실시간 데이터 교환(Real-Time Data Exchange) 기능이 기본 내장돼, 정밀 조립처럼 접촉력을 느끼며 움직여야 하는 작업을 겨냥합니다. 다만 툴 플랜지가 공급하는 정확한 전압·전류 범위와 개별 모델의 최대 소비전력은 이번 발표 자료에는 나오지 않아 확인이 필요합니다.
+
+출처: [Universal Robots 보도자료](https://www.universal-robots.com/news-and-media/news-center/universal-robots-unveils-gen-7-new-platform-industrial-automation-physical-ai/), [Automation World](https://www.automationworld.com/factory/robotics/news/55404812/universal-robots-unveils-gen-7-platform-at-imts-2026-in-chicago)
 
 ## UR17g-1300 vs UR10e — 같은 1300mm 리치, 다른 세대
 
@@ -38,6 +43,8 @@ draft: false
 | 반복 정밀도 | ±0.05mm | ±0.05mm |
 | 최고 TCP 속도 | 4m/s | 5m/s |
 | 최대 소비전력 | 615W | 확인 필요 |
+
+출처: [Universal Robots UR10e 기술 사양서](https://www.universal-robots.com/manuals/EN/TechSheets/UR10e_techsheet_pdf_online/UR10e_techsheet_en.pdf), [Unite.AI](https://www.unite.ai/universal-robots-debuts-gen-7-cobot-platform-for-physical-ai/)
 
 ![UR10e 대비 UR17g-1300은 페이로드가 12.5kg에서 15kg(확장 17.5kg)로, 최고 속도가 4m/s에서 5m/s로 늘었습니다](/images/posts/embedded-universal-robots-gen7.ko-compare.png "표를 막대로 그린 것입니다. 같은 1300mm 리치에서 페이로드와 속도가 함께 올랐습니다.")
 

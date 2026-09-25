@@ -1,5 +1,6 @@
 ---
 title: "28만원 비싼 울트라4, 배터리는 10시간 짧다"
+seoTitle: "애플워치 울트라4 vs 갤럭시 워치 울트라2: 가격·배터리·밝기 비교"
 date: 2026-09-21T03:06:57+09:00
 slug: "wearable-apple-watch-ultra4-galaxy-watch-ultra2"
 summary: "애플이 9월 18일 국내 출시한 애플워치 울트라4와 시리즈12를 이미 시장에 나와 있는 삼성 갤럭시 워치 울트라2와 가격, 배터리, 밝기 기준으로 비교했습니다."
@@ -21,7 +22,7 @@ draft: false
 | 칩 | S11 | S11 |
 | 배터리(표준 사용) | 최대 50시간 | 확인 필요 |
 | 배터리(저전력 모드) | 최대 84시간 | - |
-| 배터리(확장 운동 모드, GPS+심박 연속) | 25시간 | - |
+| 배터리(확장 운동 모드, 운동 중 저전력 모드) | 25시간 | - |
 | 심박 측정 주기 | 확인 필요 | 5초(기존 대비 60배 빨라짐) |
 | 디스플레이 밝기 | 3,000니트 | 확인 필요 |
 | 크기 | 49×44×12mm | 확인 필요 |
@@ -30,6 +31,8 @@ draft: false
 | 위성 기능 | 비상 SOS | 없음 |
 | 가격(미국) | $799부터 | $399부터 |
 | 가격(국내) | 1,249,000원부터 | 599,000원부터 |
+
+출처: [Apple 울트라4 기술 사양](https://www.apple.com/apple-watch-ultra-4/specs/), [Apple Newsroom](https://www.apple.com/newsroom/2026/09/introducing-apple-watch-series-12-with-the-all-new-health-sensing-system/), [The Mac Observer](https://www.macobserver.com/tips/round-ups/apple-watch-ultra-4-full-specs-63-g-3000-nits-100-m-water-rating-satellite-battery/), [the5krunner](https://the5krunner.com/specs/apple/watch-ultra-4/), [TechRepublic](https://www.techrepublic.com/article/news-apple-watch-series-12-ultra-4/), [ZDNet Korea](https://zdnet.co.kr/view/?no=20260910083526), [이데일리](https://www.edaily.co.kr/News/Read?newsId=01548166645578808)
 
 울트라4는 외형은 이전 세대와 같고, 완전히 새로운 건강 센싱 시스템과 배터리 관리에 변화를 집중했습니다. 시리즈12는 알루미늄 모델의 전면 유리가 기존보다 60% 단단해졌고, 새 심박 센서로 심박수를 5초마다 측정해 이전 세대보다 60배 빨라졌습니다. 두 모델 모두 활동량, 활력징후, 수면 데이터를 종합한 새 '준비도(readiness)' 지표가 추가돼, 컨디션이 좋은 날과 회복이 필요한 날을 구분해 알려줍니다.
 
@@ -44,8 +47,10 @@ draft: false
 | 크기 | 49×44×12mm | 47.4×47.1×10.7mm |
 | 무게 | 63~63.1g | 61.5g |
 | 소재 | 티타늄 | 티타늄 |
-| 가격(미국) | $799 | $649~699 |
-| 가격(국내) | 1,249,000원 | 약 969,100원 |
+| 가격(미국) | $799 | $699.99 (47mm LTE) |
+| 가격(국내) | 1,249,000원 | 969,100원 (47mm LTE 출고가) |
+
+출처: [삼성전자 뉴스룸](https://news.samsung.com/kr/%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EC%9B%8C%EC%B9%98-%EC%9A%B8%ED%8A%B8%EB%9D%BC2%C2%B7%EC%9B%8C%EC%B9%989-%EA%B3%B5%EA%B0%9C), [삼성전자 갤럭시 워치 울트라2 스펙](https://www.samsung.com/sec/watches/galaxy-watch/galaxy-watch-ultra2/specs/), [Samsung US](https://www.samsung.com/us/watches/galaxy-watch-ultra2/), [Droid Life](https://www.droid-life.com/2026/07/22/galaxy-watch-9-galaxy-watch-ultra-2-made-official/), [The Mac Observer](https://www.macobserver.com/tips/round-ups/apple-watch-ultra-4-full-specs-63-g-3000-nits-100-m-water-rating-satellite-battery/), [ZDNet Korea](https://zdnet.co.kr/view/?no=20260910083526)
 
 ![애플워치 울트라4는 배터리 최대 50시간, 밝기 3,000니트인 반면 갤럭시 워치 울트라2는 배터리 60시간, 밝기 5,000니트로 두 항목 모두 앞섭니다](/images/posts/wearable-apple-watch-ultra4-galaxy-watch-ultra2.ko-compare.png "높을수록 좋은 두 항목 모두 갤럭시 워치 울트라2가 앞섭니다. 가격은 본문 표를 참고하세요.")
 
@@ -60,6 +65,8 @@ draft: false
 ## 국내 출시 여부
 
 두 제품 모두 한국이 1차 출시국에 포함돼 미국과 같은 날인 9월 18일부터 판매되고 있습니다. 시리즈12는 599,000원부터, 울트라4는 1,249,000원부터입니다.
+
+출처: [ZDNet Korea](https://zdnet.co.kr/view/?no=20260910083526), [이데일리](https://www.edaily.co.kr/News/Read?newsId=01548166645578808)
 
 ## 총평
 

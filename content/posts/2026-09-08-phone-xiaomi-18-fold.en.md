@@ -1,5 +1,6 @@
 ---
 title: "Xiaomi 18 Fold: A Thinner Body, a Bigger Battery"
+seoTitle: "Xiaomi 18 Fold vs Galaxy Z Fold7: Thickness, 6000mAh Battery"
 date: 2026-09-08T03:08:41+09:00
 slug: "phone-xiaomi-18-fold"
 summary: "Xiaomi has officially launched its first wide-format foldable, the Xiaomi 18 Fold, in China. A 6000mAh battery and a slimmer hinge put it in direct comparison with Samsung's Galaxy Z Fold7."
