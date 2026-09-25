@@ -1,5 +1,6 @@
 ---
 title: "Violoop's $399 Won't Last the Campaign"
+seoTitle: "Violoop Kickstarter $399 AI Hardware, Alibaba Code Review Tool | Weekly Brief"
 date: 2026-09-18T03:10:28+09:00
 slug: "brief-violoop-open-code-review"
 summary: "No confirmed Korea product launches this week. Globally, screen-watching AI hardware Violoop opened its Kickstarter at $399, and on the software side Alibaba's open-sourced code review tool gained about 8,500 GitHub stars in a single week."

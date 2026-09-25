@@ -1,5 +1,6 @@
 ---
 title: "Lighter Than a Gram: Acer's Swift Blade 14"
+seoTitle: "Acer Swift Blade 14 (799g) vs LG gram AI 2026 14: Weight and Specs"
 date: 2026-09-11T19:09:20+09:00
 slug: "laptop-acer-swift-blade-14"
 summary: "Acer unveiled the 799g Swift Blade 14 at IFA 2026. We weigh it against LG's 1.29kg gram AI 2026 14-inch, which just launched in Korea this month."

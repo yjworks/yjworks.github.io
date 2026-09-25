@@ -1,5 +1,6 @@
 ---
 title: "Roborock Pulls Harder, Ecovacs Rinses Cleaner"
+seoTitle: "Roborock Saros 20 vs Ecovacs Deebot X12S: Suction, Mop, Price"
 date: 2026-09-07T05:43:18+09:00
 slug: "appliance-roborock-saros20-ecovacs-x12s"
 summary: "Roborock's Saros 20 lineup and Ecovacs' Deebot X12S OmniCyclone both launched at IFA 2026. We compare suction power, obstacle-clearing chassis design, mop hygiene, and price."

@@ -1,5 +1,6 @@
 ---
 title: "클라우드플레어 스킬, 검증 못하면 취약점도 아니다"
+seoTitle: "Cloudflare security-audit-skill·DeepSeek Harness | GitHub 트렌딩"
 date: 2026-09-24T03:13:22+09:00
 slug: "dev-security-audit-skill-deepseek-harness"
 summary: "이번 주 GitHub 트렌딩에서 8월 공개 2주 만에 스타 20만 개를 넘긴 AI 에이전트 프레임워크 DeepSeek Harness와, 코드 에이전트에 독립 검증 단계까지 넣은 Cloudflare의 security-audit-skill을 골랐습니다."

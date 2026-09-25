@@ -1,5 +1,6 @@
 ---
 title: "Qualcomm Ships a New Chip, Korea Stays Quiet"
+seoTitle: "Snapdragon 8 Elite Gen 6 2nm Unveiled, Qwen3.8-27B | Weekly Brief"
 date: 2026-09-25T03:13:13+09:00
 slug: "brief-snapdragon-gen6-qwen"
 summary: "No confirmed Korea product launches this week. Globally, Qualcomm unveiled the 2nm Snapdragon 8 Elite Gen 6 and Extreme Gen 6 at its Snapdragon Summit, and on the software side Alibaba's Qwen3.8-27B topped Hugging Face's weekly trending chart with over 16,000 likes."

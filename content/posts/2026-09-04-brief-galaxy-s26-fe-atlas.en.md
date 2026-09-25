@@ -1,5 +1,6 @@
 ---
 title: "Galaxy S26 FE Costs Less, a Wearable Reads More"
+seoTitle: "Galaxy S26 FE Korea Price, Atlas 1.0 Brain Wearable | Weekly Brief"
 date: 2026-09-04T03:10:00+09:00
 slug: "brief-galaxy-s26-fe-atlas"
 summary: "Samsung's Galaxy S26 FE went on sale in Korea at KRW 1,045,000, a brainwave-reading wearable called Atlas 1.0 launched abroad, and Upstage's large open model Solar Open2-250B drew attention in software."

@@ -1,5 +1,6 @@
 ---
 title: "iPhone Duo Folds Late, Costs More"
+seoTitle: "iPhone Duo vs Galaxy Z Fold8: Specs, Price, Korea Launch Date"
 date: 2026-09-14T03:07:46+09:00
 slug: "phone-iphone-duo-galaxy-fold8"
 summary: "Apple unveiled its first foldable phone, the iPhone Duo, at its September 9 event alongside the iPhone 18 Pro lineup. Here's how it compares with the Galaxy Z Fold8 on specs and price, plus Korea's launch timeline."

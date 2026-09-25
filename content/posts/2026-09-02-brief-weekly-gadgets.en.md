@@ -1,5 +1,6 @@
 ---
 title: "On sale today, shipping next year"
+seoTitle: "LG Gram Book 14 and Galaxy Book6 Prices, Jetson Orin Nano 2 | Weekly Brief"
 date: 2026-09-02T15:00:00+09:00
 slug: "brief-weekly-gadgets"
 summary: "Two budget 14-inch laptops launched in Korea on the same day, NVIDIA's next entry-level Jetson for robots, and Poco's pricier F9 flagships."

@@ -1,5 +1,6 @@
 ---
 title: "미니마인드는 작게, 갓츠아이뷰는 크게"
+seoTitle: "MiniMind 64M 언어모델·God's Eye View 3D 지구본 | GitHub 트렌딩"
 date: 2026-09-03T07:57:31+09:00
 slug: "dev-minimind-gods-eye-view"
 summary: "이번 주 GitHub 트렌딩에서 64M 파라미터 언어모델을 2시간 만에 학습하는 MiniMind와, 브라우저에서 실시간 위성·항공·해상 데이터를 3D 지구본으로 보여주는 God's Eye View를 골랐다."

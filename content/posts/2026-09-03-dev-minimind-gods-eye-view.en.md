@@ -1,5 +1,6 @@
 ---
 title: "MiniMind Thinks Small, God's Eye Sees Big"
+seoTitle: "MiniMind 64M LLM and God's Eye View 3D Globe | GitHub Trending"
 date: 2026-09-03T07:57:31+09:00
 slug: "dev-minimind-gods-eye-view"
 summary: "This week's GitHub trending list pairs MiniMind, a 64M-parameter language model you can train in two hours, with God's Eye View, a browser-based 3D globe streaming live satellite, flight, and shipping data."

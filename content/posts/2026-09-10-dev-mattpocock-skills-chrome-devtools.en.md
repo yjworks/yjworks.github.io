@@ -1,5 +1,6 @@
 ---
 title: "Matt Pocock's Skills: One Line, No Code"
+seoTitle: "Matt Pocock's Agent Skills and Chrome DevTools MCP v1.9.0 | GitHub Trending"
 date: 2026-09-10T03:10:52+09:00
 slug: "dev-mattpocock-skills-chrome-devtools"
 summary: "This week's GitHub trending list pairs Matt Pocock's agent-skills repo, which crossed a quarter-million stars, with Chrome DevTools MCP v1.9.0, which just added a plugin system for agents."

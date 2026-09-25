@@ -1,5 +1,6 @@
 ---
 title: "미니CPM5는 이기고, 플래시넥스트는 아낀다"
+seoTitle: "MiniCPM5-2B·Qwen3.8-Flash-Next 온디바이스·MoE 모델 | Hugging Face 트렌딩"
 date: 2026-09-17T10:10:00+09:00
 slug: "dev-minicpm5-qwen-flash-next"
 summary: "이번 주 Hugging Face에서 2.52B로 4B급 모델을 넘어선 온디바이스 모델 MiniCPM5-2B와, 125B 중 토큰당 6B만 깨워 쓰는 Qwen3.8-Flash-Next를 골랐습니다."

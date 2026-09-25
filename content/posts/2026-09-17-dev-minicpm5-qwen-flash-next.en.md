@@ -1,5 +1,6 @@
 ---
 title: "MiniCPM5 Wins Big, Flash-Next Spends Small"
+seoTitle: "MiniCPM5-2B and Qwen3.8-Flash-Next | Hugging Face Trending"
 date: 2026-09-17T10:10:00+09:00
 slug: "dev-minicpm5-qwen-flash-next"
 summary: "This week's Hugging Face trending picks: MiniCPM5-2B, a 2.52B on-device model that beats a 4B rival, and Qwen3.8-Flash-Next, a 125B MoE that only wakes up 6B parameters per token."

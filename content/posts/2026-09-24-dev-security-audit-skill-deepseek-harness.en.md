@@ -1,5 +1,6 @@
 ---
 title: "Cloudflare's Skill Says: Unverified Isn't a Vulnerability"
+seoTitle: "Cloudflare security-audit-skill and DeepSeek Harness | GitHub Trending"
 date: 2026-09-24T03:13:22+09:00
 slug: "dev-security-audit-skill-deepseek-harness"
 summary: "This week's GitHub picks: DeepSeek Harness, a plugin-based agent runtime that crossed 200k stars two weeks after launch, and Cloudflare's security-audit-skill, which adds independent verification before an AI agent's finding counts as a real vulnerability."

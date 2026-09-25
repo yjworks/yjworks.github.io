@@ -1,5 +1,6 @@
 ---
 title: "매트 포콕 스킬, 코드 대신 명령 한 줄"
+seoTitle: "매트 포콕 에이전트 스킬·Chrome DevTools MCP v1.9.0 | GitHub 트렌딩"
 date: 2026-09-10T03:10:52+09:00
 slug: "dev-mattpocock-skills-chrome-devtools"
 summary: "이번 주 GitHub 트렌딩에서 스타 25만 개를 넘긴 매트 포콕의 에이전트 스킬 저장소와, 에이전트용 플러그인 시스템을 새로 얹은 Chrome DevTools MCP v1.9.0을 골랐습니다."

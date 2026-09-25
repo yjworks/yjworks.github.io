@@ -1,5 +1,6 @@
 ---
 title: "Huawei Watch 6: Brighter Screen, Narrower World"
+seoTitle: "Huawei Watch 6 and 6 Pro vs Pixel Watch 5: Specs and Price"
 date: 2026-09-03T07:16:00+09:00
 slug: "wearable-huawei-watch-6"
 summary: "Huawei's IFA 2026 launch of the Watch 6 and Watch 6 Pro, compared against Google's Pixel Watch 5 on specs, price, and ecosystem lock-in."
