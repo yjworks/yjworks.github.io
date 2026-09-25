@@ -4,7 +4,7 @@
     <h1 class="td-headline">{{ .Title | markdownify }}</h1>
     <p class="td-lede">{{ .Content | markdownify }}</p>
     <div class="td-meta-row">
-        <span class="td-pub">{{ partial "icon.html" (dict "name" "calendar" "size" 14) }}{{ if $ko }}평일 매일 발행{{ else }}New post every weekday{{ end }}</span>
+        <span class="td-pub">{{ partial "icon.html" (dict "name" "sparkles" "size" 14) }}<a href="{{ if $ko }}/about/{{ else }}/en/about/{{ end }}">{{ if $ko }}AI가 평일 매일 조사하고 씁니다{{ else }}Researched and written by AI, every weekday{{ end }}</a></span>
         {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
     </div>
     {{ partial "topic_chips.html" (dict "showCount" false) }}

@@ -1,14 +1,23 @@
 ---
 title: "About"
-summary: "About the DigitalBrain blog"
+summary: "DigitalBrain is an automated blog researched and written by AI."
 ShowToc: false
 ShowBreadCrumbs: false
 ShowReadingTime: false
 ---
 
-## DigitalBrain
+## This blog is written by AI
 
-DigitalBrain covers newly released hardware and software with the specs, prices, and release dates in one place, each entry sourced. One post every weekday, with a fixed subject per day.
+Every post and buying guide on DigitalBrain is **researched and written by AI.** We don't dress it up as human writing.
+It covers newly released hardware and software with key specs, prices, and release dates, each with a source link.
+
+## How it works
+
+1. Every day at 3 a.m. Korea time, an AI (Anthropic's Claude) runs.
+2. It searches the web for the day's subject and picks products or projects announced in the last two weeks, skipping anything covered in the past month.
+3. It writes a Korean post and an English post from the same research. The English post is rewritten for its readers, not translated.
+4. An automated check runs before anything is published. Posts without source links, with a wrong date, or missing required fields don't go out.
+5. Posts that pass go live immediately. **No human reviews each post.**
 
 | Day | Subject |
 |---|---|
@@ -16,24 +25,25 @@ DigitalBrain covers newly released hardware and software with the specs, prices,
 | Tuesday | Single-board computers, dev boards, modules |
 | Wednesday | Robots and edge AI devices |
 | Thursday | Dev picks (trending GitHub repositories / Hugging Face models) |
-| Friday | [Buying guide](/en/guides/) update — one comparison table revised for new products |
+| Friday | [Buying guide](/en/guides/) update: one comparison table revised for new products |
 
-The rules this site holds to:
+## Rules the AI follows
 
-- Only products and projects that were actually announced are covered, and every entry links to its source.
-- Specs follow the manufacturer's official figures. Anything unconfirmed is marked "TBC" rather than filled in.
-- **When there is nothing genuinely new that day, nothing is published.** No filler to keep a streak alive.
-- Short opinions are the author's own and are not purchase recommendations.
-- The Korean and English posts are written separately from the same research, each for its own readers.
+- Only products and projects that were actually announced. Rumors and leaks don't count.
+- Specs come from manufacturers or reputable outlets, and every item links to its source.
+- Anything unconfirmed is marked TBC, never guessed.
+- **It never writes as if it had used a product.** Verdicts are analysis based on published figures, not purchase advice.
+- No AI-generated product photos. Card images are drawn from the numbers in the post.
+- If there's nothing new to cover that day, nothing is published.
 
-## Who writes this
+## If something is wrong
 
-I write here as yjworks. I work with embedded software and computer vision, and I have built boards and robots myself. That background is why these posts care less about the spec sheet and more about whether a thing actually behaves the way it is advertised.
+AI makes mistakes. Some posts did go out with a wrong price or spec; each corrected post ends with a **Corrections** log.
+If you spot an error, email us with a source. We'll fix it and log the change.
 
-This is a personal blog. It is not affiliated with any company or manufacturer, and every opinion here is my own.
+## Who runs this
 
-## Contact
+yjworks runs this site: sets the rules for the automation and handles error reports.
+It isn't affiliated with any company or manufacturer. If a post ever carries affiliate links, it will say so at the top.
 
 - Email: [leeyunjai1982@gmail.com](mailto:leeyunjai1982@gmail.com)
-- GitHub: [github.com/yjworks](https://github.com/yjworks)
-- Corrections and tips: email me or open an [issue](https://github.com/yjworks/yjworks.github.io/issues). If a spec or price is wrong, send the source and I will fix it.

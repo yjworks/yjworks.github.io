@@ -76,6 +76,5 @@ For privacy-related questions, please contact:
 
 - Operator: yjworks
 - Email: [leeyunjai1982@gmail.com](mailto:leeyunjai1982@gmail.com)
-- GitHub: [yjworks/yjworks.github.io](https://github.com/yjworks/yjworks.github.io)
 
 - Effective date: September 2, 2026

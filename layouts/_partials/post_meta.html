@@ -16,11 +16,13 @@
       (.Lastmod | time.Format (default ":date_long" site.Params.DateFormat))) }}
 {{- end }}
 
-{{- /* 운영자가 직접 쓴 글(Hands-on)은 그렇다고 밝힌다. 자동 글에는 붙지 않는다. */}}
-{{- if in (.Params.categories | default slice) "Hands-on" }}
-  {{- $items = $items | append (printf `<span class="meta-item meta-human">%s%s</span>`
-      (partial "icon.html" (dict "name" "pen" "size" 14))
-      (cond (eq .Language.Lang "ko") "yjworks 직접 작성" "Written by yjworks")) }}
+{{- /* 이 사이트의 글과 가이드는 AI가 쓴다. 숨기지 않고 글마다 밝힌다. */}}
+{{- if in (slice "posts" "guides") .Section }}
+  {{- $ko := eq .Language.Lang "ko" }}
+  {{- $items = $items | append (printf `<a class="meta-item meta-ai" href="%s">%s%s</a>`
+      (cond $ko "/about/" "/en/about/")
+      (partial "icon.html" (dict "name" "sparkles" "size" 14))
+      (cond $ko "AI 작성" "Written by AI")) }}
 {{- end }}
 
 {{- if (.Param "ShowReadingTime") }}

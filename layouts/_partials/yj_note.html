@@ -1,9 +1,0 @@
-{{- /* yjworks 한마디. front matter 의 note 에 운영자가 직접 쓴 한두 줄이 있을 때만 나온다.
-       자동 발행은 이 값을 절대 쓰지 않는다(SKILL). 없는 코멘트를 만들어 내면 이 박스의 의미가 사라진다. */}}
-{{- with .Params.note }}
-{{- $ko := eq $.Language.Lang "ko" }}
-<aside class="td-note">
-  <p class="td-note-head">{{ partial "icon.html" (dict "name" "pen" "size" 15) }}{{ if $ko }}yjworks 한마디{{ else }}A note from yjworks{{ end }}</p>
-  <div class="td-note-body">{{ . | markdownify }}</div>
-</aside>
-{{- end }}

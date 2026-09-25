@@ -86,14 +86,6 @@
 .td-sub-links a { color: var(--td-accent); text-decoration: none; }
 .td-sub-links a:hover { text-decoration: underline; }
 
-/* yjworks 한마디 — 사람이 직접 단 코멘트. 자동 작성 본문과 눈으로 구분되게 서명과 함께 둔다. */
-.td-note { margin: 28px 0 8px; padding: 16px 20px 16px 18px; border-radius: 10px;
-  background: var(--code-bg); border-inline-start: 4px solid var(--td-accent); }
-.td-note-head { display: flex; align-items: center; gap: 7px; margin: 0 0 6px;
-  font-size: 13px; font-weight: 700; color: var(--td-accent); }
-.td-note-body { font-size: 16px; line-height: 1.75; color: var(--primary); word-break: keep-all; }
-.td-note-body p { margin: 0 0 .5em; }
-.td-note-body p:last-child { margin-bottom: 0; }
 
 /* 수정 기록 — 틀린 것을 고쳤으면 무엇을 언제 고쳤는지 남긴다 */
 .td-updates { margin: 36px 0 0; padding: 14px 18px; border: 1px dashed var(--border); border-radius: 10px; }
@@ -113,4 +105,5 @@
 .td-hub li a { color: var(--primary); font-weight: 700; text-decoration: none; }
 .td-hub li a:hover { color: var(--td-accent); }
 .td-hub-date { margin-inline-start: 8px; font-size: 12.5px; color: var(--secondary); white-space: nowrap; }
-.post-meta .meta-human { color: var(--td-accent); font-weight: 600; }
+.post-meta .meta-ai { color: var(--td-accent); font-weight: 600; text-decoration: none; }
+.post-meta .meta-ai:hover { text-decoration: underline; }

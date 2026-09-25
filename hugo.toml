@@ -106,14 +106,10 @@ buildExpired = false
     weight = 1
     title = "DigitalBrain"
     [languages.ko.params]
-      description = "최신 기기와 소프트웨어를 스펙·가격·출처와 함께 정리하는 블로그"
+      description = "AI가 최신 기기와 소프트웨어를 스펙·가격·출처와 함께 정리하는 자동화 블로그"
       [languages.ko.params.homeInfoParams]
         Title = "새로 나온 것만, 출처 있는 것만."
         Content = "노트북부터 로봇까지, 저장소부터 모델까지. 스펙도 가격도 출처와 함께."
-    [[languages.ko.params.socialIcons]]
-      name = "github"
-      title = "GitHub"
-      url = "https://github.com/yjworks"
     [[languages.ko.params.socialIcons]]
       name = "rss"
       title = "RSS"
@@ -158,14 +154,10 @@ buildExpired = false
     weight = 2
     title = "DigitalBrain"
     [languages.en.params]
-      description = "New hardware and software, with specs, prices, and a source for every claim"
+      description = "An AI-written blog on new hardware and software, with specs, prices, and a source for every claim"
       [languages.en.params.homeInfoParams]
         Title = "Just launched, fully sourced."
         Content = "From laptops to robots, from repositories to models. Specs and prices, always with a source."
-    [[languages.en.params.socialIcons]]
-      name = "github"
-      title = "GitHub"
-      url = "https://github.com/yjworks"
     [[languages.en.params.socialIcons]]
       name = "rss"
       title = "RSS"
