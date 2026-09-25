@@ -88,8 +88,8 @@
 
   <section id="tools">
     <h2>도구</h2>
-    <div class="grid" id="tool-grid"></div>
-    <p class="note" id="tool-note">곧 추가됩니다. 모든 도구는 파일을 서버로 보내지 않고 브라우저 안에서만 처리합니다.</p>
+    <div class="grid" id="tool-grid"><!--TOOLS--></div>
+    <p class="note" id="tool-note"><!--TOOLS_NOTE--></p>
   </section>
 
   <section>
@@ -108,11 +108,12 @@
   </footer>
 </div>
 <script>
-  /* 도구 목록: tools 저장소가 /tools/registry.json 을 내보내면 자동으로 채운다.
+  /* 도구 목록은 빌드 때 HTML 에 들어간다(검색엔진·캐시 대비). 여기서는 그 뒤에 추가된 도구를 반영한다.
      형식: [{"slug":"csv-encoding","name":"CSV 한글 깨짐 복구","desc":"…","icon":"/tools/csv-encoding/icon.svg"}] */
   fetch('/tools/registry.json', {cache: 'no-cache'}).then(function (r) { return r.ok ? r.json() : []; }).then(function (list) {
     if (!Array.isArray(list) || !list.length) return;
     var grid = document.getElementById('tool-grid');
+    grid.textContent = '';   /* 빌드 때 넣어 둔 목록을 최신 목록으로 바꾼다 */
     list.forEach(function (t) {
       var a = document.createElement('a'); a.className = 'card'; a.href = '/tools/' + t.slug + '/';
       var ic;

@@ -22,6 +22,30 @@ if out.exists():
     shutil.rmtree(out)
 shutil.copytree(hub, out)
 
+# 도구 목록을 HTML 에 직접 넣는다. 페이지가 뜬 뒤 불러오는 방식만으로는 캐시·네트워크 문제로
+# 빈 칸이 될 수 있고, 검색엔진도 도구 링크를 보지 못한다. 불러오지 못하면 비워 두고 JS 가 채운다.
+import json, urllib.request
+cards, note = "", "곧 추가됩니다. 모든 도구는 파일을 서버로 보내지 않고 브라우저 안에서만 처리합니다."
+try:
+    import os
+    local = os.environ.get("HUB_TOOLS_REGISTRY")   # 로컬 시험용: tools 저장소의 dist/registry.json 경로
+    if local:
+        tools = json.loads(pathlib.Path(local).read_text(encoding="utf-8"))
+    else:
+        with urllib.request.urlopen("https://dibrain.dev/tools/registry.json", timeout=15) as r:
+            tools = json.load(r)
+    cards = "".join(
+        f'<a class="card" href="/tools/{html.escape(t["slug"])}/">'
+        f'<img src="{html.escape(t.get("icon") or "")}" alt="" loading="lazy">'
+        f'<div><p class="t">{html.escape(t["name"])}</p><p class="d">{html.escape(t.get("desc", ""))}</p></div></a>'
+        for t in tools)
+    note = f"도구 {len(tools)}개. 모든 도구는 파일을 서버로 보내지 않고 브라우저 안에서만 처리합니다. <a href=\"/tools/\">전체 목록</a>"
+    print(f"hub: {len(tools)} tools baked in")
+except Exception as e:
+    print(f"hub: tool registry not available ({e}); JS will fill it")
+idx = out / "index.html"
+idx.write_text(idx.read_text(encoding="utf-8").replace("<!--TOOLS-->", cards).replace("<!--TOOLS_NOTE-->", note), encoding="utf-8")
+
 STUB = """<!doctype html>
 <html lang="ko"><head><meta charset="utf-8">
 <title>블로그 주소가 바뀌었습니다</title>
