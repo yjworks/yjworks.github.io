@@ -29,31 +29,62 @@
   :root { --bg:#f7f7f5; --card:#fff; --text:#16181d; --sub:#5b606b; --line:#e3e4e8; --accent:#2f6fed; }
   @media (prefers-color-scheme: dark) { :root { --bg:#111318; --card:#1a1d24; --text:#eceef2; --sub:#a0a6b2; --line:#2a2e37; --accent:#7aa2ff; } }
   * { box-sizing: border-box; }
+  [hidden] { display:none !important; }
+  html { scroll-behavior: smooth; }
   body { margin:0; background:var(--bg); color:var(--text); font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Apple SD Gothic Neo","Noto Sans KR",sans-serif; line-height:1.6; word-break:keep-all; }
   .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
   header { display:flex; align-items:center; gap:10px; padding:22px 0; }
   header .brand { font-size:20px; font-weight:800; letter-spacing:-.02em; color:var(--text); text-decoration:none; display:flex; align-items:center; gap:9px; }
   header nav { margin-left:auto; display:flex; gap:18px; font-size:15px; }
   header nav a { color:var(--sub); text-decoration:none; } header nav a:hover { color:var(--accent); }
-  .hero { padding: 36px 0 30px; }
+  .hero { padding: 30px 0 10px; }
   .hero h1 { font-size: 34px; line-height:1.3; letter-spacing:-.03em; margin:0 0 12px; }
   .hero p { margin:0; color:var(--sub); font-size:17px; max-width: 34em; }
-  section { margin: 34px 0; }
-  h2 { font-size:13px; font-weight:700; letter-spacing:.06em; color:var(--sub); margin:0 0 12px; padding-bottom:10px; border-bottom:1px solid var(--text); }
+
+  /* 첫 화면에서 무엇이 있는지 한눈에: 분류별 바로가기 */
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 0; padding:0; list-style:none; }
+  .chip { display:inline-flex; align-items:center; gap:6px; padding:7px 13px; border:1px solid var(--line); border-radius:999px; background:var(--card); color:var(--text); text-decoration:none; font-size:14.5px; font-weight:600; }
+  .chip b { color:var(--sub); font-weight:600; font-size:12.5px; }
+  .chip:hover { border-color:var(--accent); color:var(--accent); }
+
+  section { margin: 34px 0; scroll-margin-top: 12px; }
+  h2 { display:flex; align-items:baseline; gap:8px; font-size:13px; font-weight:700; letter-spacing:.06em; color:var(--sub); margin:0 0 12px; padding-bottom:10px; border-bottom:1px solid var(--text); }
   .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap:12px; }
   .card { display:flex; gap:14px; align-items:center; padding:16px; background:var(--card); border:1px solid var(--line); border-radius:14px; text-decoration:none; color:inherit; transition:border-color .15s; }
   .card:hover { border-color: var(--accent); }
   .card img { width:56px; height:56px; border-radius:13px; flex:0 0 auto; }
   .card .t { font-size:16px; font-weight:700; margin:0 0 2px; }
   .card .d { font-size:13.5px; color:var(--sub); margin:0; line-height:1.5; }
-  .ico { width:56px; height:56px; border-radius:13px; flex:0 0 auto; display:grid; place-items:center; background:color-mix(in srgb, var(--accent) 12%, transparent); color:var(--accent); font-weight:800; font-size:20px; }
-  .note { color:var(--sub); font-size:14.5px; margin:0; }
+  .note { color:var(--sub); font-size:14.5px; margin:16px 0 0; }
+
+  /* 도구: 검색 + 분류별 묶음 + 작은 카드 */
+  .search { width:100%; font:inherit; font-size:16px; color:var(--text); background:var(--card); border:1px solid var(--line); border-radius:12px; padding:11px 14px; margin:4px 0 4px; }
+  .search:focus { outline:2px solid var(--accent); outline-offset:-1px; border-color:transparent; }
+  .group { margin:24px 0 0; scroll-margin-top:12px; }
+  .group h3 { display:flex; align-items:baseline; gap:8px; font-size:17px; letter-spacing:-.01em; margin:0 0 10px; }
+  .group h3 small { color:var(--sub); font-size:13px; font-weight:600; }
+  .tools .grid { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap:10px; }
+  .tools .card { padding:12px 14px; gap:12px; }
+  .tools .card img { width:44px; height:44px; border-radius:11px; }
+  .tools .card .t { font-size:15px; }
+  .tools .card .d { font-size:13px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .empty { color:var(--sub); font-size:14.5px; margin:14px 0 0; }
+
   .blog { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; padding:20px; background:var(--card); border:1px solid var(--line); border-radius:14px; }
   .blog .t { font-size:17px; font-weight:700; margin:0 0 4px; } .blog .d { margin:0; color:var(--sub); font-size:14.5px; }
   .btn { display:inline-block; padding:10px 16px; border-radius:10px; background:var(--accent); color:#fff; text-decoration:none; font-weight:700; font-size:14.5px; }
   footer { margin:48px 0 36px; padding-top:18px; border-top:1px solid var(--line); color:var(--sub); font-size:13.5px; display:flex; flex-wrap:wrap; gap:14px; }
   footer a { color:var(--sub); }
-  @media (max-width: 600px) { .hero h1 { font-size:27px; } header nav { gap:12px; font-size:14px; } }
+  @media (max-width: 600px) {
+    .hero h1 { font-size:27px; } header nav { gap:12px; font-size:14px; }
+    .chip { font-size:14px; padding:6px 11px; }
+    /* 휴대폰: 도구는 두 줄로, 이름만. 설명은 도구 페이지에서 본다 */
+    .tools .grid { grid-template-columns: 1fr 1fr; gap:8px; }
+    .tools .card { flex-direction:column; align-items:flex-start; gap:8px; padding:12px; }
+    .tools .card img { width:40px; height:40px; }
+    .tools .card .t { font-size:14.5px; line-height:1.4; }
+    .tools .card .d { display:none; }
+  }
 </style>
 </head>
 <body>
@@ -66,6 +97,7 @@
   <div class="hero">
     <h1>설치 없이, 브라우저에서 바로.</h1>
     <p>아이 학습 앱, 가볍게 즐기는 게임, 매일 쓰는 도구를 모았습니다. 파일은 기기 안에서만 처리되고 서버로 보내지 않습니다.</p>
+    <ul class="chips" id="chips"><li><a class="chip" href="#apps">앱 <b>3</b></a></li><!--TOOL_CHIPS--></ul>
   </div>
 
   <section id="apps">
@@ -86,9 +118,11 @@
     </div>
   </section>
 
-  <section id="tools">
-    <h2>도구</h2>
-    <div class="grid" id="tool-grid"><!--TOOLS--></div>
+  <section id="tools" class="tools">
+    <h2>도구 <span id="tool-count"><!--TOOLS_COUNT--></span></h2>
+    <input class="search" id="tool-search" type="search" placeholder="도구 찾기 (예: PDF, 녹음, 퇴직금, 엑셀)" aria-label="도구 찾기" autocomplete="off">
+    <div id="tool-groups" data-slugs="<!--TOOLS_SLUGS-->"><!--TOOLS--></div>
+    <p class="empty" id="tool-empty" hidden>찾는 도구가 없습니다. <a href="mailto:contact@dibrain.dev">필요한 도구를 알려 주세요.</a></p>
     <p class="note" id="tool-note"><!--TOOLS_NOTE--></p>
   </section>
 
@@ -108,24 +142,78 @@
   </footer>
 </div>
 <script>
-  /* 도구 목록은 빌드 때 HTML 에 들어간다(검색엔진·캐시 대비). 여기서는 그 뒤에 추가된 도구를 반영한다.
-     형식: [{"slug":"csv-encoding","name":"CSV 한글 깨짐 복구","desc":"…","icon":"/tools/csv-encoding/icon.svg"}] */
-  fetch('/tools/registry.json', {cache: 'no-cache'}).then(function (r) { return r.ok ? r.json() : []; }).then(function (list) {
-    if (!Array.isArray(list) || !list.length) return;
-    var grid = document.getElementById('tool-grid');
-    grid.textContent = '';   /* 빌드 때 넣어 둔 목록을 최신 목록으로 바꾼다 */
+(function () {
+  /* 도구 목록은 빌드 때 HTML 에 들어간다(검색엔진·캐시 대비, scripts/build_hub.py).
+     여기서는 그 뒤에 도구가 추가·변경됐을 때만 다시 그린다. 분류 순서와 주소 조각은 build_hub.py 의 GROUPS 와 같게 둔다.
+     registry.json 형식: [{"slug":"csv-encoding","name":"…","desc":"…","group":"문서·텍스트","icon":"/tools/csv-encoding/icon.svg"}] */
+  var GROUPS = [['생활 계산', 'life'], ['문서·텍스트', 'docs'], ['사진·이미지', 'image'], ['오디오·영상', 'media'], ['모임·놀이', 'play'], ['3D 프린팅', '3d']];
+  var box = document.getElementById('tool-groups');
+  var input = document.getElementById('tool-search');
+  var empty = document.getElementById('tool-empty');
+
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  function grouped(list) {
+    var order = GROUPS.map(function (g) { return g[0]; }), ids = {}, out = [], by = {};
+    GROUPS.forEach(function (g) { ids[g[0]] = g[1]; });
     list.forEach(function (t) {
-      var a = document.createElement('a'); a.className = 'card'; a.href = '/tools/' + t.slug + '/';
-      var ic;
-      if (t.icon) { ic = document.createElement('img'); ic.src = t.icon; ic.alt = ''; ic.loading = 'lazy'; }
-      else { ic = document.createElement('span'); ic.className = 'ico'; ic.textContent = (t.name || '?').slice(0, 1); }
-      var box = document.createElement('div');
-      var n = document.createElement('p'); n.className = 't'; n.textContent = t.name;
-      var d = document.createElement('p'); d.className = 'd'; d.textContent = t.desc || '';
-      box.appendChild(n); box.appendChild(d); a.appendChild(ic); a.appendChild(box); grid.appendChild(a);
+      var g = t.group || '기타';
+      if (!by[g]) { by[g] = []; if (order.indexOf(g) < 0) order.push(g); }
+      by[g].push(t);
     });
+    order.forEach(function (g, i) { if (by[g]) out.push({ name: g, id: 't-' + (ids[g] || 'g' + i), tools: by[g] }); });
+    return out;
+  }
+
+  function render(list) {
+    var groups = grouped(list);
+    box.textContent = '';
+    groups.forEach(function (g) {
+      var sec = el('div', 'group'); sec.id = g.id;
+      var h = el('h3', null, g.name + ' '); h.appendChild(el('small', null, String(g.tools.length))); sec.appendChild(h);
+      var grid = el('div', 'grid');
+      g.tools.forEach(function (t) {
+        var a = el('a', 'card'); a.href = '/tools/' + t.slug + '/';
+        var ic = el('img'); ic.src = t.icon || ('/tools/' + t.slug + '/icon.svg'); ic.alt = ''; ic.loading = 'lazy';
+        var txt = el('div'); txt.appendChild(el('p', 't', t.name)); txt.appendChild(el('p', 'd', t.desc || ''));
+        a.appendChild(ic); a.appendChild(txt); grid.appendChild(a);
+      });
+      sec.appendChild(grid); box.appendChild(sec);
+    });
+    var chips = document.getElementById('chips');
+    while (chips.children.length > 1) chips.removeChild(chips.lastChild);
+    groups.forEach(function (g) {
+      var li = el('li'), a = el('a', 'chip', g.name + ' '); a.href = '#' + g.id;
+      a.appendChild(el('b', null, String(g.tools.length))); li.appendChild(a); chips.appendChild(li);
+    });
+    document.getElementById('tool-count').textContent = list.length + '개';
+    box.setAttribute('data-slugs', list.map(function (t) { return t.slug; }).join(' '));
+    filter();
+  }
+
+  function filter() {
+    var q = (input.value || '').trim().toLowerCase().replace(/\s+/g, '');
+    var shown = 0;
+    Array.prototype.forEach.call(box.querySelectorAll('.group'), function (sec) {
+      var n = 0;
+      Array.prototype.forEach.call(sec.querySelectorAll('.card'), function (a) {
+        var hit = !q || a.textContent.toLowerCase().replace(/\s+/g, '').indexOf(q) >= 0;
+        a.hidden = !hit; if (hit) n++;
+      });
+      sec.hidden = n === 0; shown += n;
+    });
+    empty.hidden = shown > 0 || !box.querySelector('.card');
+  }
+  input.addEventListener('input', filter);
+
+  fetch('/tools/registry.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : []; }).then(function (list) {
+    if (!Array.isArray(list) || !list.length) return;
+    var slugs = list.map(function (t) { return t.slug; }).join(' ');
+    if (slugs === box.getAttribute('data-slugs')) return;   /* 빌드 때 넣은 목록과 같으면 그대로 둔다 */
+    render(list);
     document.getElementById('tool-note').textContent = '모든 도구는 파일을 서버로 보내지 않고 브라우저 안에서만 처리합니다.';
   }).catch(function () {});
+})();
 </script>
 </body>
 </html>

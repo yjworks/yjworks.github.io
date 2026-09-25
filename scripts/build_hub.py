@@ -24,27 +24,60 @@ shutil.copytree(hub, out)
 
 # 도구 목록을 HTML 에 직접 넣는다. 페이지가 뜬 뒤 불러오는 방식만으로는 캐시·네트워크 문제로
 # 빈 칸이 될 수 있고, 검색엔진도 도구 링크를 보지 못한다. 불러오지 못하면 비워 두고 JS 가 채운다.
-import json, urllib.request
-cards, note = "", "곧 추가됩니다. 모든 도구는 파일을 서버로 보내지 않고 브라우저 안에서만 처리합니다."
+# 분류 순서와 주소 조각(#t-life 등)은 hub/index.html 스크립트의 GROUPS 와 같게 둔다.
+import json, os, urllib.request
+GROUPS = [("생활 계산", "life"), ("문서·텍스트", "docs"), ("사진·이미지", "image"),
+          ("오디오·영상", "media"), ("모임·놀이", "play"), ("3D 프린팅", "3d")]
+
+
+def tool_sections(tools):
+    """분류별 묶음 HTML 과 첫 화면 바로가기 칩 HTML 을 만든다. 목록에 없는 분류는 뒤에 붙인다."""
+    order, ids, by = [g for g, _ in GROUPS], dict(GROUPS), {}
+    for t in tools:
+        g = t.get("group") or "기타"
+        if g not in by:
+            by[g] = []
+            if g not in order:
+                order.append(g)
+        by[g].append(t)
+    groups = [(g, "t-" + ids.get(g, f"g{i}"), by[g]) for i, g in enumerate(order) if g in by]
+    e = html.escape
+    body = "".join(
+        f'<div class="group" id="{gid}"><h3>{e(g)} <small>{len(ts)}</small></h3><div class="grid">'
+        + "".join(
+            f'<a class="card" href="/tools/{e(t["slug"])}/">'
+            f'<img src="{e(t.get("icon") or "/tools/" + t["slug"] + "/icon.svg")}" alt="" loading="lazy">'
+            f'<div><p class="t">{e(t["name"])}</p><p class="d">{e(t.get("desc", ""))}</p></div></a>'
+            for t in ts)
+        + "</div></div>"
+        for g, gid, ts in groups)
+    chips = "".join(f'<li><a class="chip" href="#{gid}">{e(g)} <b>{len(ts)}</b></a></li>' for g, gid, ts in groups)
+    return body, chips
+
+
+parts = {"<!--TOOLS-->": "", "<!--TOOL_CHIPS-->": "", "<!--TOOLS_COUNT-->": "", "<!--TOOLS_SLUGS-->": "",
+         "<!--TOOLS_NOTE-->": "모든 도구는 파일을 서버로 보내지 않고 브라우저 안에서만 처리합니다."}
 try:
-    import os
     local = os.environ.get("HUB_TOOLS_REGISTRY")   # 로컬 시험용: tools 저장소의 dist/registry.json 경로
     if local:
         tools = json.loads(pathlib.Path(local).read_text(encoding="utf-8"))
     else:
         with urllib.request.urlopen("https://dibrain.dev/tools/registry.json", timeout=15) as r:
             tools = json.load(r)
-    cards = "".join(
-        f'<a class="card" href="/tools/{html.escape(t["slug"])}/">'
-        f'<img src="{html.escape(t.get("icon") or "")}" alt="" loading="lazy">'
-        f'<div><p class="t">{html.escape(t["name"])}</p><p class="d">{html.escape(t.get("desc", ""))}</p></div></a>'
-        for t in tools)
-    note = f"도구 {len(tools)}개. 모든 도구는 파일을 서버로 보내지 않고 브라우저 안에서만 처리합니다. <a href=\"/tools/\">전체 목록</a>"
+    body, chips = tool_sections(tools)
+    parts.update({
+        "<!--TOOLS-->": body, "<!--TOOL_CHIPS-->": chips, "<!--TOOLS_COUNT-->": f"{len(tools)}개",
+        "<!--TOOLS_SLUGS-->": " ".join(html.escape(t["slug"]) for t in tools),
+        "<!--TOOLS_NOTE-->": "모든 도구는 파일을 서버로 보내지 않고 브라우저 안에서만 처리합니다. <a href=\"/tools/\">도구 목록 페이지</a>",
+    })
     print(f"hub: {len(tools)} tools baked in")
 except Exception as e:
     print(f"hub: tool registry not available ({e}); JS will fill it")
 idx = out / "index.html"
-idx.write_text(idx.read_text(encoding="utf-8").replace("<!--TOOLS-->", cards).replace("<!--TOOLS_NOTE-->", note), encoding="utf-8")
+page = idx.read_text(encoding="utf-8")
+for k, v in parts.items():
+    page = page.replace(k, v)
+idx.write_text(page, encoding="utf-8")
 
 STUB = """<!doctype html>
 <html lang="ko"><head><meta charset="utf-8">
