@@ -1,4 +1,6 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+{{- /* 블로그는 설치형 앱이 아니다(display: browser). scope "/" 앱을 폰에 설치하면 dibrain.dev 아래
+       전부를 차지해서 /games/, /kids-lab/ 같은 하위 앱이 "이미 설치됨"으로 막힌다. 홈 화면 바로가기만 된다. */}}
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 {{- with site.Params.naverSiteVerification }}
