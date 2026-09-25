@@ -13,10 +13,10 @@ DigitalBrain covers newly released hardware and software with the specs, prices,
 | Day | Subject |
 |---|---|
 | Monday | Laptops, phones, appliances or wearables — whatever launched |
-| Tuesday | The same range, a different category from Monday |
-| Wednesday | Single-board computers, dev boards, robots |
+| Tuesday | Single-board computers, dev boards, modules |
+| Wednesday | Robots and edge AI devices |
 | Thursday | Dev picks (trending GitHub repositories / Hugging Face models) |
-| Friday | The week in brief (Korea / Global / Software) |
+| Friday | [Buying guide](/en/guides/) update — one comparison table revised for new products |
 
 The rules this site holds to:
 
