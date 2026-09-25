@@ -26,6 +26,9 @@ buildExpired = false
 [minify]
   disableXML = true
   minifyOutput = true
+  # 소유확인 메타 태그를 그대로 두기 위해 속성 따옴표를 지우지 않는다(네이버 확인기가 원형을 찾는다).
+  [minify.tdewolff.html]
+    keepQuotes = true
 
 [params]
   env = "production"
@@ -52,7 +55,7 @@ buildExpired = false
 
   # 네이버 서치어드바이저 사이트 소유확인 값(HTML 태그 방식의 content 값만).
   # https://searchadvisor.naver.com 에서 사이트를 등록하면 나온다. 비면 태그가 안 나간다.
-  naverSiteVerification = ""
+  naverSiteVerification = "4d02a6a0576f18d5899932421cae67963df0d41b"
 
   # Google Analytics 4 measurement ID (예: "G-XXXXXXXXXX")
   googleAnalytics = "G-3MH93TXQTM"
