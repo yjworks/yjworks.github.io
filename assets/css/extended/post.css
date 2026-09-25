@@ -89,3 +89,15 @@
 /* 댓글 */
 .td-comments { margin: 48px 0 0; }
 .td-comments .td-section { margin-bottom: 18px; }
+
+/* 글 → 비교 가이드. 본문 바로 아래에 두어 글 하나로 끝나지 않고 허브로 이어지게 한다. */
+.td-hub { display: flex; gap: 14px; align-items: flex-start; margin: 36px 0 0; padding: 18px 20px;
+  border: 1px solid var(--border); border-inline-start: 3px solid var(--td-accent); border-radius: 10px; }
+.td-hub > .icon { flex: 0 0 auto; color: var(--td-accent); margin-top: 2px; }
+.td-hub-body { min-width: 0; flex: 1; }
+.td-hub-label { margin: 0 0 6px; font-size: 13px; font-weight: 600; color: var(--secondary); }
+.td-hub ul { margin: 0; padding: 0; list-style: none; }
+.td-hub li { margin: 0 0 4px; font-size: 15.5px; line-height: 1.5; word-break: keep-all; }
+.td-hub li a { color: var(--primary); font-weight: 700; text-decoration: none; }
+.td-hub li a:hover { color: var(--td-accent); }
+.td-hub-date { margin-inline-start: 8px; font-size: 12.5px; color: var(--secondary); white-space: nowrap; }

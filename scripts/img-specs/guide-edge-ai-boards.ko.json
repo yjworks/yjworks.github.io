@@ -1,0 +1,7 @@
+{"kicker": "비교 가이드 · SBC · 로봇",
+ "date": "2026.09.25",
+ "accent": "sbc",
+ "stats": [{"value": "6종", "label": "비교한 보드"},
+           {"value": "$5~$299", "label": "확인된 가격 범위"},
+           {"value": "78 TOPS", "label": "최대 AI 연산 (Orin Nano 2)"},
+           {"value": "2027 상반기", "label": "Orin Nano 2 출하"}]}

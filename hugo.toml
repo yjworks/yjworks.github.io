@@ -18,6 +18,7 @@ buildExpired = false
 
 [permalinks]
   posts = "/:year/:month/:day/:slug/"
+  guides = "/guides/:slug/"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
@@ -48,6 +49,10 @@ buildExpired = false
   # Google AdSense publisher ID (예: "ca-pub-XXXXXXXXXXXXXXXX")
   # 승인 전에는 빈 값으로 두면 스크립트가 삽입되지 않습니다.
   adsense = ""
+
+  # 네이버 서치어드바이저 사이트 소유확인 값(HTML 태그 방식의 content 값만).
+  # https://searchadvisor.naver.com 에서 사이트를 등록하면 나온다. 비면 태그가 안 나간다.
+  naverSiteVerification = ""
 
   # Google Analytics 4 measurement ID (예: "G-XXXXXXXXXX")
   googleAnalytics = "G-3MH93TXQTM"
@@ -125,6 +130,11 @@ buildExpired = false
       text = "[소개](/about/) · [개인정보처리방침](/privacy/) · [문의](mailto:leeyunjai1982@gmail.com)"
     [languages.ko.menu]
       [[languages.ko.menu.main]]
+        identifier = "guides"
+        name = "가이드"
+        url = "/guides/"
+        weight = 5
+      [[languages.ko.menu.main]]
         identifier = "posts"
         name = "글목록"
         url = "/posts/"
@@ -171,6 +181,11 @@ buildExpired = false
     [languages.en.params.footer]
       text = "[About](/en/about/) · [Privacy](/en/privacy/) · [Contact](mailto:leeyunjai1982@gmail.com)"
     [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "guides"
+        name = "Guides"
+        url = "/en/guides/"
+        weight = 5
       [[languages.en.menu.main]]
         identifier = "posts"
         name = "Posts"

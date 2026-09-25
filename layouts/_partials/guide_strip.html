@@ -1,0 +1,18 @@
+{{- /* 홈: 비교 가이드(허브) 목록. 최근에 갱신된 것부터. home_info 의 with 블록 안에서 불리므로 site 로 읽는다. */}}
+{{- $ko := eq site.Language.Lang "ko" }}
+{{- with sort (where site.RegularPages "Section" "guides") "Lastmod" "desc" }}
+<section class="td-guides">
+  <h2 class="td-section">{{ if $ko }}비교 가이드{{ else }}Buying guides{{ end }}</h2>
+  <ul>
+    {{- range first 4 . }}
+    <li>
+      <a href="{{ .Permalink }}">
+        {{ partial "icon.html" (dict "name" "table" "size" 18) }}
+        <span class="td-guide-title">{{ .Title }}</span>
+        <span class="td-guide-date">{{ if $ko }}업데이트{{ else }}Updated{{ end }} {{ .Lastmod | time.Format (i18n "date_format" | default ":date_medium") }}</span>
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}

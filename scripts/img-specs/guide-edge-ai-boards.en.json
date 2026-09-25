@@ -1,0 +1,7 @@
+{"kicker": "Buying Guide · SBCs · Robots",
+ "date": "Sep 25, 2026",
+ "accent": "sbc",
+ "stats": [{"value": "6", "label": "Boards compared"},
+           {"value": "$5–$299", "label": "Confirmed price range"},
+           {"value": "78 TOPS", "label": "Top AI compute (Orin Nano 2)"},
+           {"value": "H1 2027", "label": "Orin Nano 2 ships"}]}

@@ -1,0 +1,27 @@
+{{- /* 글 본문 바로 아래: 이 글의 주제를 다루는 비교 가이드로 보낸다.
+       가이드(content/guides)는 새 제품이 나올 때마다 갱신되는 허브 페이지다.
+       글의 주제 태그와 가이드의 hubTags 가 하나라도 겹치면 보여준다. */}}
+{{- if eq .Section "posts" }}
+{{- $tags := .Params.tags | default slice }}
+{{- $hubs := slice }}
+{{- range where site.RegularPages "Section" "guides" }}
+  {{- $hit := false }}
+  {{- range (.Params.hubTags | default slice) }}{{ if in $tags . }}{{ $hit = true }}{{ end }}{{ end }}
+  {{- if $hit }}{{ $hubs = $hubs | append . }}{{ end }}
+{{- end }}
+{{- with $hubs }}
+{{- $ko := eq $.Language.Lang "ko" }}
+<aside class="td-hub">
+  {{ partial "icon.html" (dict "name" "table" "size" 20) }}
+  <div class="td-hub-body">
+    <p class="td-hub-label">{{ if $ko }}이 제품군을 한 표로 보려면{{ else }}See the whole category in one table{{ end }}</p>
+    <ul>
+      {{- range sort . "Lastmod" "desc" }}
+      <li><a href="{{ .Permalink }}">{{ .Title }}</a>
+        <span class="td-hub-date">{{ if $ko }}업데이트{{ else }}Updated{{ end }} {{ .Lastmod | time.Format (i18n "date_format" | default ":date_medium") }}</span></li>
+      {{- end }}
+    </ul>
+  </div>
+</aside>
+{{- end }}
+{{- end }}

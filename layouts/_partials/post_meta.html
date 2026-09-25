@@ -7,6 +7,15 @@
       (.Date | time.Format (default ":date_long" site.Params.DateFormat))) }}
 {{- end }}
 
+{{- /* 가이드는 계속 갱신되는 페이지라 작성일보다 마지막 업데이트가 중요하다. */}}
+{{- if and (eq .Section "guides") (not .Lastmod.IsZero) (ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02")) }}
+  {{- $items = $items | append (printf `<span class="meta-item" title="%s">%s%s %s</span>`
+      (.Lastmod)
+      (partial "icon.html" (dict "name" "refresh" "size" 14))
+      (cond (eq .Language.Lang "ko") "업데이트" "Updated")
+      (.Lastmod | time.Format (default ":date_long" site.Params.DateFormat))) }}
+{{- end }}
+
 {{- if (.Param "ShowReadingTime") }}
   {{- $items = $items | append (printf `<span class="meta-item">%s%s</span>`
       (partial "icon.html" (dict "name" "clock" "size" 14))

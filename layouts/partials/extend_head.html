@@ -1,18 +1,30 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+{{- with site.Params.naverSiteVerification }}
+<meta name="naver-site-verification" content="{{ . }}">
+{{- end }}
 {{- /* Google AdSense: hugo.toml [params] adsense 값이 비어있지 않을 때만 삽입 */ -}}
 {{- with site.Params.adsense }}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ . }}" crossorigin="anonymous"></script>
 {{- end }}
 {{- /* Google Analytics 4: hugo.toml [params] googleAnalytics 값이 비어있지 않을 때만 삽입.
        GA4 는 IP 익명화가 기본이라 anonymize_ip 를 넘겨도 무시된다. 넣지 않는다. */ -}}
+{{- /* content_group: 글은 카테고리(Deep Dive / Weekly Brief / Dev Picks), 나머지는 home·list·page.
+       GA4 기본 측정기준 '콘텐츠 그룹'으로 바로 보인다. post_topic 은 data/topics.yaml 의 첫 주제 태그로,
+       GA 관리 > 맞춤 정의에 이벤트 범위 측정기준 post_topic 을 등록해야 보고서에 나온다. */ -}}
+{{- $group := "page" }}
+{{- if .IsHome }}{{ $group = "home" }}{{ else if eq .Section "guides" | and .IsPage }}{{ $group = "Guide" }}{{ else if .IsPage }}{{ with .Params.categories }}{{ $group = index . 0 }}{{ end }}{{ else }}{{ $group = "list" }}{{ end }}
+{{- $topics := slice }}
+{{- range (index site.Data "topics").topics }}{{ $topics = $topics | append .term }}{{ end }}
+{{- $topic := "" }}
+{{- range (.Params.tags | default slice) }}{{ if and (eq $topic "") (in $topics .) }}{{ $topic = . }}{{ end }}{{ end }}
 {{- with site.Params.googleAnalytics }}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', '{{ . }}');
+  gtag('config', '{{ . }}', {content_group: {{ $group }}{{ with $topic }}, post_topic: {{ . }}{{ end }}});
 </script>
 {{- end }}
