@@ -2,6 +2,12 @@
 title: "UR Gen 7, 빨라지고 작아졌다"
 seoTitle: "UR Gen 7 UR17g-1300 vs UR10e 협동로봇 스펙 비교"
 date: 2026-09-16T03:08:05+09:00
+lastmod: 2026-09-25T10:06:19+09:00
+updates:
+  - date: "2026-09-25"
+    text: "공식 자료로 확인되지 않은 UR18g-950 무게(39.2kg)를 '확인 필요'로 바꿨습니다."
+  - date: "2026-09-25"
+    text: "빠져 있던 출처 링크를 추가했습니다."
 slug: "embedded-universal-robots-gen7"
 summary: "유니버설로봇이 IMTS 2026에서 공개한 7세대 협동로봇 플랫폼 UR Gen 7을 살펴보고, 같은 1300mm 리치를 쓰는 이전 세대 UR10e와 스펙을 비교했습니다."
 tags: ["Robot", "Global"]

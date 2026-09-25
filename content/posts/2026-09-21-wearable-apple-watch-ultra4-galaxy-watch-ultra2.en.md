@@ -2,6 +2,14 @@
 title: "Apple Watch Ultra 4 Costs More, Runs Out Sooner"
 seoTitle: "Apple Watch Ultra 4 vs Galaxy Watch Ultra 2: Price, Battery, Brightness"
 date: 2026-09-21T03:06:57+09:00
+lastmod: 2026-09-25T10:06:19+09:00
+updates:
+  - date: "2026-09-25"
+    text: "Corrected the Galaxy Watch Ultra 2 US price to $699.99 (47mm LTE)."
+  - date: "2026-09-25"
+    text: "The Ultra 4's 25-hour figure applies to low-power workout mode, not continuous GPS; corrected the condition. Korean pre-orders opened September 11, not 9."
+  - date: "2026-09-25"
+    text: "Added the missing source links."
 slug: "wearable-apple-watch-ultra4-galaxy-watch-ultra2"
 summary: "Apple Watch Ultra 4 and Series 12 went on sale in Korea on September 18. We lined their battery, brightness and price against the Samsung Galaxy Watch Ultra 2, already on shelves."
 tags: ["Wearable", "Korea", "Global"]

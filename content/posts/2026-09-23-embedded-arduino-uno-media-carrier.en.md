@@ -2,6 +2,14 @@
 title: "For a Camera Add-On, Skip the $299 VENTUNO Q"
 seoTitle: "Arduino UNO Media Carrier: UNO Q vs VENTUNO Q for Camera Projects"
 date: 2026-09-23T03:12:53+09:00
+lastmod: 2026-09-25T10:06:19+09:00
+updates:
+  - date: "2026-09-25"
+    text: "Corrected UNO Q pricing from $39 (2GB) / $59 (4GB) to the post-July 6 prices of $59 / $79; the 4GB model is already on sale."
+  - date: "2026-09-25"
+    text: "Filled in VENTUNO Q memory (16GB/64GB) and OS, and corrected the price gap between the boards to $240."
+  - date: "2026-09-25"
+    text: "Added the missing source links."
 slug: "embedded-arduino-uno-media-carrier"
 summary: "Arduino's new $19.25 UNO Media Carrier bolts a camera, display, and audio onto both the UNO Q and the pricier VENTUNO Q. Since the same accessory fits either board, we looked at whether a vision project actually needs the expensive one."
 tags: ["SBC", "Global"]

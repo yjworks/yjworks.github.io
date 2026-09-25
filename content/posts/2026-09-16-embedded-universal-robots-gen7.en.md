@@ -2,6 +2,12 @@
 title: "UR Gen 7: Quicker Arm, Smaller Brain"
 seoTitle: "UR Gen 7 UR17g-1300 vs UR10e Cobot Specs Compared"
 date: 2026-09-16T03:08:05+09:00
+lastmod: 2026-09-25T10:06:19+09:00
+updates:
+  - date: "2026-09-25"
+    text: "Replaced the UR18g-950 weight (39.2kg), which no Gen 7 source confirmed, with TBC."
+  - date: "2026-09-25"
+    text: "Added the missing source links."
 slug: "embedded-universal-robots-gen7"
 summary: "Universal Robots unveiled its seventh-generation cobot platform, UR Gen 7, at IMTS 2026. We compare the UR17g-1300 to the previous-generation UR10e, which shares the same 1300 mm reach."
 tags: ["Robot", "Global"]

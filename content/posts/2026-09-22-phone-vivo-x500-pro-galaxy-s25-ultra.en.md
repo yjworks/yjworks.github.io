@@ -2,6 +2,14 @@
 title: "vivo X500 Pro Wins on Battery, Not on Availability"
 seoTitle: "vivo X500 Pro vs Galaxy S25 Ultra: Battery, Charging, Korea Availability"
 date: 2026-09-22T03:07:33+09:00
+lastmod: 2026-09-25T10:06:19+09:00
+updates:
+  - date: "2026-09-25"
+    text: "Corrected the telephoto camera from 200MP (an X500 Pro Max spec) to 64MP 3.5x, and revised the zoom verdict accordingly."
+  - date: "2026-09-25"
+    text: "Corrected the display from 6.37 to 6.36 inches and the OS to OriginOS, and added the Galaxy S25 Ultra's Korean price."
+  - date: "2026-09-25"
+    text: "Added the missing source links."
 slug: "phone-vivo-x500-pro-galaxy-s25-ultra"
 summary: "vivo unveiled the X500 Pro in China on September 21. We lined its battery, charging speed and refresh rate against the Samsung Galaxy S25 Ultra, which is already on sale in Korea — vivo isn't."
 tags: ["Smartphone", "Global"]

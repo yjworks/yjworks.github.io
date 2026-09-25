@@ -2,6 +2,12 @@
 title: "Nurovi's UV Light Meets Aqua20's 180°C Steam"
 seoTitle: "Dyson Nurovi vs Dreame Aqua20 Pro Ultra: Suction and Stain Removal"
 date: 2026-09-15T03:08:25+09:00
+lastmod: 2026-09-25T10:06:19+09:00
+updates:
+  - date: "2026-09-25"
+    text: "Replaced an unsourced Korean price for the Dreame Aqua10 Ultra Roller with TBC."
+  - date: "2026-09-25"
+    text: "Added the missing source links."
 slug: "appliance-dyson-nurovi-dreame-aqua20"
 summary: "Dyson unveiled its 'Nurovi' robot vacuum lineup at IFA 2026, while Dreame showed off the Aqua20 Pro Ultra Roller X Complete at the same show. We compare suction power, stain removal, and navigation."
 tags: ["Home Appliance", "Global"]
