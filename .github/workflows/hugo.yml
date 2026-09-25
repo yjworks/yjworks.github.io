@@ -75,3 +75,38 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # 블로그를 blog.dibrain.dev 로 옮기는 중. 같은 원본을 Cloudflare Pages(프로젝트 dibrain-blog)에도 올린다.
+  # dibrain.dev(GitHub Pages)는 앱·툴 첫 화면이 되고, 블로그는 여기서 나간다.
+  blog-cloudflare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (with submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Install latest Hugo extended
+        run: |
+          TAG=$(curl -fsSL https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r .tag_name)
+          VER=${TAG#v}
+          curl -fsSL -o /tmp/hugo.deb "https://github.com/gohugoio/hugo/releases/download/${TAG}/hugo_extended_${VER}_linux-amd64.deb"
+          sudo dpkg -i /tmp/hugo.deb
+          hugo version
+
+      - name: Build for blog.dibrain.dev
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+          TZ: Asia/Seoul
+        run: hugo --gc --minify --baseURL "https://blog.dibrain.dev/" --destination public-blog
+
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          # 처음 한 번만 프로젝트가 만들어진다. 이미 있으면 에러가 나지만 무시한다.
+          npx --yes wrangler@4 pages project create dibrain-blog --production-branch main || true
+          npx --yes wrangler@4 pages deploy public-blog --project-name dibrain-blog --branch main --commit-dirty=true
