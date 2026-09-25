@@ -55,7 +55,7 @@ buildExpired = false
 
   # 네이버 서치어드바이저 사이트 소유확인 값(HTML 태그 방식의 content 값만).
   # https://searchadvisor.naver.com 에서 사이트를 등록하면 나온다. 비면 태그가 안 나간다.
-  naverSiteVerification = "4d02a6a0576f18d5899932421cae67963df0d41b"
+  naverSiteVerification = "e8c3750c60328de4830bf67025ad9933b9452ebd"   # blog.dibrain.dev 등록용. dibrain.dev 용 값은 hub/index.html
 
   # Google Analytics 4 measurement ID (예: "G-XXXXXXXXXX")
   googleAnalytics = "G-3MH93TXQTM"
