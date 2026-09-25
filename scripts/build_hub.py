@@ -61,7 +61,8 @@ for f in ["favicon.svg", "favicon.ico", "favicon-16x16.png", "favicon-32x32.png"
 
 (out / "robots.txt").write_text(
     "User-agent: *\nAllow: /\n\nUser-agent: Yeti\nAllow: /\n\n"
-    "Sitemap: https://dibrain.dev/sitemap.xml\nSitemap: https://blog.dibrain.dev/sitemap.xml\n",
+    "Sitemap: https://dibrain.dev/sitemap.xml\nSitemap: https://dibrain.dev/tools/sitemap.xml\n"
+    "Sitemap: https://blog.dibrain.dev/sitemap.xml\n",
     encoding="utf-8")
 (out / "sitemap.xml").write_text(
     '<?xml version="1.0" encoding="UTF-8"?>\n'
