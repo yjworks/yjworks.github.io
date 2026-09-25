@@ -86,9 +86,21 @@
 .td-sub-links a { color: var(--td-accent); text-decoration: none; }
 .td-sub-links a:hover { text-decoration: underline; }
 
-/* 댓글 */
-.td-comments { margin: 48px 0 0; }
-.td-comments .td-section { margin-bottom: 18px; }
+/* yjworks 한마디 — 사람이 직접 단 코멘트. 자동 작성 본문과 눈으로 구분되게 서명과 함께 둔다. */
+.td-note { margin: 28px 0 8px; padding: 16px 20px 16px 18px; border-radius: 10px;
+  background: var(--code-bg); border-inline-start: 4px solid var(--td-accent); }
+.td-note-head { display: flex; align-items: center; gap: 7px; margin: 0 0 6px;
+  font-size: 13px; font-weight: 700; color: var(--td-accent); }
+.td-note-body { font-size: 16px; line-height: 1.75; color: var(--primary); word-break: keep-all; }
+.td-note-body p { margin: 0 0 .5em; }
+.td-note-body p:last-child { margin-bottom: 0; }
+
+/* 수정 기록 — 틀린 것을 고쳤으면 무엇을 언제 고쳤는지 남긴다 */
+.td-updates { margin: 36px 0 0; padding: 14px 18px; border: 1px dashed var(--border); border-radius: 10px; }
+.td-updates-title { margin: 0 0 6px; font-size: 13px; font-weight: 700; color: var(--secondary); }
+.td-updates ul { margin: 0; padding-inline-start: 18px; }
+.td-updates li { margin: 0 0 3px; font-size: 14px; line-height: 1.6; color: var(--secondary); word-break: keep-all; }
+.td-updates time { font-variant-numeric: tabular-nums; color: var(--primary); margin-inline-end: 6px; }
 
 /* 글 → 비교 가이드. 본문 바로 아래에 두어 글 하나로 끝나지 않고 허브로 이어지게 한다. */
 .td-hub { display: flex; gap: 14px; align-items: flex-start; margin: 36px 0 0; padding: 18px 20px;
@@ -101,3 +113,4 @@
 .td-hub li a { color: var(--primary); font-weight: 700; text-decoration: none; }
 .td-hub li a:hover { color: var(--td-accent); }
 .td-hub-date { margin-inline-start: 8px; font-size: 12.5px; color: var(--secondary); white-space: nowrap; }
+.post-meta .meta-human { color: var(--td-accent); font-weight: 600; }

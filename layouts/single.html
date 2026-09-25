@@ -34,6 +34,8 @@
   {{- partial "toc.html" . }}
   {{- end }}
 
+  {{- partial "yj_note.html" . }}
+
   {{- if .Content }}
   <div class="post-content md-content">
     {{- if not (.Param "disableAnchoredHeadings") }}
@@ -63,9 +65,6 @@
   {{- partial "newsletter.html" . }}
   {{- partial "related_posts.html" . }}
 
-  {{- if (.Param "comments") }}
-  {{- partial "comments.html" . }}
-  {{- end }}
 </article>
 
 {{- end }}{{/* end main */}}

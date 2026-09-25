@@ -62,14 +62,6 @@ buildExpired = false
   [params.newsletter]
     action = ""
 
-  # 댓글(giscus). https://giscus.app 에서 저장소를 넣으면 네 값이 나온다.
-  # 사전 조건: 저장소 Settings 에서 Discussions 활성화 + giscus 앱 설치.
-  [params.giscus]
-    repo = ""
-    repoId = ""
-    category = ""
-    categoryId = ""
-
   # 카카오톡 공유. developers.kakao.com 앱의 JavaScript 키. 비면 버튼이 안 나온다.
   [params.kakao]
     jsKey = ""

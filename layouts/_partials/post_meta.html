@@ -16,6 +16,13 @@
       (.Lastmod | time.Format (default ":date_long" site.Params.DateFormat))) }}
 {{- end }}
 
+{{- /* 운영자가 직접 쓴 글(Hands-on)은 그렇다고 밝힌다. 자동 글에는 붙지 않는다. */}}
+{{- if in (.Params.categories | default slice) "Hands-on" }}
+  {{- $items = $items | append (printf `<span class="meta-item meta-human">%s%s</span>`
+      (partial "icon.html" (dict "name" "pen" "size" 14))
+      (cond (eq .Language.Lang "ko") "yjworks 직접 작성" "Written by yjworks")) }}
+{{- end }}
+
 {{- if (.Param "ShowReadingTime") }}
   {{- $items = $items | append (printf `<span class="meta-item">%s%s</span>`
       (partial "icon.html" (dict "name" "clock" "size" 14))
