@@ -49,4 +49,4 @@ If you spot an error, email us with a source. We'll fix it and log the change.
 The DigitalBrain operator sets the rules for the automation and handles error reports.
 It isn't affiliated with any company or manufacturer. If a post ever carries affiliate links, it will say so at the top.
 
-- Email: [leeyunjai1982@gmail.com](mailto:leeyunjai1982@gmail.com)
+- Email: [contact@dibrain.dev](mailto:contact@dibrain.dev)

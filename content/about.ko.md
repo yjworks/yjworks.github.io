@@ -49,4 +49,4 @@ AI도 틀립니다. 실제로 가격이나 사양이 틀린 채로 나간 글이
 DigitalBrain 운영자가 자동화의 규칙을 정하고, 오류 제보를 받아 고칩니다.
 특정 회사나 제조사와 관련이 없습니다. 제휴 링크가 들어가면 해당 글 첫머리에 표시합니다.
 
-- 이메일: [leeyunjai1982@gmail.com](mailto:leeyunjai1982@gmail.com)
+- 이메일: [contact@dibrain.dev](mailto:contact@dibrain.dev)

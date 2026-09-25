@@ -75,6 +75,6 @@ This policy may be updated to reflect changes in law or services. Any changes wi
 For privacy-related questions, please contact:
 
 - Operator: DigitalBrain
-- Email: [leeyunjai1982@gmail.com](mailto:leeyunjai1982@gmail.com)
+- Email: [contact@dibrain.dev](mailto:contact@dibrain.dev)
 
 - Effective date: September 2, 2026

@@ -115,7 +115,7 @@ buildExpired = false
       title = "RSS"
       url = "/index.xml"
     [languages.ko.params.footer]
-      text = "[소개](/about/) · [개인정보처리방침](/privacy/) · [문의](mailto:leeyunjai1982@gmail.com)"
+      text = "[소개](/about/) · [개인정보처리방침](/privacy/) · [문의](mailto:contact@dibrain.dev)"
     [languages.ko.menu]
       [[languages.ko.menu.main]]
         identifier = "guides"
@@ -163,7 +163,7 @@ buildExpired = false
       title = "RSS"
       url = "/en/index.xml"
     [languages.en.params.footer]
-      text = "[About](/en/about/) · [Privacy](/en/privacy/) · [Contact](mailto:leeyunjai1982@gmail.com)"
+      text = "[About](/en/about/) · [Privacy](/en/privacy/) · [Contact](mailto:contact@dibrain.dev)"
     [languages.en.menu]
       [[languages.en.menu.main]]
         identifier = "guides"
