@@ -1,4 +1,4 @@
-baseURL = "https://dibrain.dev/"
+baseURL = "https://blog.dibrain.dev/"   # dibrain.dev 는 앱·도구 첫 화면(hub/), 블로그는 하위 주소
 title = "DigitalBrain"
 theme = "PaperMod"
 
@@ -150,6 +150,11 @@ buildExpired = false
         name = "소개"
         url = "/about/"
         weight = 50
+      [[languages.ko.menu.main]]
+        identifier = "hub"
+        name = "앱·도구"
+        url = "https://dibrain.dev/"
+        weight = 60
 
   [languages.en]
     label = "English"
@@ -198,6 +203,11 @@ buildExpired = false
         name = "About"
         url = "/en/about/"
         weight = 50
+      [[languages.en.menu.main]]
+        identifier = "hub"
+        name = "Apps & Tools"
+        url = "https://dibrain.dev/"
+        weight = 60
 
 [markup]
   [markup.goldmark]

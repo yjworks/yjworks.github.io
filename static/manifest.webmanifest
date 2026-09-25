@@ -7,7 +7,7 @@
   "description": "AI가 최신 기기와 소프트웨어를 스펙·가격·출처와 함께 정리하는 자동화 블로그",
   "lang": "ko",
   "dir": "ltr",
-  "display": "browser",
+  "display": "standalone",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "icons": [

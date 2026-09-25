@@ -1,4 +1,8 @@
-name: Deploy Hugo site to GitHub Pages
+name: Deploy blog (Cloudflare Pages) and dibrain.dev hub (GitHub Pages)
+
+# 블로그는 blog.dibrain.dev (Cloudflare Pages 프로젝트 dibrain-blog) 에서 나간다.
+# dibrain.dev (이 저장소의 GitHub Pages) 는 앱·도구 첫 화면이다. 예전 블로그 주소로 들어온
+# 사람은 같은 경로의 blog.dibrain.dev 로 보낸다. /games/, /kids-lab/ 는 각 저장소가 내보낸다.
 
 on:
   push:
@@ -37,33 +41,34 @@ jobs:
           sudo dpkg -i /tmp/hugo.deb
           hugo version
 
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
-      - name: Build with Hugo
+      - name: Build blog for blog.dibrain.dev
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
           TZ: Asia/Seoul
-        run: |
-          # Pages reports http:// until "Enforce HTTPS" is on, and a build taken in that
-          # window would print http canonicals, sitemap and OG URLs. The site is only ever
-          # served over HTTPS (.dev is HSTS-preloaded), so pin the scheme.
-          BASE="${{ steps.pages.outputs.base_url }}"
-          BASE="${BASE/#http:\/\//https://}"
-          echo "baseURL: ${BASE}/"
-          hugo \
-            --gc \
-            --minify \
-            --baseURL "${BASE}/"
+        run: hugo --gc --minify --baseURL "https://blog.dibrain.dev/" --destination public-blog
 
-      - name: Upload artifact
+      - name: Deploy blog to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          # 프로젝트는 처음 한 번만 만들어진다. 이미 있으면 에러가 나지만 무시한다.
+          npx --yes wrangler@4 pages project create dibrain-blog --production-branch main || true
+          npx --yes wrangler@4 pages deploy public-blog --project-name dibrain-blog --branch main --commit-dirty=true
+
+      - name: Build dibrain.dev hub
+        run: python3 scripts/build_hub.py public-blog public-hub
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload hub artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./public-hub
 
   deploy:
     environment:
@@ -75,38 +80,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-  # 블로그를 blog.dibrain.dev 로 옮기는 중. 같은 원본을 Cloudflare Pages(프로젝트 dibrain-blog)에도 올린다.
-  # dibrain.dev(GitHub Pages)는 앱·툴 첫 화면이 되고, 블로그는 여기서 나간다.
-  blog-cloudflare:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout (with submodules)
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 0
-
-      - name: Install latest Hugo extended
-        run: |
-          TAG=$(curl -fsSL https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r .tag_name)
-          VER=${TAG#v}
-          curl -fsSL -o /tmp/hugo.deb "https://github.com/gohugoio/hugo/releases/download/${TAG}/hugo_extended_${VER}_linux-amd64.deb"
-          sudo dpkg -i /tmp/hugo.deb
-          hugo version
-
-      - name: Build for blog.dibrain.dev
-        env:
-          HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
-          TZ: Asia/Seoul
-        run: hugo --gc --minify --baseURL "https://blog.dibrain.dev/" --destination public-blog
-
-      - name: Deploy to Cloudflare Pages
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: |
-          # 처음 한 번만 프로젝트가 만들어진다. 이미 있으면 에러가 나지만 무시한다.
-          npx --yes wrangler@4 pages project create dibrain-blog --production-branch main || true
-          npx --yes wrangler@4 pages deploy public-blog --project-name dibrain-blog --branch main --commit-dirty=true

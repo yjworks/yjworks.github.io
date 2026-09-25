@@ -1,6 +1,6 @@
 # DigitalBrain
 
-Hugo + PaperMod 한/영 기술 블로그. https://dibrain.dev/
+Hugo + PaperMod 한/영 기술 블로그. https://blog.dibrain.dev/ (첫 화면 https://dibrain.dev/ 은 hub/)
 
 - 글: `content/posts/YYYY-MM-DD-<slug>.ko.md` / `.en.md`
 - 배포: `main` push 시 GitHub Actions → GitHub Pages
