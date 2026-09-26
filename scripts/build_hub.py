@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""dibrain.dev(GitHub Pages)에 올릴 사이트를 만든다.
+"""dibrain.dev(Cloudflare Pages 프로젝트 dibrain-hub)의 첫 화면과 옛 블로그 주소 이전을 만든다.
 
 블로그는 blog.dibrain.dev 로 옮겼다. dibrain.dev 는 앱·도구 첫 화면이 되고,
 예전 블로그 주소(dibrain.dev/2026/09/…)로 들어온 사람은 같은 경로의 새 주소로 보낸다.
@@ -8,7 +8,7 @@
 
 - hub/ 의 첫 화면을 그대로 복사한다.
 - 블로그 빌드의 모든 index.html 경로마다 새 주소로 보내는 작은 페이지를 만든다
-  (canonical + meta refresh 0초 + JS). GitHub Pages 는 301 을 못 하므로 이것이 최선이다.
+  (canonical + meta refresh 0초 + JS). 실제 이전은 _redirects 의 301 이 하고, 이 페이지는 대비책이다.
 - RSS 는 구독기가 meta refresh 를 따르지 않으므로 블로그 피드를 그대로 복사한다.
 - 이미 공유된 링크의 미리보기가 깨지지 않게 글 이미지와 기본 파일도 복사한다.
 - /games/, /kids-lab/ 같은 앱 경로는 각 저장소가 내보내므로 여기서 만들지 않는다.

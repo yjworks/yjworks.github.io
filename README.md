@@ -3,7 +3,7 @@
 Hugo + PaperMod 한/영 기술 블로그. https://blog.dibrain.dev/ (첫 화면 https://dibrain.dev/ 은 hub/)
 
 - 글: `content/posts/YYYY-MM-DD-<slug>.ko.md` / `.en.md`
-- 배포: `main` push 시 GitHub Actions → GitHub Pages
+- 배포: `main` push 시 GitHub Actions → Cloudflare Pages (블로그 blog.dibrain.dev, 첫 화면·도구·앱 dibrain.dev). 도구·앱 저장소의 변경은 30분마다 확인해 반영
 - 자동 작성: 평일 매일 1편. `hw1`(월) `hw2`(화) `embedded`(수) `dev`(목) `brief`(금)
 
 ```bash

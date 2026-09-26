@@ -595,7 +595,7 @@ git push origin main
 2. `git pull --rebase origin main` 후 한 번 더 시도한다.
 3. 그래도 안 되면 실행 기록에 에러 원문을 적고, **최종 보고 첫 줄에 "푸시 실패"와 에러 원문**을 쓴다.
 
-푸시 후 GitHub Actions(`Deploy blog (Cloudflare Pages) and dibrain.dev hub (GitHub Pages)`) 결과를 한 번 확인한다. 블로그 주소는 https://blog.dibrain.dev/ 다.
+푸시 후 GitHub Actions(`Deploy blog.dibrain.dev and dibrain.dev (Cloudflare Pages)`) 결과를 한 번 확인한다. 블로그 주소는 https://blog.dibrain.dev/ 다.
 
 ## 9. 실행 기록 (매 실행, 발행하지 않은 날도)
 

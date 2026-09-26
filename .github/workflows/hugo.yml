@@ -11,9 +11,7 @@ name: Deploy blog.dibrain.dev and dibrain.dev (Cloudflare Pages)
 #
 # 다른 저장소에 push 해도 이 저장소는 모른다. 그래서 30분마다 네 저장소의 최신 커밋을 보고,
 # 마지막 배포(dibrain.dev/deploy.txt)와 다를 때만 다시 만든다. 급하면 Actions 에서 수동 실행.
-#
-# 옮기는 동안에는 예전처럼 첫 화면만 GitHub Pages 에도 올린다. dibrain.dev 도메인을
-# Cloudflare 로 넘긴 뒤 GitHub Pages 단계(아래 표시)를 지운다.
+# GitHub Pages 는 쓰지 않는다(2026-09-26 Cloudflare 로 옮김). 네 저장소의 워크플로는 테스트만 한다.
 
 on:
   push:
@@ -24,8 +22,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: "site"
@@ -38,8 +34,6 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      skip: ${{ steps.sources.outputs.skip }}
     steps:
       - name: Checkout (with submodules)
         uses: actions/checkout@v4
@@ -134,7 +128,6 @@ jobs:
           set -euo pipefail
           # 첫 화면. 도구 목록은 방금 만든 tools 빌드의 registry.json 을 쓴다.
           HUB_TOOLS_REGISTRY=_src/tools/dist/registry.json python3 scripts/build_hub.py public-blog site
-          cp -r site public-hub          # GitHub Pages 용(옮기는 동안만)
           cp -r _src/tools/dist site/tools
           cp -r _src/games/dist site/games
           copy() {   # 원본 폴더, 대상 폴더, 빼는 이름들 — 정적 앱을 개발용 파일만 빼고 복사
@@ -170,28 +163,3 @@ jobs:
         run: |
           npx --yes wrangler@4 pages project create dibrain-hub --production-branch main || true
           npx --yes wrangler@4 pages deploy site --project-name dibrain-hub --branch main --commit-dirty=true
-
-      # ── 옮기는 동안만: 첫 화면을 GitHub Pages 에도 올린다 ──
-      - name: Setup Pages
-        if: steps.sources.outputs.skip != 'true'
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
-      - name: Upload hub artifact
-        if: steps.sources.outputs.skip != 'true'
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public-hub
-
-  deploy:
-    needs: build
-    if: needs.build.outputs.skip != 'true'
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
