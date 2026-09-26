@@ -51,7 +51,7 @@ buildExpired = false
 
   # Google AdSense publisher ID (예: "ca-pub-XXXXXXXXXXXXXXXX")
   # 승인 전에는 빈 값으로 두면 스크립트가 삽입되지 않습니다.
-  adsense = ""
+  adsense = "ca-pub-3496526935001350"
 
   # 네이버 서치어드바이저 사이트 소유확인 값(HTML 태그 방식의 content 값만).
   # https://searchadvisor.naver.com 에서 사이트를 등록하면 나온다. 비면 태그가 안 나간다.

@@ -6,7 +6,7 @@ ShowBreadCrumbs: false
 ShowReadingTime: false
 ---
 
-DigitalBrain ("this site", https://dibrain.dev/ and https://blog.dibrain.dev/) respects your privacy. This policy explains what information is collected when you visit this site, how it is used, and the choices you have.
+DigitalBrain ("this site", https://dibrain.dev/ with the apps and tools under it, and https://blog.dibrain.dev/) respects your privacy. This policy explains what information is collected when you visit this site, how it is used, and the choices you have.
 
 ## 1. Information We Collect
 
@@ -64,7 +64,9 @@ Posts on this site contain links to external sites such as manufacturer pages, n
 
 ## 8. Children's Privacy
 
-This site is not directed at children under 14 and does not knowingly collect personal information from children.
+The blog and the tools are not directed at children under 14 and do not knowingly collect personal information from children.
+
+The one exception is **Kids Lab** (https://dibrain.dev/kids-lab/), a learning app made for children. Kids Lab carries no ads and no analytics (no Google AdSense, no Google Analytics) and sends nothing to any server. Learning progress stays in that device's browser storage and is removed when browser data is cleared.
 
 ## 9. Changes to This Policy
 
@@ -78,3 +80,4 @@ For privacy-related questions, please contact:
 - Email: [contact@dibrain.dev](mailto:contact@dibrain.dev)
 
 - Effective date: September 2, 2026
+- Revised: September 26, 2026 (added the apps and tools, and the Kids Lab note)
