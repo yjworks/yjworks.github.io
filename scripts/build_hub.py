@@ -56,6 +56,11 @@ def tool_sections(tools):
     return body, chips
 
 
+def signature(tools):
+    """목록이 달라졌는지 보는 값. hub/index.html 스크립트의 sig() 와 같은 규칙: 이름·분류·종류가 바뀌면 다시 그린다."""
+    return " ".join(f'{t["slug"]}|{t.get("group", "")}|{t.get("kind", "tool")}|{t.get("name", "")}' for t in tools)
+
+
 def app_cards(apps):
     e = html.escape
     return "".join(
@@ -80,7 +85,7 @@ try:
     body, chips = tool_sections(only_tools)
     parts.update({
         "<!--TOOLS-->": body, "<!--TOOL_CHIPS-->": chips, "<!--TOOLS_COUNT-->": f"{len(only_tools)}개",
-        "<!--TOOLS_SLUGS-->": " ".join(html.escape(t["slug"]) for t in tools),
+        "<!--TOOLS_SLUGS-->": html.escape(signature(tools)),
         "<!--APP_CARDS-->": app_cards(apps), "<!--APP_COUNT-->": str(FIXED_APPS + len(apps)),
         "<!--TOOLS_NOTE-->": "모든 도구는 파일을 서버로 보내지 않고 브라우저 안에서만 처리합니다. <a href=\"/tools/\">도구 목록 페이지</a>",
     })

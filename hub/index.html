@@ -168,6 +168,11 @@
     return out;
   }
 
+  /* 목록이 달라졌는지 보는 값. build_hub.py 의 signature() 와 같은 규칙 */
+  function sig(list) {
+    return list.map(function (t) { return [t.slug, t.group || '', t.kind || 'tool', t.name || ''].join('|'); }).join(' ');
+  }
+
   function card(t, dyn) {
     var a = el('a', 'card'); a.href = '/tools/' + t.slug + '/';
     if (dyn) a.setAttribute('data-dyn', '1');
@@ -200,7 +205,7 @@
       a.appendChild(el('b', null, String(g.tools.length))); li.appendChild(a); chips.appendChild(li);
     });
     document.getElementById('tool-count').textContent = list.length + '개';
-    box.setAttribute('data-slugs', all.map(function (t) { return t.slug; }).join(' '));
+    box.setAttribute('data-slugs', sig(all));
     filter();
   }
 
@@ -221,8 +226,7 @@
 
   fetch('/tools/registry.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : []; }).then(function (list) {
     if (!Array.isArray(list) || !list.length) return;
-    var slugs = list.map(function (t) { return t.slug; }).join(' ');
-    if (slugs === box.getAttribute('data-slugs')) return;   /* 빌드 때 넣은 목록과 같으면 그대로 둔다 */
+    if (sig(list) === box.getAttribute('data-slugs')) return;   /* 빌드 때 넣은 목록과 같으면 그대로 둔다 */
     render(list);
     document.getElementById('tool-note').textContent = '모든 도구는 파일을 서버로 보내지 않고 브라우저 안에서만 처리합니다.';
   }).catch(function () {});
