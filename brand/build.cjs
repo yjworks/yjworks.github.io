@@ -13,7 +13,7 @@ const path = require('node:path');
 
 const SRC = path.join(__dirname, 'src');
 const DIST = path.join(__dirname, 'dist');
-const NAMES = ['dibrain', 'kids-lab', 'games', 'ai-shot'];
+const NAMES = ['dibrain', 'kids-lab', 'games', 'ai-shot', 'clip-box', 'snap-box'];
 
 async function render(page, svgFile, size, out) {
   const svg = fs.readFileSync(path.join(SRC, svgFile), 'utf8').replace(/width="\d+" height="\d+"/, `width="${size}" height="${size}"`);

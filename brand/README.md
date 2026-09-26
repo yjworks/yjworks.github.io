@@ -43,6 +43,8 @@ NODE_PATH=<playwright 가 있는 node_modules> node brand/build.cjs
 | 키즈랩 | `#F5B400` | 검정 별 | `#F5B400`(위 글자는 검정) |
 | 딴짓 | `#E8590C` | 주사위 | 버튼 `#C2410C` / `#FF8A4C` |
 | AI 샷 | `#6D4AE6` | 뷰파인더 + 셔터 | `#6D4AE6` / `#9D86FF` |
+| clip-box | `#0F766E` | 필름 + 재생 | `#0F766E` / `#2DD4BF` |
+| snap-box | `#BE185D` | 사진 틀 + 모자이크 | `#BE185D` / `#F472B6` |
 
 글자가 올라가는 버튼 색은 글자와 대비 4.5:1 이상으로 골랐다(`--db-accent-bg` / `--db-on-accent`).
 
