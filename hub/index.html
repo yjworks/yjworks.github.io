@@ -98,12 +98,12 @@
   <div class="hero">
     <h1>설치 없이, 브라우저에서 바로.</h1>
     <p>아이 학습 앱, 가볍게 즐기는 게임, 매일 쓰는 도구를 모았습니다. 파일은 기기 안에서만 처리되고 서버로 보내지 않습니다.</p>
-    <ul class="chips" id="chips"><li><a class="chip" href="#apps">앱 <b>3</b></a></li><!--TOOL_CHIPS--></ul>
+    <ul class="chips" id="chips"><li><a class="chip" href="#apps">앱 <b id="app-count"><!--APP_COUNT--></b></a></li><!--TOOL_CHIPS--></ul>
   </div>
 
   <section id="apps">
     <h2>앱</h2>
-    <div class="grid">
+    <div class="grid" id="app-grid">
       <a class="card" href="/kids-lab/">
         <img src="/kids-lab/icons/icon-192.png" alt="" loading="lazy">
         <div><p class="t">키즈랩</p><p class="d">다섯 살부터 혼자 켜서 쓰는 한글·영어·수학·과학 학습 놀이터</p></div>
@@ -116,6 +116,7 @@
         <img src="/games/icon-192.png" alt="" loading="lazy">
         <div><p class="t">딴짓</p><p class="d">보드·퍼즐·액션. 브라우저에서 바로 도는 게임 모음</p></div>
       </a>
+      <!--APP_CARDS-->
     </div>
   </section>
 
@@ -146,8 +147,9 @@
 (function () {
   /* 도구 목록은 빌드 때 HTML 에 들어간다(검색엔진·캐시 대비, scripts/build_hub.py).
      여기서는 그 뒤에 도구가 추가·변경됐을 때만 다시 그린다. 분류 순서와 주소 조각은 build_hub.py 의 GROUPS 와 같게 둔다.
-     registry.json 형식: [{"slug":"csv-encoding","name":"…","desc":"…","group":"문서·텍스트","icon":"/tools/csv-encoding/icon.svg"}] */
-  var GROUPS = [['생활 계산', 'life'], ['문서·텍스트', 'docs'], ['사진·이미지', 'image'], ['오디오·영상', 'media'], ['모임·놀이', 'play'], ['3D 프린팅', '3d']];
+     registry.json 형식: [{"slug":"csv-encoding","name":"…","desc":"…","group":"문서·텍스트","kind":"tool","icon":"/tools/csv-encoding/icon.svg"}] — kind "app" 은 앱 칸으로 */
+  var GROUPS = [['생활 계산', 'life'], ['문서·텍스트', 'docs'], ['사진·이미지', 'image'], ['오디오·영상', 'media'], ['공부·집중', 'focus'], ['모임·놀이', 'play'], ['3D 프린팅', '3d']];
+  var FIXED_APPS = 3;   /* 위에 직접 적어 둔 앱 수. kind "app" 인 도구는 앱 칸에 붙는다 */
   var box = document.getElementById('tool-groups');
   var input = document.getElementById('tool-search');
   var empty = document.getElementById('tool-empty');
@@ -166,19 +168,29 @@
     return out;
   }
 
-  function render(list) {
+  function card(t, dyn) {
+    var a = el('a', 'card'); a.href = '/tools/' + t.slug + '/';
+    if (dyn) a.setAttribute('data-dyn', '1');
+    var ic = el('img'); ic.src = t.icon || ('/tools/' + t.slug + '/icon.svg'); ic.alt = ''; ic.loading = 'lazy';
+    var txt = el('div'); txt.appendChild(el('p', 't', t.name)); txt.appendChild(el('p', 'd', t.desc || ''));
+    a.appendChild(ic); a.appendChild(txt);
+    return a;
+  }
+
+  function render(all) {
+    var apps = all.filter(function (t) { return t.kind === 'app'; });
+    var list = all.filter(function (t) { return t.kind !== 'app'; });
+    var appGrid = document.getElementById('app-grid');
+    Array.prototype.forEach.call(appGrid.querySelectorAll('[data-dyn]'), function (n) { n.remove(); });
+    apps.forEach(function (t) { appGrid.appendChild(card(t, true)); });
+    document.getElementById('app-count').textContent = String(FIXED_APPS + apps.length);
     var groups = grouped(list);
     box.textContent = '';
     groups.forEach(function (g) {
       var sec = el('div', 'group'); sec.id = g.id;
       var h = el('h3', null, g.name + ' '); h.appendChild(el('small', null, String(g.tools.length))); sec.appendChild(h);
       var grid = el('div', 'grid');
-      g.tools.forEach(function (t) {
-        var a = el('a', 'card'); a.href = '/tools/' + t.slug + '/';
-        var ic = el('img'); ic.src = t.icon || ('/tools/' + t.slug + '/icon.svg'); ic.alt = ''; ic.loading = 'lazy';
-        var txt = el('div'); txt.appendChild(el('p', 't', t.name)); txt.appendChild(el('p', 'd', t.desc || ''));
-        a.appendChild(ic); a.appendChild(txt); grid.appendChild(a);
-      });
+      g.tools.forEach(function (t) { grid.appendChild(card(t, false)); });
       sec.appendChild(grid); box.appendChild(sec);
     });
     var chips = document.getElementById('chips');
@@ -188,7 +200,7 @@
       a.appendChild(el('b', null, String(g.tools.length))); li.appendChild(a); chips.appendChild(li);
     });
     document.getElementById('tool-count').textContent = list.length + '개';
-    box.setAttribute('data-slugs', list.map(function (t) { return t.slug; }).join(' '));
+    box.setAttribute('data-slugs', all.map(function (t) { return t.slug; }).join(' '));
     filter();
   }
 

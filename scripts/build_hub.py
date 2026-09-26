@@ -27,7 +27,8 @@ shutil.copytree(hub, out)
 # 분류 순서와 주소 조각(#t-life 등)은 hub/index.html 스크립트의 GROUPS 와 같게 둔다.
 import json, os, urllib.request
 GROUPS = [("생활 계산", "life"), ("문서·텍스트", "docs"), ("사진·이미지", "image"),
-          ("오디오·영상", "media"), ("모임·놀이", "play"), ("3D 프린팅", "3d")]
+          ("오디오·영상", "media"), ("공부·집중", "focus"), ("모임·놀이", "play"), ("3D 프린팅", "3d")]
+FIXED_APPS = 3   # hub/index.html 에 직접 적어 둔 앱(키즈랩·AI 샷·딴짓). tools 저장소의 kind "app" 은 그 뒤에 붙는다.
 
 
 def tool_sections(tools):
@@ -55,7 +56,17 @@ def tool_sections(tools):
     return body, chips
 
 
+def app_cards(apps):
+    e = html.escape
+    return "".join(
+        f'<a class="card" href="/tools/{e(t["slug"])}/" data-dyn="1">'
+        f'<img src="{e(t.get("icon") or "/tools/" + t["slug"] + "/icon.svg")}" alt="" loading="lazy">'
+        f'<div><p class="t">{e(t["name"])}</p><p class="d">{e(t.get("desc", ""))}</p></div></a>'
+        for t in apps)
+
+
 parts = {"<!--TOOLS-->": "", "<!--TOOL_CHIPS-->": "", "<!--TOOLS_COUNT-->": "", "<!--TOOLS_SLUGS-->": "",
+         "<!--APP_CARDS-->": "", "<!--APP_COUNT-->": str(FIXED_APPS),
          "<!--TOOLS_NOTE-->": "모든 도구는 파일을 서버로 보내지 않고 브라우저 안에서만 처리합니다."}
 try:
     local = os.environ.get("HUB_TOOLS_REGISTRY")   # 로컬 시험용: tools 저장소의 dist/registry.json 경로
@@ -64,13 +75,16 @@ try:
     else:
         with urllib.request.urlopen("https://dibrain.dev/tools/registry.json", timeout=15) as r:
             tools = json.load(r)
-    body, chips = tool_sections(tools)
+    apps = [t for t in tools if t.get("kind") == "app"]
+    only_tools = [t for t in tools if t.get("kind") != "app"]
+    body, chips = tool_sections(only_tools)
     parts.update({
-        "<!--TOOLS-->": body, "<!--TOOL_CHIPS-->": chips, "<!--TOOLS_COUNT-->": f"{len(tools)}개",
+        "<!--TOOLS-->": body, "<!--TOOL_CHIPS-->": chips, "<!--TOOLS_COUNT-->": f"{len(only_tools)}개",
         "<!--TOOLS_SLUGS-->": " ".join(html.escape(t["slug"]) for t in tools),
+        "<!--APP_CARDS-->": app_cards(apps), "<!--APP_COUNT-->": str(FIXED_APPS + len(apps)),
         "<!--TOOLS_NOTE-->": "모든 도구는 파일을 서버로 보내지 않고 브라우저 안에서만 처리합니다. <a href=\"/tools/\">도구 목록 페이지</a>",
     })
-    print(f"hub: {len(tools)} tools baked in")
+    print(f"hub: {len(only_tools)} tools and {len(apps)} tool apps baked in")
 except Exception as e:
     print(f"hub: tool registry not available ({e}); JS will fill it")
 idx = out / "index.html"
