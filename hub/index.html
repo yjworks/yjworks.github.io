@@ -148,7 +148,7 @@
   /* 도구 목록은 빌드 때 HTML 에 들어간다(검색엔진·캐시 대비, scripts/build_hub.py).
      여기서는 그 뒤에 도구가 추가·변경됐을 때만 다시 그린다. 분류 순서와 주소 조각은 build_hub.py 의 GROUPS 와 같게 둔다.
      registry.json 형식: [{"slug":"csv-encoding","name":"…","desc":"…","group":"문서·텍스트","kind":"tool","icon":"/tools/csv-encoding/icon.svg"}] — kind "app" 은 앱 칸으로 */
-  var GROUPS = [['생활 계산', 'life'], ['문서·텍스트', 'docs'], ['사진·이미지', 'image'], ['오디오·영상', 'media'], ['공부·집중', 'focus'], ['모임·놀이', 'play'], ['3D 프린팅', '3d']];
+  var GROUPS = [['생활 계산', 'life'], ['문서·텍스트', 'docs'], ['PDF', 'pdf'], ['사진 편집', 'photo'], ['이미지 변환', 'image'], ['오디오·영상', 'media'], ['공부·집중', 'focus'], ['모임·놀이', 'play'], ['3D 프린팅', '3d']];
   var FIXED_APPS = 3;   /* 위에 직접 적어 둔 앱 수. kind "app" 인 도구는 앱 칸에 붙는다 */
   var box = document.getElementById('tool-groups');
   var input = document.getElementById('tool-search');

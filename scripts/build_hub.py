@@ -26,7 +26,7 @@ shutil.copytree(hub, out)
 # 빈 칸이 될 수 있고, 검색엔진도 도구 링크를 보지 못한다. 불러오지 못하면 비워 두고 JS 가 채운다.
 # 분류 순서와 주소 조각(#t-life 등)은 hub/index.html 스크립트의 GROUPS 와 같게 둔다.
 import json, os, urllib.request
-GROUPS = [("생활 계산", "life"), ("문서·텍스트", "docs"), ("사진·이미지", "image"),
+GROUPS = [("생활 계산", "life"), ("문서·텍스트", "docs"), ("PDF", "pdf"), ("사진 편집", "photo"), ("이미지 변환", "image"),
           ("오디오·영상", "media"), ("공부·집중", "focus"), ("모임·놀이", "play"), ("3D 프린팅", "3d")]
 FIXED_APPS = 3   # hub/index.html 에 직접 적어 둔 앱(키즈랩·AI 샷·딴짓). tools 저장소의 kind "app" 은 그 뒤에 붙는다.
 
