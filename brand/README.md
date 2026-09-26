@@ -10,7 +10,10 @@
 | `src/dibrain.svg` | 브랜드 마크. 파랑 둥근 사각형 + 흰 "네모와 반원" D |
 | `src/dibrain-mono.svg` | 한 색 마크(Safari 고정 탭, 도장, 흑백 인쇄) |
 | `src/<앱>.svg`, `src/<앱>-maskable.svg` | 앱 아이콘. maskable 은 모서리 없이 꽉 채운 판(안드로이드·iOS 홈 화면용) |
-| `src/og-default.svg` | 링크 공유 미리보기 1200×630 |
+| `src/dibrain-wordmark.svg` | 글자 로고 "DigitalBrain"(Pretendard ExtraBold 윤곽선) |
+| `src/dibrain-lockup.svg`, `src/dibrain-lockup-dark.svg` | 마크 + 글자 가로 조합(밝은 바탕 / 어두운 바탕) |
+| `src/og-default.svg` | 링크 공유 미리보기 1200×630(마크 + 글자 + 한 줄 소개) |
+| `wordmark.py` | 위 세 가지를 Pretendard 윤곽선으로 다시 만든다(`pip install fonttools brotli`) |
 | `tokens.css` | 공통 색·글꼴·모서리·상단 바. 각 저장소에 그대로 복사 |
 | `build.cjs` | 위 SVG 에서 PNG(16~512)·favicon.ico·maskable·apple-touch-icon 생성 → `dist/` |
 
@@ -52,7 +55,8 @@ NODE_PATH=<playwright 가 있는 node_modules> node brand/build.cjs
 
 Pretendard 하나(SIL Open Font License 1.1, 상업용 사용 가능). 오프라인 앱은 글꼴 파일을 저장소 안에 두고, 온라인 페이지는 jsDelivr 를 쓴다.
 
-## 아직 정하지 않은 것
+## 이름
 
-- **이름(글자 로고)**: 상표 검색 결과를 보고 확정한다. 확정 전까지 글자 로고 이미지는 만들지 않고, 화면에는 텍스트로만 쓴다.
-- **상표 출원**: 마크와 이름 모두 출원 전이다.
+- 이름은 **DigitalBrain** (한글 표기 디지털브레인). 글자 로고는 글꼴 없이도 같게 보이도록 윤곽선으로 저장했다.
+- 상표: 2026-09-26 KIPRIS 국내 검색에서 "디지털브레인" 상표 등록은 없었다(같은 이름 회사의 다른 상표 1건, 36류, 소멸).
+  영문 "DIGITAL BRAIN" 검색과 출원은 아직 하지 않았다. 출원한다면 글자만보다 마크 + 글자 조합이 식별력 면에서 유리하다.
