@@ -1,0 +1,16 @@
+/* 로고 옆 작은 '블로그' 표시: dibrain.dev(첫 화면)와 blog.dibrain.dev 를 구분한다. 브랜드 이름은 DigitalBrain 그대로. */
+.logo > a::after {
+  content: "블로그";
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+html[lang^="en"] .logo > a::after { content: "Blog"; }
