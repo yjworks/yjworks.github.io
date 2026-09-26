@@ -110,8 +110,8 @@ STUB = """<!doctype html>
 </body></html>
 """
 
-n = 0
-for page in blog.rglob("index.html"):
+n, redirects = 0, []
+for page in sorted(blog.rglob("index.html")):
     rel = page.parent.relative_to(blog).as_posix()
     if rel == ".":
         continue                                   # 루트는 첫 화면
@@ -119,7 +119,15 @@ for page in blog.rglob("index.html"):
     dst = out / rel / "index.html"
     dst.parent.mkdir(parents=True, exist_ok=True)
     dst.write_text(STUB.format(url=html.escape(url), js=repr(url)), encoding="utf-8")
+    redirects += [f"/{rel}/ {url} 301", f"/{rel} {url} 301"]
     n += 1
+
+# Cloudflare Pages 는 _redirects 로 진짜 301 을 보낸다(검색엔진이 순위를 새 주소로 넘긴다).
+# 위의 안내 페이지는 _redirects 를 읽지 않는 호스팅에서만 쓰이는 대비책이다.
+# 목록에 없는 옛 블로그 경로(나중에 지운 글 등)는 앞부분이 같으면 블로그의 같은 경로로 보낸다.
+OLD_PREFIXES = ["2025", "2026", "2027", "en", "tags", "categories", "posts", "guides", "archives", "search", "about", "privacy", "page"]
+redirects += [f"/{p}/* {NEW}/{p}/:splat 301" for p in OLD_PREFIXES]
+(out / "_redirects").write_text("\n".join(redirects) + "\n", encoding="utf-8")
 
 # 피드: 구독기가 계속 새 글을 받도록 블로그 피드를 그대로 둔다(링크는 이미 blog.dibrain.dev).
 for feed in ["index.xml", "en/index.xml"]:
@@ -160,4 +168,4 @@ for f in ["favicon.svg", "favicon.ico", "favicon-16x16.png", "favicon-32x32.png"
 </body></html>
 """, encoding="utf-8")
 
-print(f"hub: {n} redirect pages -> {out}")
+print(f"hub: {n} redirect pages, {len(redirects)} _redirects rules -> {out}")

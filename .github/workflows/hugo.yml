@@ -1,13 +1,26 @@
-name: Deploy blog (Cloudflare Pages) and dibrain.dev hub (GitHub Pages)
+name: Deploy blog.dibrain.dev and dibrain.dev (Cloudflare Pages)
 
-# 블로그는 blog.dibrain.dev (Cloudflare Pages 프로젝트 dibrain-blog) 에서 나간다.
-# dibrain.dev (이 저장소의 GitHub Pages) 는 앱·도구 첫 화면이다. 예전 블로그 주소로 들어온
-# 사람은 같은 경로의 blog.dibrain.dev 로 보낸다. /games/, /kids-lab/ 는 각 저장소가 내보낸다.
+# 사이트 두 개를 Cloudflare Pages 에 올린다. 둘 다 정적 파일뿐이고 서버 코드(Functions)는 없다.
+#
+#  blog.dibrain.dev  ← 이 저장소의 Hugo 블로그                     (프로젝트 dibrain-blog)
+#  dibrain.dev       ← 첫 화면(hub/) + 다른 저장소 네 곳을 모은 것  (프로젝트 dibrain-hub)
+#                        /tools/    yjworks/tools     (npm run build → dist)
+#                        /games/    yjworks/games     (npm run build → dist)
+#                        /kids-lab/ yjworks/kids-lab  (정적 파일 그대로)
+#                        /ai-shot/  yjworks/ai-shot   (정적 파일 그대로)
+#
+# 다른 저장소에 push 해도 이 저장소는 모른다. 그래서 30분마다 네 저장소의 최신 커밋을 보고,
+# 마지막 배포(dibrain.dev/deploy.txt)와 다를 때만 다시 만든다. 급하면 Actions 에서 수동 실행.
+#
+# 옮기는 동안에는 예전처럼 첫 화면만 GitHub Pages 에도 올린다. dibrain.dev 도메인을
+# Cloudflare 로 넘긴 뒤 GitHub Pages 단계(아래 표시)를 지운다.
 
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  schedule:
+    - cron: "7,37 * * * *"
 
 permissions:
   contents: read
@@ -15,7 +28,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: "site"
   cancel-in-progress: false
 
 defaults:
@@ -25,6 +38,8 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      skip: ${{ steps.sources.outputs.skip }}
     steps:
       - name: Checkout (with submodules)
         uses: actions/checkout@v4
@@ -32,7 +47,30 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
+      - name: Find the commit of each source
+        id: sources
+        run: |
+          set -euo pipefail
+          head() { git ls-remote "https://github.com/yjworks/$1" HEAD | cut -f1; }
+          {
+            echo "blog=${GITHUB_SHA}"
+            echo "tools=$(head tools)"
+            echo "games=$(head games)"
+            echo "kids_lab=$(head kids-lab)"
+            echo "ai_shot=$(head ai-shot)"
+          } > sources.txt
+          cat sources.txt
+          cat sources.txt >> "$GITHUB_OUTPUT"
+          skip=false
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            live=$(curl -fsSL --max-time 20 https://dibrain-hub.pages.dev/deploy.txt || true)
+            [ "$live" = "$(cat sources.txt)" ] && skip=true
+          fi
+          echo "skip=$skip" >> "$GITHUB_OUTPUT"
+          echo "skip=$skip"
+
       - name: Install latest Hugo extended
+        if: steps.sources.outputs.skip != 'true'
         run: |
           TAG=$(curl -fsSL https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r .tag_name)
           VER=${TAG#v}
@@ -42,6 +80,7 @@ jobs:
           hugo version
 
       - name: Build blog for blog.dibrain.dev
+        if: steps.sources.outputs.skip != 'true'
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
@@ -49,33 +88,109 @@ jobs:
         run: hugo --gc --minify --baseURL "https://blog.dibrain.dev/" --destination public-blog
 
       - name: Deploy blog to Cloudflare Pages
+        # 블로그는 이 저장소가 바뀔 때만 올린다(30분 점검에서 다른 저장소만 바뀌었으면 건너뜀)
+        if: steps.sources.outputs.skip != 'true' && github.event_name != 'schedule'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
-          # 프로젝트는 처음 한 번만 만들어진다. 이미 있으면 에러가 나지만 무시한다.
           npx --yes wrangler@4 pages project create dibrain-blog --production-branch main || true
           npx --yes wrangler@4 pages deploy public-blog --project-name dibrain-blog --branch main --commit-dirty=true
 
-      - name: Build dibrain.dev hub
-        run: python3 scripts/build_hub.py public-blog public-hub
+      - name: Check out tools, games, kids-lab, ai-shot
+        if: steps.sources.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          fetch() {   # 저장소 이름, 커밋 — 그 커밋만 얕게 받는다
+            mkdir -p "_src/$1" && cd "_src/$1"
+            git init -q && git remote add origin "https://github.com/yjworks/$1"
+            git fetch -q --depth 1 origin "$2" && git checkout -q FETCH_HEAD
+            cd - >/dev/null
+          }
+          fetch tools    "${{ steps.sources.outputs.tools }}"
+          fetch games    "${{ steps.sources.outputs.games }}"
+          fetch kids-lab "${{ steps.sources.outputs.kids_lab }}"
+          fetch ai-shot  "${{ steps.sources.outputs.ai_shot }}"
 
+      - uses: actions/setup-node@v4
+        if: steps.sources.outputs.skip != 'true'
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            _src/tools/package-lock.json
+            _src/games/package-lock.json
+
+      - name: Build tools and games
+        if: steps.sources.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          (cd _src/tools && npm ci && npm run build)
+          (cd _src/games && npm ci && npm run build)
+
+      - name: Assemble dibrain.dev
+        if: steps.sources.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          # 첫 화면. 도구 목록은 방금 만든 tools 빌드의 registry.json 을 쓴다.
+          HUB_TOOLS_REGISTRY=_src/tools/dist/registry.json python3 scripts/build_hub.py public-blog site
+          cp -r site public-hub          # GitHub Pages 용(옮기는 동안만)
+          cp -r _src/tools/dist site/tools
+          cp -r _src/games/dist site/games
+          copy() {   # 원본 폴더, 대상 폴더, 빼는 이름들 — 정적 앱을 개발용 파일만 빼고 복사
+            local src=$1 dst=$2; shift 2
+            mkdir -p "$dst"
+            tar -C "$src" $(printf -- '--exclude=./%s ' "$@") -cf - . | tar -C "$dst" -xf -
+          }
+          copy _src/kids-lab site/kids-lab .git .github tests README.md
+          copy _src/ai-shot  site/ai-shot  .git .github tools DEVELOP.md README.md wrangler.toml _headers
+          cat > site/_headers <<'EOF'
+          # 브라우저로 직접 열어도 한글이 깨지지 않게
+          /*.js
+            Content-Type: text/javascript; charset=utf-8
+          /*.mjs
+            Content-Type: text/javascript; charset=utf-8
+          /*.css
+            Content-Type: text/css; charset=utf-8
+          # 빌드 때 이름에 해시가 붙는 파일은 바뀌지 않으니 오래 둔다
+          /tools/assets/*
+            Cache-Control: public, max-age=31536000, immutable
+          /games/assets/*
+            Cache-Control: public, max-age=31536000, immutable
+          EOF
+          cp sources.txt site/deploy.txt
+          echo "files: $(find site -type f | wc -l)"
+          find site -type f -size +25M -print | sed 's/^/too large for Cloudflare Pages: /' | tee /dev/stderr | (! grep -q .)
+
+      - name: Deploy dibrain.dev to Cloudflare Pages
+        if: steps.sources.outputs.skip != 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          npx --yes wrangler@4 pages project create dibrain-hub --production-branch main || true
+          npx --yes wrangler@4 pages deploy site --project-name dibrain-hub --branch main --commit-dirty=true
+
+      # ── 옮기는 동안만: 첫 화면을 GitHub Pages 에도 올린다 ──
       - name: Setup Pages
+        if: steps.sources.outputs.skip != 'true'
         uses: actions/configure-pages@v5
         with:
           enablement: true
 
       - name: Upload hub artifact
+        if: steps.sources.outputs.skip != 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public-hub
 
   deploy:
+    needs: build
+    if: needs.build.outputs.skip != 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
