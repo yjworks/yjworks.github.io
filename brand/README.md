@@ -63,6 +63,13 @@ Pretendard 하나(SIL Open Font License 1.1, 상업용 사용 가능). 오프라
 - 상표: 2026-09-26 KIPRIS 국내 검색에서 "디지털브레인" 상표 등록은 없었다(같은 이름 회사의 다른 상표 1건, 36류, 소멸).
   영문 "DIGITAL BRAIN" 검색과 출원은 아직 하지 않았다. 출원한다면 글자만보다 마크 + 글자 조합이 식별력 면에서 유리하다.
 
+## 이름
+
+- 화면에 보이는 앱·도구 이름은 **한글**로 쓴다. 영어 이름은 소리대로 적는다(Kids Lab → 키즈랩, Clip Box → 클립박스).
+- 주소(저장소 이름)는 영어 소문자와 하이픈: `/kids-lab/`, `/clip-box/`. 한 번 정하면 바꾸지 않는다.
+- 영어 화면이 있는 앱은 영어 이름을 따로 둔다(키즈랩 Kids Lab, AI 샷 AI Shot, 클립박스 Clip Box, 스냅박스 Snap Box).
+- 이름이 들어가는 곳: 첫 화면 카드, 상단 바 `.db-title`, `<title>`, `og:title`, manifest `name`·`short_name`, `apple-mobile-web-app-title`.
+
 ## 도구와 앱의 기준
 
 - **도구**: 한 페이지에서 다 해결되는 기능. `yjworks/tools` 저장소에 폴더 하나로 넣는다(`docs/TOOL-SPEC.md`).
