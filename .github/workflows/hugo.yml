@@ -8,10 +8,12 @@ name: Deploy blog.dibrain.dev and dibrain.dev (Cloudflare Pages)
 #                        /games/    yjworks/games     (npm run build → dist)
 #                        /kids-lab/ yjworks/kids-lab  (정적 파일 그대로)
 #                        /ai-shot/  yjworks/ai-shot   (정적 파일 그대로)
+#                        /clip-box/ yjworks/clip-box  (정적 파일 그대로)
+#                        /snap-box/ yjworks/snap-box  (정적 파일 그대로)
 #
-# 다른 저장소에 push 해도 이 저장소는 모른다. 그래서 30분마다 네 저장소의 최신 커밋을 보고,
+# 다른 저장소에 push 해도 이 저장소는 모른다. 그래서 30분마다 그 저장소들의 최신 커밋을 보고,
 # 마지막 배포(dibrain.dev/deploy.txt)와 다를 때만 다시 만든다. 급하면 Actions 에서 수동 실행.
-# GitHub Pages 는 쓰지 않는다(2026-09-26 Cloudflare 로 옮김). 네 저장소의 워크플로는 테스트만 한다.
+# GitHub Pages 는 쓰지 않는다(2026-09-26 Cloudflare 로 옮김). 다른 저장소의 워크플로는 테스트만 한다.
 
 on:
   push:
@@ -52,6 +54,8 @@ jobs:
             echo "games=$(head games)"
             echo "kids_lab=$(head kids-lab)"
             echo "ai_shot=$(head ai-shot)"
+            echo "clip_box=$(head clip-box)"
+            echo "snap_box=$(head snap-box)"
           } > sources.txt
           cat sources.txt
           cat sources.txt >> "$GITHUB_OUTPUT"
@@ -91,7 +95,7 @@ jobs:
           npx --yes wrangler@4 pages project create dibrain-blog --production-branch main || true
           npx --yes wrangler@4 pages deploy public-blog --project-name dibrain-blog --branch main --commit-dirty=true
 
-      - name: Check out tools, games, kids-lab, ai-shot
+      - name: Check out the app and tool repositories
         if: steps.sources.outputs.skip != 'true'
         run: |
           set -euo pipefail
@@ -105,6 +109,8 @@ jobs:
           fetch games    "${{ steps.sources.outputs.games }}"
           fetch kids-lab "${{ steps.sources.outputs.kids_lab }}"
           fetch ai-shot  "${{ steps.sources.outputs.ai_shot }}"
+          fetch clip-box "${{ steps.sources.outputs.clip_box }}"
+          fetch snap-box "${{ steps.sources.outputs.snap_box }}"
 
       - uses: actions/setup-node@v4
         if: steps.sources.outputs.skip != 'true'
@@ -137,6 +143,8 @@ jobs:
           }
           copy _src/kids-lab site/kids-lab .git .github tests README.md
           copy _src/ai-shot  site/ai-shot  .git .github tools DEVELOP.md README.md wrangler.toml _headers
+          copy _src/clip-box site/clip-box .git .github design docs README.md
+          copy _src/snap-box site/snap-box .git .github design docs README.md
           cat > site/_headers <<'EOF'
           # 브라우저로 직접 열어도 한글이 깨지지 않게
           /*.js

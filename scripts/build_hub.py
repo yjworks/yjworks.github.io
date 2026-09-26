@@ -28,7 +28,7 @@ shutil.copytree(hub, out)
 import json, os, urllib.request
 GROUPS = [("생활 계산", "life"), ("문서·텍스트", "docs"), ("PDF", "pdf"), ("사진 편집", "photo"), ("이미지 변환", "image"),
           ("오디오·영상", "media"), ("공부·집중", "focus"), ("모임·놀이", "play"), ("3D 프린팅", "3d")]
-FIXED_APPS = 3   # hub/index.html 에 직접 적어 둔 앱(키즈랩·AI 샷·딴짓). tools 저장소의 kind "app" 은 그 뒤에 붙는다.
+FIXED_APPS = 5   # hub/index.html 에 직접 적어 둔 앱(키즈랩·AI 샷·딴짓·clip-box·snap-box). tools 저장소의 kind "app" 은 그 뒤에 붙는다.
 
 
 def tool_sections(tools):
