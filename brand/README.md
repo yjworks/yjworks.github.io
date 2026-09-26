@@ -9,7 +9,7 @@
 |---|---|
 | `src/dibrain.svg` | 브랜드 마크. 파랑 둥근 사각형 + 흰 "네모와 반원" D |
 | `src/dibrain-mono.svg` | 한 색 마크(Safari 고정 탭, 도장, 흑백 인쇄) |
-| `src/dibrain-blog.svg` | 블로그 아이콘(탭·홈 화면): 짙은 바탕(`#16181D`)에 흰 연필. 블로그 머리글 로고는 브랜드 마크(파랑) 그대로 |
+| `src/dibrain-blog.svg` | 블로그 아이콘(탭·홈 화면): 짙은 바탕(`#16181D`)에 흰 연필. 블로그 머리글 로고는 브랜드 마크(파랑) 그대로. 블로그에는 `static/icons/blog-pen-*` 로 들어간다 |
 | `src/<앱>.svg`, `src/<앱>-maskable.svg` | 앱 아이콘. maskable 은 모서리 없이 꽉 채운 판(안드로이드·iOS 홈 화면용) |
 | `src/dibrain-wordmark.svg` | 글자 로고 "DigitalBrain"(Pretendard ExtraBold 윤곽선) |
 | `src/dibrain-lockup.svg`, `src/dibrain-lockup-dark.svg` | 마크 + 글자 가로 조합(밝은 바탕 / 어두운 바탕) |
@@ -48,6 +48,11 @@ NODE_PATH=<playwright 가 있는 node_modules> node brand/build.cjs
 | snap-box | `#BE185D` | 사진 틀 + 모자이크 | `#BE185D` / `#F472B6` |
 
 글자가 올라가는 버튼 색은 글자와 대비 4.5:1 이상으로 골랐다(`--db-accent-bg` / `--db-on-accent`).
+
+## 아이콘 파일 이름
+
+설치형 앱의 아이콘 그림을 바꿀 때는 **파일 이름도 바꾼다**(예: `blog-pen-icon-192.png`). 같은 이름이면 휴대폰과 브라우저가
+캐시에 남은 옛 그림으로 다시 설치하거나 탭에 띄운다.
 
 ## 공통 상단 바
 
