@@ -138,8 +138,8 @@ for feed in ["index.xml", "en/index.xml"]:
 # 공유된 링크 미리보기용 이미지와 기본 파일
 if (blog / "images").exists():
     shutil.copytree(blog / "images", out / "images", dirs_exist_ok=True)
-for f in ["favicon.svg", "favicon.ico", "favicon-16x16.png", "favicon-32x32.png",
-          "apple-touch-icon.png", "safari-pinned-tab.svg", "og-default.png", "ads.txt"]:
+# 파비콘은 첫 화면 것(hub/, 파랑 마크)을 쓴다. 블로그는 짙은 바탕 마크라 여기서 가져오지 않는다.
+for f in ["og-default.png", "ads.txt"]:
     if (blog / f).exists():
         shutil.copy2(blog / f, out / f)
 
