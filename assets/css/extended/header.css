@@ -1,5 +1,5 @@
 /* 로고 옆 작은 '블로그' 표시: dibrain.dev(첫 화면)와 blog.dibrain.dev 를 구분한다. 브랜드 이름은 DigitalBrain 그대로. */
-.logo > a::after {
+.logo > a.blog-home::after {
   content: "블로그";
   display: inline-block;
   margin-left: 8px;
@@ -13,4 +13,15 @@
   letter-spacing: 0;
   vertical-align: middle;
 }
-html[lang^="en"] .logo > a::after { content: "Blog"; }
+html[lang^="en"] .logo > a.blog-home::after { content: "Blog"; }
+
+/* 브랜드 마크 링크(dibrain.dev 첫 화면)와 글자 링크(블로그 첫 화면)를 나눴다. 누르는 칸은 44px 이상 */
+.logo { align-items: center; }
+.logo > a.brand-home { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; margin-inline-start: -10px; }
+.logo > a.brand-home svg { transform: none; margin: 0; }
+/* 작은 폰(≤420px): 로고 글자를 조금 줄여 다크모드·언어 버튼이 다음 줄로 밀리지 않게 */
+@media (max-width: 420px) {
+  .logo > a.blog-home { font-size: 20px; }
+  .logo > a.blog-home::after { margin-left: 6px; padding: 0 7px; font-size: 11px; }
+  .logo > a.brand-home { margin-inline-end: -4px; }
+}
