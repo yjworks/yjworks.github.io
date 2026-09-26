@@ -8,8 +8,8 @@
   "lang": "ko",
   "dir": "ltr",
   "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#f7f7f5",
+  "background_color": "#f7f7f5",
   "icons": [
     {
       "src": "/icons/blog-pen-icon-192.png",

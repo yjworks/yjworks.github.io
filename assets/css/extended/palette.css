@@ -1,0 +1,38 @@
+/*
+ * DigitalBrain 공통 색(brand/tokens.css 의 --db-*)을 PaperMod 변수에 맞춘다.
+ * 허브·도구·앱과 같은 바탕(#f7f7f5 / #111318)과 카드(#fff / #1a1d24)를 쓴다. 값을 바꿀 때는 tokens.css 와 함께.
+ * layouts/_partials/head.html 의 noscript 어두운 색도 같은 값이다.
+ */
+:root {
+  --theme: #f7f7f5;          /* --db-bg */
+  --entry: #ffffff;          /* --db-card */
+  --primary: #16181d;        /* --db-text */
+  --secondary: #5b606b;      /* --db-sub */
+  --tertiary: #d4d6dc;
+  --content: #1f2127;
+  --code-bg: #eeeef0;
+  --border: #e3e4e8;         /* --db-line */
+}
+:root[data-theme="dark"] {
+  --theme: #111318;
+  --entry: #1a1d24;
+  --primary: #eceef2;
+  --secondary: #a0a6b2;
+  --tertiary: #3a3f4a;
+  --content: #c9ccd3;
+  --code-block-bg: #1a1d24;
+  --code-bg: #252932;
+  --border: #2a2e37;
+}
+/* 목록 화면도 다른 화면과 같은 바탕(PaperMod 기본은 밝은 회색) */
+.list { background: var(--theme); }
+
+/* 머리글의 어두운 화면·언어 버튼: 누르는 곳 44px 이상(앱들과 같은 규칙) */
+#theme-toggle { min-width: 44px; justify-content: center; }
+.lang-menu a { min-width: 44px; justify-content: center; padding: 0 6px; font-weight: 700; font-size: 15px; }
+.logo-switches { gap: 0; }
+
+/* 휴대폰 메뉴: 가로로 밀어 보는 줄. 더 있으면 오른쪽 끝이 흐려진다(footer.html 스크립트가 .more 를 붙임) */
+.menu.more { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent); }
+.menu { scrollbar-width: none; }
+.menu::-webkit-scrollbar { display: none; }

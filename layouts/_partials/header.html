@@ -19,7 +19,7 @@
             {{- if $lsenabled }}
             <div class="logo-switches">
                 {{- if (not site.Params.disableThemeToggle) }}
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="{{ if eq site.Language.Lang "en" }}Dark or light{{ else }}어두운 화면 전환{{ end }}">
                     <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -52,11 +52,8 @@
                         <li>
                             <a href="{{- .Permalink -}}" title="{{ .Language.Params.languageAltTitle | default (.Language.LanguageName | emojify) | default (.Lang | title) }}"
                                 aria-label="{{ .Language.LanguageName | default (.Lang | title) }}">
-                                {{- if (and site.Params.displayFullLangName (.Language.LanguageName)) }}
-                                {{- .Language.LanguageName | emojify -}}
-                                {{- else }}
-                                {{- .Lang | title -}}
-                                {{- end -}}
+                                {{- /* 앱들의 언어 버튼과 같은 표기: EN / 한 */ -}}
+                                {{- if eq .Lang "en" }}EN{{ else if eq .Lang "ko" }}한{{ else }}{{ .Lang | upper }}{{ end -}}
                             </a>
                         </li>
                         {{- end -}}
