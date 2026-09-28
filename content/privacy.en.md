@@ -44,6 +44,7 @@ This site may use Google Analytics to analyze visitor statistics.
 
 - Google Analytics uses cookies to collect information about how visitors use this site. That information is transmitted to and stored on Google's servers.
 - The collected information is used only to understand site usage and improve the content.
+- It applies to the blog, the dibrain.dev front page, the tools and the apps (딴짓, AI 샷, 클립박스, 스냅박스). Only usage information such as the pages visited and the referrer is sent; the photos, videos, files and records you work with in the tools and apps are never sent. It does not apply to 키즈랩 (Kids Lab, section 8).
 - You can opt out by installing the [Google Analytics Opt-out Browser Add-on](https://tools.google.com/dlpage/gaoptout).
 
 ## 5. How Information Is Used
@@ -80,4 +81,4 @@ For privacy-related questions, please contact:
 - Email: [contact@dibrain.dev](mailto:contact@dibrain.dev)
 
 - Effective date: September 2, 2026
-- Revised: September 26, 2026 (added the apps and tools, and the Kids Lab note)
+- Revised: September 28, 2026 (Google Analytics now covers the apps)
