@@ -1,17 +1,37 @@
 ---
 title: "소개"
-summary: "DigitalBrain은 AI가 조사하고 쓰는 자동화 블로그입니다."
+summary: "DigitalBrain은 브라우저에서 바로 쓰는 앱·도구(dibrain.dev)와 AI가 쓰는 IT 블로그(blog.dibrain.dev)를 운영합니다."
 ShowToc: false
 ShowBreadCrumbs: false
 ShowReadingTime: false
 ---
+
+## DigitalBrain은
+
+두 가지를 운영합니다.
+
+- **[앱과 도구](https://dibrain.dev/)**(dibrain.dev): 설치나 회원가입 없이 브라우저에서 바로 쓰는 앱과 도구입니다.
+- **블로그**(blog.dibrain.dev, 지금 보시는 곳): 새로 나온 기기와 소프트웨어를 AI가 조사해 정리하는 블로그입니다.
+
+## 앱과 도구
+
+- **앱**: 여러 기능을 묶은 것입니다.
+  - [키즈랩](https://dibrain.dev/kids-lab/): 아이 학습 놀이
+  - [AI 샷](https://dibrain.dev/ai-shot/): 손짓·표정으로 찍는 카메라
+  - [딴짓](https://dibrain.dev/games/): 게임 모음
+  - [클립박스](https://dibrain.dev/clip-box/): 영상 구간 자르기
+  - [스냅박스](https://dibrain.dev/snap-box/): 보고서 사진 정리
+- **[도구](https://dibrain.dev/tools/)**: 한 페이지에서 한 가지 일을 끝내는 40개가 넘는 도구입니다. 생활 계산, 문서·PDF, 사진·이미지, 오디오·영상, 공부·집중 등으로 나뉩니다.
+- 사진·영상·문서 같은 파일은 **쓰는 기기의 브라우저 안에서만 처리하고 서버로 보내지 않습니다.** 기록도 그 기기에만 남습니다. 기록을 남기는 앱·도구에는 "기록 전체 삭제"가 있어 한 번에 지울 수 있습니다.
+- 운영자가 기획하고 관리합니다. 개발에는 AI 코딩 도구도 씁니다. 쓰는 오픈소스와 라이선스는 [오픈소스 라이선스](https://dibrain.dev/tools/third-party-licenses.txt)에 적어 두었습니다.
+- 아이가 쓰는 키즈랩에는 광고와 방문 통계를 넣지 않습니다([개인정보처리방침](/privacy/) 8항).
 
 ## AI가 쓰는 블로그입니다
 
 DigitalBrain의 글과 비교 가이드는 **AI가 조사하고 씁니다.** 사람이 쓴 글처럼 꾸미지 않습니다.
 새로 나온 기기와 소프트웨어를 핵심 스펙, 가격, 출시일과 함께 출처 링크를 달아 정리합니다.
 
-## 어떻게 만드나
+## 블로그 글은 어떻게 만드나
 
 1. 매일 새벽 3시(한국 시각)에 AI(Anthropic Claude)가 실행됩니다.
 2. 그날 요일의 주제로 웹을 검색해 최근 2주 안에 발표된 제품·프로젝트를 고릅니다. 최근 한 달 안에 다룬 것은 다시 다루지 않습니다.
@@ -46,7 +66,7 @@ AI도 틀립니다. 실제로 가격이나 사양이 틀린 채로 나간 글이
 
 ## 운영
 
-DigitalBrain 운영자가 자동화의 규칙을 정하고, 오류 제보를 받아 고칩니다.
+DigitalBrain 운영자가 앱·도구를 만들고 관리하며, 블로그 자동화의 규칙을 정하고 오류 제보를 받아 고칩니다.
 특정 회사나 제조사와 관련이 없습니다. 제휴 링크가 들어가면 해당 글 첫머리에 표시합니다.
 
 - 이메일: [contact@dibrain.dev](mailto:contact@dibrain.dev)

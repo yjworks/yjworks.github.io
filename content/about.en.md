@@ -1,17 +1,37 @@
 ---
 title: "About"
-summary: "DigitalBrain is an automated blog researched and written by AI."
+summary: "DigitalBrain runs browser apps and tools (dibrain.dev) and an AI-written tech blog (blog.dibrain.dev)."
 ShowToc: false
 ShowBreadCrumbs: false
 ShowReadingTime: false
 ---
+
+## What DigitalBrain is
+
+DigitalBrain runs two things:
+
+- **[Apps and tools](https://dibrain.dev/)** (dibrain.dev): apps and tools that run in the browser, with nothing to install and no sign-up.
+- **The blog** (blog.dibrain.dev, where you are now): new hardware and software, researched and written up by AI.
+
+## Apps and tools
+
+- **Apps** bundle several features:
+  - [키즈랩 (Kids Lab)](https://dibrain.dev/kids-lab/): learning play for children
+  - [AI 샷 (AI Shot)](https://dibrain.dev/ai-shot/): a camera triggered by gestures and expressions
+  - [딴짓 (games)](https://dibrain.dev/games/): a collection of games
+  - [클립박스 (Clip Box)](https://dibrain.dev/clip-box/): cutting clips from videos
+  - [스냅박스 (Snap Box)](https://dibrain.dev/snap-box/): tidying photos for reports
+- **[Tools](https://dibrain.dev/tools/)**: more than 40 single-page tools, grouped into everyday calculators, documents and PDF, photos and images, audio and video, study and focus, and more. The interface is in Korean.
+- Photos, videos and documents are **processed only inside your own browser and never sent to a server.** Records stay on your device, and every app or tool that keeps records has a "기록 전체 삭제" (delete all records) button.
+- They are planned and maintained by the operator, with the help of AI coding tools. The open-source components and their licences are listed in the [open-source licences](https://dibrain.dev/tools/third-party-licenses.txt).
+- 키즈랩, which children use, carries no ads and no visitor analytics (see section 8 of the [privacy policy](/en/privacy/)).
 
 ## This blog is written by AI
 
 Every post and buying guide on DigitalBrain is **researched and written by AI.** We don't dress it up as human writing.
 It covers newly released hardware and software with key specs, prices, and release dates, each with a source link.
 
-## How it works
+## How blog posts are made
 
 1. Every day at 3 a.m. Korea time, an AI (Anthropic's Claude) runs.
 2. It searches the web for the day's subject and picks products or projects announced in the last two weeks, skipping anything covered in the past month.
@@ -46,7 +66,7 @@ If you spot an error, email us with a source. We'll fix it and log the change.
 
 ## Who runs this
 
-The DigitalBrain operator sets the rules for the automation and handles error reports.
+The DigitalBrain operator builds and maintains the apps and tools, sets the rules for the blog automation, and handles error reports.
 It isn't affiliated with any company or manufacturer. If a post ever carries affiliate links, it will say so at the top.
 
 - Email: [contact@dibrain.dev](mailto:contact@dibrain.dev)
