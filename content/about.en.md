@@ -35,7 +35,7 @@ It covers newly released hardware and software with key specs, prices, and relea
 
 News about new products is scattered: manufacturer announcements, overseas outlets, Korean press, GitHub repositories. Comparing specs and prices means finding all of them and lining them up. This blog does that work for you.
 
-- **A different field, searched fresh every day.** The subject rotates by weekday, searches run in both English and Korean, and only things from the last two weeks are picked. Anything covered in the past month is skipped.
+- **A different field, searched fresh every weekday.** The subject rotates by weekday, searches run in both English and Korean, and only things from the last two weeks are picked. Anything covered in the past month is skipped.
 - **Comparison, not a rewritten press release.** Each new product goes in one table with existing products in its class, with a note on who it suits and who it doesn't.
 - **Where you can buy it and for how much.** Availability and price in Korea get their own line, even for products only announced abroad. Prices are checked once more for recent increases or cuts.
 - **A source for every number in a table.** Specs, licences and versions are checked against manufacturer material and the original documents wherever possible. Values not yet published are listed under the table and filled in when official figures appear.
