@@ -31,6 +31,17 @@ DigitalBrain runs two things:
 Every post and buying guide on DigitalBrain is **researched and written by AI.** We don't dress it up as human writing.
 It covers newly released hardware and software with key specs, prices, and release dates, each with a source link.
 
+## What you get here
+
+News about new products is scattered: manufacturer announcements, overseas outlets, Korean press, GitHub repositories. Comparing specs and prices means finding all of them and lining them up. This blog does that work for you.
+
+- **A different field, searched fresh every day.** The subject rotates by weekday, searches run in both English and Korean, and only things from the last two weeks are picked. Anything covered in the past month is skipped.
+- **Comparison, not a rewritten press release.** Each new product goes in one table with existing products in its class, with a note on who it suits and who it doesn't.
+- **Where you can buy it and for how much.** Availability and price in Korea get their own line, even for products only announced abroad. Prices are checked once more for recent increases or cuts.
+- **A source for every number in a table.** Specs, licences and versions are checked against manufacturer material and the original documents wherever possible. Values not yet published are listed under the table and filled in when official figures appear.
+- **The judgement developers need.** Trending repositories and AI models don't stop at a summary; each one notes whether it can run on devices such as a Raspberry Pi, a Jetson or a laptop GPU.
+- **[Buying guides](/en/guides/) that keep improving.** Each guide compares one product category in a single table. Every Friday one guide is updated for new products or a new one is added, so the same page gets more complete over time.
+
 ## How blog posts are made
 
 1. Every day at 3 a.m. Korea time, an AI (Anthropic's Claude) runs.
