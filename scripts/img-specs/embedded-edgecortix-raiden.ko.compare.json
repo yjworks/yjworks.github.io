@@ -1,0 +1,5 @@
+{"title": "라이덴 X4 vs 젯슨 AGX 토르", "a": "라이덴 X4", "b": "젯슨 AGX 토르",
+ "rows": [{"label": "FP4 연산 (PFLOPS)", "a": 3.36, "b": 2.07},
+          {"label": "메모리 (GB)", "a": 256, "b": 128},
+          {"label": "메모리 대역폭 (GB/s)", "a": 548, "b": 273}],
+ "note": "높을수록 좋은 항목만 · 출처: EdgeCortix 발표(HPCwire), Jetson AGX Thor 스펙(Waveshare)"}

@@ -1,0 +1,7 @@
+{"kicker": "Deep Dive · AI Chip · Robotics",
+ "date": "Sep 29, 2026",
+ "accent": "ai",
+ "stats": [{"value": "3.36 PFLOPS", "label": "FP4 compute (X4 flagship)"},
+           {"value": "256GB", "label": "Max memory"},
+           {"value": "548GB/s", "label": "Memory bandwidth"},
+           {"value": "1.6x", "label": "vs Jetson AGX Thor"}]}

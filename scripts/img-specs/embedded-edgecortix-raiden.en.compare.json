@@ -1,0 +1,5 @@
+{"title": "RAIDEN X4 vs Jetson AGX Thor", "a": "RAIDEN X4", "b": "Jetson AGX Thor",
+ "rows": [{"label": "FP4 compute (PFLOPS)", "a": 3.36, "b": 2.07},
+          {"label": "Memory (GB)", "a": 256, "b": 128},
+          {"label": "Memory bandwidth (GB/s)", "a": 548, "b": 273}],
+ "note": "Higher is better · Sources: EdgeCortix (HPCwire), Jetson Thor specs (Waveshare)"}

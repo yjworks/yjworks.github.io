@@ -1,0 +1,7 @@
+{"kicker": "심층 리뷰 · AI 반도체 · 로봇",
+ "date": "2026.09.29",
+ "accent": "ai",
+ "stats": [{"value": "3.36 PFLOPS", "label": "FP4 연산 (X4 최상위)"},
+           {"value": "256GB", "label": "최대 메모리"},
+           {"value": "548GB/s", "label": "메모리 대역폭"},
+           {"value": "1.6배", "label": "젯슨 AGX 토르 대비"}]}
