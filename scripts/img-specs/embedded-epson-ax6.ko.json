@@ -1,0 +1,7 @@
+{"kicker": "심층 리뷰 · 로봇 · 해외",
+ "date": "2026.09.30",
+ "accent": "robot",
+ "stats": [{"value": "6kg", "label": "가반하중"},
+           {"value": "900mm", "label": "리치"},
+           {"value": "17kg", "label": "본체 무게"},
+           {"value": "48V DC", "label": "직류 입력 지원"}]}

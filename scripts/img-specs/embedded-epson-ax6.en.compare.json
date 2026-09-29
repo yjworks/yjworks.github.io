@@ -1,0 +1,4 @@
+{"title": "Epson AX6 vs UR5e", "a": "Epson AX6", "b": "UR5e",
+ "rows": [{"label": "Payload (kg)", "a": 6, "b": 5},
+          {"label": "Reach (mm)", "a": 900, "b": 850}],
+ "note": "Higher is better only · Sources: Epson launch material, UR5e datasheet"}

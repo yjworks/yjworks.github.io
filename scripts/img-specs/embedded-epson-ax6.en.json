@@ -1,0 +1,7 @@
+{"kicker": "Deep Dive · Robots · Global",
+ "date": "Sep 30, 2026",
+ "accent": "robot",
+ "stats": [{"value": "6 kg", "label": "Payload"},
+           {"value": "900 mm", "label": "Reach"},
+           {"value": "17 kg", "label": "Arm weight"},
+           {"value": "48 V DC", "label": "DC input supported"}]}
