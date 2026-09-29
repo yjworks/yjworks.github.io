@@ -10,10 +10,11 @@ description: 운영자가 직접 만든 코드를 받아 "코드 노트"(categor
 
 ## 0. 받기 전에 확인할 것 (한 번에 물어본다)
 
-1. **개인 코드인가?** 회사(서큘러스, Pibo, pibo-lab) 코드이거나 회사 업무로 만든 것이면 올리지 않는다.
+1. **개인 코드인가?** 운영자 회사의 코드이거나 회사 업무로 만든 것이면 올리지 않는다.
 2. **공개 라이선스:** 따로 말이 없으면 MIT로 올려도 되는지 묻는다.
 3. **어디까지 돌려 봤나:** 실제 보드에서 동작 확인, 컴파일만, 아직 안 돌려 봄 중 무엇인지. 사용 보드·부품·라이브러리 버전.
 4. 글에서 꼭 짚었으면 하는 점이 있는지(선택).
+5. **코드에서 지울 이름:** 회사명·제품명·사내 계정명 등. 회사 이름은 이 저장소 파일에 적어 두지 않고, 그때그때 운영자에게 받는다.
 
 ## 1. 코드 정리 — 지울 것
 
@@ -22,10 +23,11 @@ description: 운영자가 직접 만든 코드를 받아 "코드 노트"(categor
 - 사람 이름, 이메일, GitHub 계정명(`yjworks`, `leeyunjai` 등), 회사명, 사내 URL·IP·호스트명
 - API 키, 토큰, 비밀번호, Wi-Fi SSID/비밀번호 → `"YOUR_API_KEY"` 같은 자리표시자
 - 파일 경로의 사용자명(`/home/<이름>/`) → `~/`
-- 저작권 줄의 실명 → `DigitalBrain`
+- 저작권 줄의 실명·계정명 → `DigitalBrain` (코드 노트는 DigitalBrain 명의로 싣는다)
 
 ```bash
-grep -nEi 'yjworks|leeyunjai|circulus|pibo|@gmail|api[_-]?key|token|passw|ssid|/home/[a-z]' <코드 파일>
+NAMES='<0번 5에서 받은 이름을 | 로 이어서>'
+grep -nEi "yjworks|leeyunjai|$NAMES|@gmail|api[_-]?key|token|passw|ssid|/home/[a-z]" <코드 파일>
 ```
 
 ## 2. 글 쓰기
