@@ -9,7 +9,7 @@ description: DigitalBrain 블로그 자동 작성. 평일 하루 한 번이며 �
 >
 > 이 스킬을 부르는 예약 실행(Routine)은 **매일 도는 것 하나뿐**이고, 그 프롬프트에는
 > 어떤 요일이든 항상 `hw1` 이 적혀 있습니다. 요일별로 Routine을 나눌 수 없어서 그렇습니다.
-> `hw1` 이라는 모드는 이제 없습니다. **프롬프트에 적힌 모드 인자는 무시하고, 아래 0번에서 오늘 요일로 모드를 정하세요.**
+> `hw1` 이라는 모드는 없습니다. **프롬프트에 적힌 모드 인자는 무시하고, 아래 0번에서 오늘 요일로 모드를 정하세요.**
 >
 > 예외는 하나뿐입니다. 사람이 대화 중에 직접 `/weekly-post dev` 처럼 부른 경우에만 그 인자를 따릅니다.
 >
@@ -42,8 +42,8 @@ description: DigitalBrain 블로그 자동 작성. 평일 하루 한 번이며 �
 TZ=Asia/Seoul date '+%F %a %u'   # 예: 2026-09-17 Thu 4   (1=월 ... 7=일)
 ```
 
-**`TZ=Asia/Seoul` 을 빼면 안 된다.** 2026-09-17(목) 03:04 실행이 UTC 기준으로 수요일이라 판단해
-`embedded` 를 고르고, 전날 글이 이미 있는 것을 보고 31초 만에 아무것도 하지 않고 끝난 적이 있다.
+**`TZ=Asia/Seoul` 을 빼면 안 된다.** 빼면 UTC 기준 전날 요일로 모드를 고르고, 전날 글을 오늘 글로 착각해
+아무것도 하지 않고 끝난다.
 
 | 요일 | 모드 | 다루는 것 | 결과물 | categories |
 |---|---|---|---|---|
@@ -57,7 +57,7 @@ TZ=Asia/Seoul date '+%F %a %u'   # 예: 2026-09-17 Thu 4   (1=월 ... 7=일)
 **이 표는 순서지 할당량이 아니다.** 오늘 모드에 소재가 없으면 2번의 **대체 모드** 규칙에 따라
 다른 모드로 내려가 쓴다. 다 훑고도 없을 때만 발행하지 않는다.
 
-### 왜 이렇게 나눴나 (2026-09-25 변경)
+### 왜 이렇게 나눴나
 
 - **소비자 기기(스마트폰·노트북·가전)는 국내 대형 매체와 블로그가 출시 당일 쏟아낸다.** 새 도메인이
   그 뉴스 검색에서 이길 수는 없다. 그래서 하드웨어 공통 풀은 주 1회로 줄였다.
@@ -125,8 +125,7 @@ GitHub와 Hugging Face를 격주로 번갈아 간다. `ls content/posts` 에서 
    TZ=Asia/Seoul date +%FT%T+09:00
    ```
 
-   미래 시각은 쓰지 않는다(2026-09-09: 03:11 커밋에 03:20을 적어 세 번의 배포에서 글이 빠졌다.
-   지금은 `buildFuture = true` 라 사라지지는 않지만 날짜가 틀린 채로 남는다).
+   미래 시각은 쓰지 않는다. 글이 사라지지는 않지만(`buildFuture = true`) 날짜가 틀린 채로 남는다.
    **글을 다 쓴 뒤, 커밋 직전에 한 번 더 검사하고 어긋나면 고친다:**
 
    ```bash
@@ -245,7 +244,7 @@ grep -H '^hubTags:' content/guides/*.ko.md
    | `on-device-llms` | 온디바이스 AI 모델(8B 이하) | `["Hugging Face"]` | MiniCPM5-2B, MiniMind |
    | `ultralight-laptops` | 1kg대 이하 14형 노트북 | `["Laptop"]` | 스위프트 블레이드 14·LG 그램북 AI 14형, 갤럭시 북6 |
 
-   이미 있는 가이드: `edge-ai-boards`(`SBC`,`Robot`), `foldable-phones`(`Smartphone`).
+   이미 있는 가이드와 그 hubTags 는 위 두 명령의 출력으로 확인하고, 표에서 이미 만든 것은 뺀다.
 2. 만들 것이 없으면, **마지막 갱신 이후 새 재료가 생긴 가이드 중 가장 오래된 것**을 갱신한다.
    새 재료 = ① 그 가이드의 `lastmod` 이후 발행된 글 중 `hubTags` 가 겹치는 글, 또는
    ② 이번 조사에서 찾은 최근 14일 내 신제품, 또는 ③ 표의 "확인 필요" 칸을 채울 수 있는 새 공식 자료.
@@ -356,7 +355,7 @@ for f in $(ls -t content/posts/*.ko.md | head -10); do sed -n 's/^title: //p' "$
   - 글: `Jetson Orin Nano 2 vs Orin Nano Super 스펙 비교: 전력·메모리`
   - dev: `MiniCPM5-2B·Qwen3.8-Flash-Next 온디바이스·MoE 모델 | Hugging Face 트렌딩`
   - 가이드: `폴더블폰 비교 2026: 갤럭시 Z 폴드8·아이폰 듀오·샤오미 18 폴드 스펙·가격`
-- 한국어 40자 안팎, 영어 70자 안팎. 뒤에 ` | DigitalBrain` 이 자동으로 붙는다.
+- 한국어 40자 안팎, 영어 70자 안팎. 뒤에 ` | DigitalBrain 블로그`(영어 ` | DigitalBrain Blog`)가 자동으로 붙는다.
 - **본문에 없는 검색어는 넣지 않는다.** 가격을 다루지 않았으면 "가격"을 넣지 않고,
   국내 출시 여부를 다루지 않았으면 "국내 출시"를 넣지 않는다. 낚시 표현 금지는 제목과 같다.
 - 모델명은 본문 표기와 똑같이 쓴다(본문이 "LG gram AI 2026 14"면 seoTitle도 그렇게).
@@ -599,7 +598,7 @@ git push origin main
 
 푸시 후 GitHub Actions(`Deploy blog.dibrain.dev and dibrain.dev (Cloudflare Pages)`) 결과를 한 번 확인한다. 블로그 주소는 https://blog.dibrain.dev/ 다.
 
-## 9. 실행 기록 (매 실행, 발행하지 않은 날도)
+## 9. 실행 기록 (평일 매 실행, 발행하지 않은 날도. 토·일은 0번에서 이미 끝났다)
 
 ```bash
 mkdir -p runlog
@@ -624,21 +623,3 @@ git push origin main
 
 어떤 단계에서든 실패하면 **거기서 멈추지 말고** 이 기록에 에러 원문을 적고 푸시한 뒤 끝낸다.
 실행 결과 메시지의 마지막 줄에는 반드시 `decision / commit / deploy` 세 값을 그대로 적는다.
-
-## 10. AdSense 신청 시점 알림 (매 실행 마지막)
-
-```bash
-POSTS=$(ls content/posts/2*.ko.md 2>/dev/null | wc -l)
-ADSENSE=$(grep -E '^[[:space:]]*adsense[[:space:]]*=' hugo.toml | sed 's/.*"\(.*\)".*/\1/')
-echo "posts=$POSTS adsense='$ADSENSE'"
-```
-
-- `POSTS`가 **25 이상**이고 `ADSENSE`가 **빈 문자열**이면, 실행 결과 메시지 마지막에 아래를 포함한다.
-
-  > **AdSense 신청 시점입니다.** 글이 N편 쌓였습니다. https://adsense.google.com 에서 사이트를 등록하세요.
-  > 계정을 만들면 바로 나오는 publisher ID(`ca-pub-...`)를 알려주시면 `hugo.toml`의 `params.adsense`와
-  > `static/ads.txt`에 넣어 배포하겠습니다. 그 코드가 사이트에 올라가야 심사가 시작됩니다.
-
-- 이미 적용됐거나 25편 미만이면 아무것도 하지 않는다.
-
-**AdSense ID는 직접 만들거나 추측하지 않는다.** 사용자가 알려준 값만 넣는다.
