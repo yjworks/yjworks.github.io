@@ -148,11 +148,17 @@ for f in ["og-default.png", "ads.txt"]:
     "Sitemap: https://dibrain.dev/sitemap.xml\nSitemap: https://dibrain.dev/tools/sitemap.xml\n"
     "Sitemap: https://blog.dibrain.dev/sitemap.xml\n",
     encoding="utf-8")
+# 첫 화면 + 앱. 도구는 /tools/sitemap.xml, 블로그는 blog.dibrain.dev/sitemap.xml 이 따로 있다.
+# 딴짓의 게임별 페이지는 사이트 빌드 때 받아 둔 games 빌드(_src/games/dist)에서 찾는다(없으면 목록만).
+HUB_URLS = ["/", "/kids-lab/", "/ai-shot/", "/games/", "/clip-box/", "/snap-box/"]
+games_dist = pathlib.Path(os.environ.get("HUB_GAMES_DIST", "_src/games/dist"))
+if (games_dist / "games").is_dir():
+    HUB_URLS += sorted(f"/games/games/{d.name}/" for d in (games_dist / "games").iterdir() if (d / "index.html").exists())
 (out / "sitemap.xml").write_text(
     '<?xml version="1.0" encoding="UTF-8"?>\n'
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-    "  <url><loc>https://dibrain.dev/</loc></url>\n"
-    "</urlset>\n", encoding="utf-8")
+    + "".join(f"  <url><loc>https://dibrain.dev{u}</loc></url>\n" for u in HUB_URLS)
+    + "</urlset>\n", encoding="utf-8")
 
 # 404: 예전 블로그 경로처럼 보이면 블로그로, 아니면 첫 화면 안내
 (out / "404.html").write_text("""<!doctype html>
