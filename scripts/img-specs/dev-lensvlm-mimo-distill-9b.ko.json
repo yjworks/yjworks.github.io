@@ -1,0 +1,7 @@
+{"kicker": "Dev Picks · Hugging Face",
+ "date": "2026.10.01",
+ "accent": "ai",
+ "stats": [{"value": "4.3x", "label": "LensVLM 정확도 유지 압축"},
+           {"value": "10.1x", "label": "기준선 앞선 최대 압축"},
+           {"value": "61.1", "label": "MiMo SWE-bench Verified"},
+           {"value": "MIT", "label": "MiMo 라이선스"}]}

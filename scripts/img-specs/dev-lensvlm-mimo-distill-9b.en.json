@@ -1,0 +1,7 @@
+{"kicker": "Dev Picks · Hugging Face",
+ "date": "Oct 1, 2026",
+ "accent": "ai",
+ "stats": [{"value": "4.3x", "label": "LensVLM lossless-ish compression"},
+           {"value": "10.1x", "label": "Max compression beating baselines"},
+           {"value": "61.1", "label": "MiMo SWE-bench Verified"},
+           {"value": "MIT", "label": "MiMo license"}]}
