@@ -596,7 +596,27 @@ git push origin main
 2. `git pull --rebase origin main` 후 한 번 더 시도한다.
 3. 그래도 안 되면 실행 기록에 에러 원문을 적고, **최종 보고 첫 줄에 "푸시 실패"와 에러 원문**을 쓴다.
 
-푸시 후 GitHub Actions(`Deploy blog.dibrain.dev and dibrain.dev (Cloudflare Pages)`) 결과를 한 번 확인한다. 블로그 주소는 https://blog.dibrain.dev/ 다.
+### 8-1. 배포 확인 — 실행 기록을 쓰기 전에 끝낸다
+
+푸시한 커밋의 GitHub Actions 실행(`Deploy blog.dibrain.dev and dibrain.dev (Cloudflare Pages)`)이 **끝날 때까지 기다린 뒤** 결과를 9번 기록에 적는다.
+보통 1~3분 걸린다. 블로그 주소는 https://blog.dibrain.dev/ 다.
+
+1. 방금 푸시한 커밋 해시로 실행을 찾는다: `git rev-parse HEAD`.
+   GitHub 도구가 있으면 저장소 `leeyunjai/leeyunjai.github.io`(실제 이름 `yjworks/yjworks.github.io`)의 워크플로 `hugo.yml` 실행 목록에서
+   `head_sha` 가 그 해시인 것을 고른다. 도구가 없으면 공개 API를 쓴다:
+   ```bash
+   SHA=$(git rev-parse HEAD)
+   curl -fsSL "https://api.github.com/repos/yjworks/yjworks.github.io/actions/runs?head_sha=$SHA" \
+     | python3 -c 'import json,sys; [print(r["run_number"], r["id"], r["status"], r["conclusion"]) for r in json.load(sys.stdin)["workflow_runs"]]'
+   ```
+2. `status` 가 `completed` 가 아니면 1~2분 기다렸다가 다시 본다. **최대 10분.** 기다릴 때는 실행 환경이 허용하는 방법
+   (백그라운드 `sleep`, 대기 도구 등)을 쓴다.
+3. 결과를 그대로 적는다.
+   - `completed` / `success` → `deploy: success (Actions #<번호>)`
+   - `completed` / 그 밖의 값 → `deploy: failure (Actions #<번호>, <conclusion>)`. 실패한 단계 이름과 로그의 에러 줄을 `errors:` 에 옮긴다.
+   - 10분이 지나도 끝나지 않음 → `deploy: unknown (Actions #<번호>, 10분 안에 끝나지 않음)`
+   - 실행을 찾지 못함 → `deploy: unknown (실행을 찾지 못함, 커밋 <해시>)`
+4. **`queued`·`pending`·"확인 예정"처럼 결과가 아닌 값은 기록에 쓰지 않는다.** 기록을 먼저 쓰고 나중에 채우는 방식은 쓰지 않는다.
 
 ## 9. 실행 기록 (평일 매 실행, 발행하지 않은 날도. 토·일은 0번에서 이미 끝났다)
 
@@ -614,7 +634,7 @@ cat > runlog/$(TZ=Asia/Seoul date +%F)-<mode>.md <<'EOF'
 - files: <만든 파일 목록. 없으면 none>
 - errors: <막힌 단계와 에러 메시지 원문. 없으면 none>
 - commit: <해시 또는 none>
-- deploy: <success | failure | not-run>
+- deploy: <8-1번 결과. success | failure | unknown (Actions #번호와 함께). 커밋하지 않았으면 not-run>
 EOF
 git add runlog
 git -c user.name=Claude -c user.email=noreply@anthropic.com commit -m "runlog: $(TZ=Asia/Seoul date +%F) <mode>"
@@ -622,4 +642,5 @@ git push origin main
 ```
 
 어떤 단계에서든 실패하면 **거기서 멈추지 말고** 이 기록에 에러 원문을 적고 푸시한 뒤 끝낸다.
+이 기록 커밋이 만드는 두 번째 배포 실행은 기다리지 않아도 된다(글은 첫 실행에서 이미 반영된다).
 실행 결과 메시지의 마지막 줄에는 반드시 `decision / commit / deploy` 세 값을 그대로 적는다.
