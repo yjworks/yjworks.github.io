@@ -603,7 +603,8 @@ git push origin main
 
 1. 방금 푸시한 커밋 해시로 실행을 찾는다: `git rev-parse HEAD`.
    GitHub 도구가 있으면 저장소 `leeyunjai/leeyunjai.github.io`(실제 이름 `yjworks/yjworks.github.io`)의 워크플로 `hugo.yml` 실행 목록에서
-   `head_sha` 가 그 해시인 것을 고른다. 도구가 없으면 공개 API를 쓴다:
+   `head_sha` 가 그 해시인 것을 고른다(GitHub MCP 도구의 워크플로 실행 목록 조회). 이 방법이 기본이다.
+   GitHub 도구가 없을 때만 공개 API를 시도한다. 실행 환경의 프록시가 막아 403이 나올 수 있다:
    ```bash
    SHA=$(git rev-parse HEAD)
    curl -fsSL "https://api.github.com/repos/yjworks/yjworks.github.io/actions/runs?head_sha=$SHA" \
@@ -615,7 +616,7 @@ git push origin main
    - `completed` / `success` → `deploy: success (Actions #<번호>)`
    - `completed` / 그 밖의 값 → `deploy: failure (Actions #<번호>, <conclusion>)`. 실패한 단계 이름과 로그의 에러 줄을 `errors:` 에 옮긴다.
    - 10분이 지나도 끝나지 않음 → `deploy: unknown (Actions #<번호>, 10분 안에 끝나지 않음)`
-   - 실행을 찾지 못함 → `deploy: unknown (실행을 찾지 못함, 커밋 <해시>)`
+   - 실행을 찾지 못하거나 조회가 막힘 → `deploy: unknown (<이유>, 커밋 <해시>)`. 이유에는 막힌 도구와 에러 원문을 짧게 적는다.
 4. **`queued`·`pending`·"확인 예정"처럼 결과가 아닌 값은 기록에 쓰지 않는다.** 기록을 먼저 쓰고 나중에 채우는 방식은 쓰지 않는다.
 
 ## 9. 실행 기록 (평일 매 실행, 발행하지 않은 날도. 토·일은 0번에서 이미 끝났다)
