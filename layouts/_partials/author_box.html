@@ -18,13 +18,13 @@
     <p class="td-author-name">{{ if $ko }}이 글은 AI가 썼습니다{{ else }}This post was written by AI{{ end }}</p>
     <p class="td-author-bio">
       {{- if $ko -}}
-      AI(Anthropic Claude)가 매일 새벽 웹에서 자료를 찾아 한국어·영어로 쓰고, 출처 링크가 없는 글은
-      발행하지 않도록 자동으로 검사합니다. 사람이 글마다 검토하지는 않습니다. 틀린 곳을 알려 주시면
-      고치고 글 끝에 수정 기록을 남깁니다.
+      AI(Anthropic Claude)가 웹에서 자료를 찾아 한국어·영어로 쓰고, 출처 링크가 없는 글은 걸러지도록
+      자동으로 검사합니다. {{ if .Params.reviewed }}이 글은 운영자가 읽고 확인한 뒤 발행했습니다.{{ else }}이 글은 운영자 검토 절차를 도입하기 전에 자동으로 발행됐습니다.{{ end }}
+      틀린 곳을 알려 주시면 고치고 글 끝에 수정 기록을 남깁니다.
       {{- else -}}
-      An AI (Anthropic's Claude) researches and writes each post in Korean and English early every
-      morning, and an automated check blocks anything without source links. No human reviews each
-      post. Tell us about an error and we'll fix it and log the correction at the end of the post.
+      An AI (Anthropic's Claude) researches and writes each post in Korean and English, and an
+      automated check blocks anything without source links. {{ if .Params.reviewed }}The operator read and approved this post before it went live.{{ else }}This post went out automatically, before operator review was introduced.{{ end }}
+      Tell us about an error and we'll fix it and log the correction at the end of the post.
       {{- end -}}
     </p>
     {{- end }}

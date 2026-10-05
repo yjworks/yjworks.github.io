@@ -35,28 +35,28 @@ It covers newly released hardware and software with key specs, prices, and relea
 
 News about new products is scattered: manufacturer announcements, overseas outlets, Korean press, GitHub repositories. Comparing specs and prices means finding all of them and lining them up. This blog does that work for you.
 
-- **A different field, searched fresh every weekday.** The subject rotates by weekday, searches run in both English and Korean, and only things from the last two weeks are picked. Anything covered in the past month is skipped.
+- **A different field, searched fresh each time.** The subject rotates by weekday, searches run in both English and Korean, and only things from the last two weeks are picked. Anything covered in the past month is skipped.
 - **Comparison, not a rewritten press release.** Each new product goes in one table with existing products in its class, with a note on who it suits and who it doesn't.
 - **Where you can buy it and for how much.** Availability and price in Korea get their own line, even for products only announced abroad. Prices are checked once more for recent increases or cuts.
 - **A source for every number in a table.** Specs, licences and versions are checked against manufacturer material and the original documents wherever possible. Values not yet published are listed under the table and filled in when official figures appear.
 - **The judgement developers need.** Trending repositories and AI models don't stop at a summary; each one notes whether it can run on devices such as a Raspberry Pi, a Jetson or a laptop GPU.
-- **[Buying guides](/en/guides/) that keep improving.** Each guide compares one product category in a single table. Every Friday one guide is updated for new products or a new one is added, so the same page gets more complete over time.
+- **[Buying guides](/en/guides/) that keep improving.** Each guide compares one product category in a single table. Every other Friday one guide is updated for new products or a new one is added, so the same page gets more complete over time.
 
 ## How blog posts are made
 
-1. Every day at 3 a.m. Korea time, an AI (Anthropic's Claude) runs.
+1. On Monday, Wednesday and Friday at 3 a.m. Korea time, an AI (Anthropic's Claude) runs.
 2. It searches the web for the day's subject and picks products or projects announced in the last two weeks, skipping anything covered in the past month.
 3. It writes a Korean post and an English post from the same research. The English post is rewritten for its readers, not translated.
-4. An automated check runs before anything is published. Posts without source links, with a wrong date, or missing required fields don't go out.
-5. Posts that pass go live immediately. **No human reviews each post.**
+4. An automated check runs first. Posts without source links, with a wrong date, or missing required fields aren't even kept as drafts.
+5. Posts that pass are saved only as **drafts**. The operator reads each one, fixes what needs fixing, and approves it before it goes live. Approved posts carry an **"Operator-reviewed"** mark, and any comment the operator adds appears at the top as an **"Operator's note"**.
+
+Posts published before October 6, 2026 went out automatically without this review, and don't carry the mark.
 
 | Day | Subject |
 |---|---|
 | Monday | Laptops, phones, appliances or wearables — whatever launched |
-| Tuesday | Single-board computers, dev boards, modules |
-| Wednesday | Robots and edge AI devices |
-| Thursday | Dev picks (trending GitHub repositories / Hugging Face models) |
-| Friday | [Buying guide](/en/guides/) update: one comparison table revised for new products |
+| Wednesday | Single-board computers, dev boards, robots and edge AI devices |
+| Friday | Alternating weeks: a [buying guide](/en/guides/) update, or dev picks (trending GitHub repositories / Hugging Face models) |
 
 **Code Notes** are the exception: code the operator wrote, explained by the AI after reading it, posted whenever there is something to share.
 Each one says which part a person wrote and which part the AI wrote.

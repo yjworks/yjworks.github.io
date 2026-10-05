@@ -1,0 +1,13 @@
+{{- /* 운영자 검토 흐름(.claude/skills/review-post).
+       - 초안(draft: true)은 미리보기 주소에서만 보인다. 맨 위에 검토 전이라는 띠를 붙인다.
+       - 승인된 글에 reviewNote 가 있으면 본문 앞에 "운영자 메모"로 싣는다(운영자가 직접 쓴 말). */ -}}
+{{- $ko := eq .Language.Lang "ko" }}
+{{- if .Draft }}
+<aside class="td-draft">{{ if $ko }}초안 · 운영자 검토 전입니다. 이 미리보기 주소는 검색에 노출되지 않습니다.{{ else }}Draft · not yet reviewed by the operator. This preview is not indexed.{{ end }}</aside>
+{{- end }}
+{{- with .Params.reviewNote }}
+<aside class="td-review-note">
+  <p class="td-review-note-title">{{ partial "icon.html" (dict "name" "pen" "size" 14) }}{{ if $ko }}운영자 메모{{ else }}Operator's note{{ end }}</p>
+  {{ . | markdownify }}
+</aside>
+{{- end }}

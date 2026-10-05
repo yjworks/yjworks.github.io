@@ -1,0 +1,8 @@
+{{- /* 검색 색인에서 뺄 목록 페이지인지 판단한다: 태그·카테고리·글목록·아카이브·검색.
+       첫 화면, 글, 가이드, 가이드 목록(/guides/), 소개·개인정보처리방침은 남긴다.
+       head.html(robots 메타)과 sitemap.xml 이 같이 쓴다. 페이지 번호(/page/2/ 등)는 static/_headers 가 막는다. */ -}}
+{{- $thin := false }}
+{{- if and (not .IsHome) (not .IsPage) }}{{ $thin = true }}{{ end }}
+{{- if and (eq .Kind "section") (eq .Section "guides") }}{{ $thin = false }}{{ end }}
+{{- if in (slice "search" "archives") .Layout }}{{ $thin = true }}{{ end }}
+{{- return $thin }}

@@ -95,6 +95,19 @@ jobs:
           npx --yes wrangler@4 pages project create dibrain-blog --production-branch main || true
           npx --yes wrangler@4 pages deploy public-blog --project-name dibrain-blog --branch main --commit-dirty=true
 
+      - name: Build and deploy draft preview (preview.dibrain-blog.pages.dev)
+        # 운영자 검토용 미리보기. 초안(draft: true)까지 넣고 --environment preview 로 만들어
+        # 모든 페이지가 noindex 이고 광고·GA 가 빠진다. 같은 프로젝트의 preview 브랜치로 올라가 운영 주소와 섞이지 않는다.
+        if: steps.sources.outputs.skip != 'true' && github.event_name != 'schedule'
+        env:
+          TZ: Asia/Seoul
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          hugo --gc --minify --buildDrafts --environment preview --baseURL "https://preview.dibrain-blog.pages.dev/" --destination public-preview
+          printf '/*\n  X-Robots-Tag: noindex, nofollow\n' > public-preview/_headers
+          npx --yes wrangler@4 pages deploy public-preview --project-name dibrain-blog --branch preview --commit-dirty=true
+
       - name: Check out the app and tool repositories
         if: steps.sources.outputs.skip != 'true'
         run: |

@@ -1,0 +1,20 @@
+{{- /* Hugo 기본 사이트맵에서 목록 페이지(is_thin.html)와 초안을 뺀 것. 색인할 페이지만 싣는다. */ -}}
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {{- range where .Pages "Sitemap.Disable" "ne" true }}
+  {{- if and .Permalink (not .Draft) (not (partial "is_thin.html" .)) }}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{- if not .Lastmod.IsZero }}
+    <lastmod>{{ safeHTML (.Lastmod.Format "2006-01-02T15:04:05-07:00") }}</lastmod>
+    {{- end }}
+    {{- if .IsTranslated }}
+    {{- range .AllTranslations }}
+    <xhtml:link rel="alternate" hreflang="{{ .Language.Locale }}" href="{{ .Permalink }}"/>
+    {{- end }}
+    {{- end }}
+  </url>
+  {{- end }}
+  {{- end }}
+</urlset>

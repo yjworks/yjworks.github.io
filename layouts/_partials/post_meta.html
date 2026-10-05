@@ -26,6 +26,14 @@
       (cond $ko "/about/" "/en/about/")
       (partial "icon.html" (dict "name" "sparkles" "size" 14))
       $label) }}
+  {{- /* 운영자가 읽고 승인한 글(front matter reviewed: "YYYY-MM-DD")만 표시한다. 검토 없이 나간 예전 글에는 붙지 않는다. */}}
+  {{- with .Params.reviewed }}
+  {{- $items = $items | append (printf `<a class="meta-item meta-reviewed" href="%s" title="%s">%s%s</a>`
+      (cond $ko "/about/" "/en/about/")
+      (printf "%s %s" (cond $ko "운영자 확인" "Reviewed") .)
+      (partial "icon.html" (dict "name" "check" "size" 14))
+      (cond $ko "운영자 확인" "Operator-reviewed")) }}
+  {{- end }}
 {{- end }}
 
 {{- if (.Param "ShowReadingTime") }}

@@ -72,6 +72,7 @@ draft: false
 ## 3. 확인과 발행
 
 1. 초안 전체, 코드에서 바꾼 것 목록, 동작 확인 범위를 운영자에게 보여 주고 OK를 받는다.
+   OK를 받으면 두 파일 front matter 에 `reviewed: "<TZ=Asia/Seoul date +%F>"` 를 넣는다("운영자 확인" 표시).
 2. 발행:
 
 ```bash

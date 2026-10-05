@@ -1,6 +1,6 @@
 ---
 name: weekly-post
-description: DigitalBrain 블로그 자동 작성. 평일 하루 한 번이며 오늘 요일(KST)이 모드를 결정한다(월 hw 하드웨어 공통 풀, 화·수 embedded 보드·로봇·엣지 AI, 목 dev GitHub/Hugging Face 격주, 금 guide 비교 가이드 갱신). 프롬프트의 인자보다 요일이 우선하고, 토·일은 즉시 종료한다. 조사 1회로 같은 slug의 .ko.md와 .en.md 두 파일을 쓰고 main에 커밋·푸시한다.
+description: DigitalBrain 블로그 초안 자동 작성. 월·수·금에만 쓰며 오늘 요일(KST)이 모드를 결정한다(월 hw 하드웨어 공통 풀, 수 embedded 보드·로봇·엣지 AI, 금 격주로 guide 비교 가이드 / dev GitHub·Hugging Face). 프롬프트의 인자보다 요일이 우선하고, 화·목·토·일은 즉시 종료한다. 결과물은 draft: true 초안이고 운영자가 review-post 로 승인해야 발행된다. 조사 1회로 같은 slug의 .ko.md와 .en.md 두 파일을 쓰고 main에 커밋·푸시한다.
 ---
 
 # weekly-post
@@ -36,6 +36,16 @@ description: DigitalBrain 블로그 자동 작성. 평일 하루 한 번이며 �
 >
 > `categories: ["Code Notes"]` 인 글(slug `code-`)은 운영자 코드로 따로 올리는 글입니다. 읽기만 하고 고치지 않습니다.
 
+> ## 이 스킬은 발행하지 않습니다 — 초안만 만듭니다
+>
+> 글과 가이드는 **`draft: true` 초안**으로만 커밋합니다. 운영 사이트(blog.dibrain.dev)에는 나가지 않고,
+> 미리보기 주소 **https://preview.dibrain-blog.pages.dev/** 에만 보입니다(전부 noindex, 광고·GA 없음).
+> 운영자가 읽고 승인하면 `review-post` 스킬이 발행합니다. 승인된 글에만 "운영자 확인" 표시가 붙습니다.
+>
+> - 검토를 기다리는 초안이 **2편 이상**이면 새 초안을 만들지 않습니다(1번).
+> - `reviewed`, `reviewNote` 는 운영자 승인 때만 붙는 값입니다. **이 스킬이 쓰지 않습니다.**
+> - 이미 발행된 글을 직접 고치지 않습니다. 틀린 곳을 찾으면 정정 제안으로 보고합니다(5-3).
+
 ## 0. 모드 — 요일이 결정한다
 
 ```bash
@@ -47,15 +57,17 @@ TZ=Asia/Seoul date '+%F %a %u'   # 예: 2026-09-17 Thu 4   (1=월 ... 7=일)
 
 | 요일 | 모드 | 다루는 것 | 결과물 | categories |
 |---|---|---|---|---|
-| 월(1) | `hw` | **하드웨어 공통 풀**에서 1개를 깊게 | 글 | `["Deep Dive"]` |
-| 화(2) | `embedded` | **SBC·개발 보드·모듈** 우선 | 글 | `["Deep Dive"]` |
-| 수(3) | `embedded` | **로봇·엣지 AI 기기** 우선 | 글 | `["Deep Dive"]` |
-| 목(4) | `dev` | GitHub 인기 오픈소스 **또는** Hugging Face 인기 모델 2~3개 | 글 | `["Dev Picks"]` |
-| 금(5) | `guide` | **비교 가이드 하나를 새로 만들거나 갱신** | 가이드 | (없음) |
-| 토(6)·일(7) | — | **즉시 종료** | — | — |
+| 월(1) | `hw` | **하드웨어 공통 풀**에서 1개를 깊게 | 글 초안 | `["Deep Dive"]` |
+| 수(3) | `embedded` | **SBC·개발 보드·로봇·엣지 AI 기기** | 글 초안 | `["Deep Dive"]` |
+| 금(5), 짝수 주 | `guide` | **비교 가이드 하나를 새로 만들거나 갱신** | 가이드 초안 | (없음) |
+| 금(5), 홀수 주 | `dev` | GitHub 인기 오픈소스 **또는** Hugging Face 인기 모델 2~3개 | 글 초안 | `["Dev Picks"]` |
+| 화(2)·목(4)·토(6)·일(7) | — | **즉시 종료** | — | — |
+
+금요일의 짝수·홀수 주는 `TZ=Asia/Seoul date +%V` (ISO 주 번호)로 정한다.
+운영자가 읽을 수 있는 양에 맞춰 주 3편으로 줄였다. 화·목에 쓰지 않는 것은 규칙이지 소재 부족이 아니다.
 
 **이 표는 순서지 할당량이 아니다.** 오늘 모드에 소재가 없으면 2번의 **대체 모드** 규칙에 따라
-다른 모드로 내려가 쓴다. 다 훑고도 없을 때만 발행하지 않는다.
+다른 모드로 내려가 쓴다. 다 훑고도 없을 때만 초안을 만들지 않는다.
 
 ### 왜 이렇게 나눴나
 
@@ -67,10 +79,10 @@ TZ=Asia/Seoul date '+%F %a %u'   # 예: 2026-09-17 Thu 4   (1=월 ... 7=일)
   가이드는 같은 URL이 계속 좋아지는 페이지라 검색 평가와 내부 링크가 쌓인다. 소비자 기기는
   가이드에서 계속 다룬다(폴더블·스마트워치·로봇청소기 등).
 
-### 토·일은 아무것도 하지 않는다
+### 화·목·토·일은 아무것도 하지 않는다
 
-출력의 마지막 숫자가 6 또는 7이면 **즉시 종료한다.** 검색도, 파일 읽기도, runlog 작성도 하지 않는다.
-"오늘은 주말이라 발행하지 않습니다" 한 줄만 답하고 끝낸다.
+출력의 마지막 숫자가 2, 4, 6, 7이면 **즉시 종료한다.** 검색도, 파일 읽기도, runlog 작성도 하지 않는다.
+"오늘은 초안을 만드는 날이 아닙니다(월·수·금만)" 한 줄만 답하고 끝낸다.
 
 ### 하드웨어 공통 풀 (`hw`, 월)
 
@@ -86,20 +98,20 @@ TZ=Asia/Seoul date '+%F %a %u'   # 예: 2026-09-17 Thu 4   (1=월 ... 7=일)
   냉장고·세탁기처럼 스펙 나열밖에 안 나오는 제품은 다루지 않는다.
 - 로봇청소기 같은 소비자 완제품은 `hw`로, 개발 보드와 산업·연구·교육용 로봇은 `embedded`로 보낸다.
 
-### 임베디드 (`embedded`, 화·수)
+### 임베디드 (`embedded`, 수)
 
-| 요일 | 우선 | tag | 예 |
-|---|---|---|---|
-| 화 | SBC·개발 보드·모듈·MCU | `SBC` | Jetson, 라즈베리파이, RK3588 보드, 아두이노, ESP32 |
-| 수 | 로봇·엣지 AI 기기 | `Robot`, `AI Device` | 협동로봇, 휴머노이드, 교육용 로봇 키트, AI 가속기 |
+| 분야 | tag | 예 |
+|---|---|---|
+| SBC·개발 보드·모듈·MCU | `SBC` | Jetson, 라즈베리파이, RK3588 보드, 아두이노, ESP32 |
+| 로봇·엣지 AI 기기 | `Robot`, `AI Device` | 협동로봇, 휴머노이드, 교육용 로봇 키트, AI 가속기 |
 
-- 우선 쪽에 소재가 없으면 같은 요일에 다른 쪽을 써도 된다.
-- **수요일 글은 화요일 글과 같은 제품·같은 제조사면 안 된다.** 이틀 연속 같은 보드를 다루지 않는다.
+- 두 분야 중 그 주에 소재가 더 좋은 쪽을 쓴다. 직전 `embedded-` 글과 다른 분야면 더 좋다.
+- **직전 `embedded-` 글과 같은 제품·같은 제조사는 다루지 않는다.**
 - slug 접두어는 둘 다 `embedded-`.
 
-### `dev` (목)
+### `dev` (금, 홀수 주)
 
-GitHub와 Hugging Face를 격주로 번갈아 간다. `ls content/posts` 에서 `dev-` 로 시작하는
+GitHub와 Hugging Face를 번갈아 간다. `ls content/posts` 에서 `dev-` 로 시작하는
 가장 최근 글의 tags를 보고 반대쪽을 고른다. 이전 dev 글이 없으면 GitHub부터.
 
 ## 1. 준비 (필수)
@@ -114,8 +126,16 @@ GitHub와 Hugging Face를 격주로 번갈아 간다. `ls content/posts` 에서 
    grep -l "^lastmod: $TODAY" content/guides/*.ko.md 2>/dev/null
    ```
 
-   - 둘 중 하나라도 파일을 찍으면 → 오늘치는 이미 나갔다. 아무것도 하지 않고 끝낸다.
-   - **아무것도 안 찍히면 → 그대로 진행한다.**
+   - 둘 중 하나라도 파일을 찍으면 → 오늘치 초안은 이미 있다. 아무것도 하지 않고 끝낸다.
+   - **아무것도 안 찍히면 → 검토 대기 초안 수를 센다:**
+
+   ```bash
+   grep -l '^draft: true' content/posts/*.ko.md content/guides/*.ko.md 2>/dev/null
+   ```
+
+   - **2개 이상이면 새 초안을 만들지 않는다.** 9번 실행 기록에 `decision: skipped`, `reason: 검토 대기 초안 N편(<파일>)` 을 남기고,
+     최종 보고에 대기 중인 초안의 미리보기 주소(10번)를 다시 적어 운영자에게 알린 뒤 끝낸다.
+   - 1개 이하이면 그대로 진행한다.
 
    **어제 글이 있는 것은 멈출 이유가 아니다.** "최근 글이 있네"로 판단하면 전날 글을 보고
    오늘 할 일이 끝났다고 착각한다. `$TODAY` 만 쓴다.
@@ -143,7 +163,7 @@ GitHub와 Hugging Face를 격주로 번갈아 간다. `ls content/posts` 에서 
 3. **최근 글의 front matter만 확인한다. 본문은 읽지 않는다.**
 
    ```bash
-   for f in $(ls -t content/posts/*.ko.md | head -20); do echo "== $f"; sed -n '2,9p' "$f"; done
+   for f in $(ls content/posts/2*.ko.md | sort -r | head -20); do echo "== $f"; sed -n '2,9p' "$f"; done
    ```
 
    여기 나온 **title에 등장하는 제품·프로젝트 이름은 이번 글의 주제로 삼지 않는다.**
@@ -177,9 +197,9 @@ for m in "hw:laptop-|phone-|appliance-|wearable-" "embedded:embedded-" "dev:dev-
 done | sort      # 위에 뜬 것이 가장 오래 비어 있던 모드 = 대체 1순위
 ```
 
-- 오늘 모드를 뺀 나머지를 위 순서대로 조사한다. 다 훑고도 없으면 **그때 발행하지 않는다.**
-- **어제 발행한 모드는 대체 후보에서 뺀다.** (수요일의 `embedded` 는 대체가 아니라 제 모드다.)
-  어제 글은 짐작하지 말고 파일로 확인한다: `ls content/posts/$(TZ=Asia/Seoul date -d yesterday +%F)-*.ko.md`
+- 오늘 모드를 뺀 나머지를 위 순서대로 조사한다. 다 훑고도 없으면 **그때 초안을 만들지 않는다.**
+- **직전 초안(발행 여부와 상관없이 가장 최근 글 파일)의 모드는 대체 후보에서 뺀다.** 같은 분야가 연달아 나오지 않게 한다.
+  짐작하지 말고 파일 이름의 날짜로 확인한다: `ls content/posts/2*.ko.md | sort | tail -1`
 - **`guide` 는 대체 후보가 아니다.** 금요일에만 한다.
 - **금요일에 갱신할 가이드가 없으면** 위 사다리를 그대로 탄다(`hw`/`embedded`/`dev`).
 - 대체했으면 **그 모드의 규칙을 그대로 따른다.** slug 접두사, `categories`, 본문 구조 전부.
@@ -205,7 +225,7 @@ done | sort      # 위에 뜬 것이 가장 오래 비어 있던 모드 = 대체
 같은 날 발표된 형제 모델은 사양이 다르다. 표의 모든 칸이 **그 모델**의 값인지 출처에서 확인한다.
 가격은 **현재 가격**인지 확인한다(인상·인하 공지가 있었는지 검색 1회).
 
-### 2-2. `dev` (목)
+### 2-2. `dev` (금, 홀수 주)
 
 **GitHub 차례**: https://github.com/trending (weekly) 또는 "GitHub trending this week" 검색.
 최근 30일 내 공개됐거나 큰 릴리스가 있었거나 스타가 급증한 저장소 2~3개.
@@ -219,7 +239,7 @@ done | sort      # 위에 뜬 것이 가장 오래 비어 있던 모드 = 대체
 특징과 벤치마크(모델 카드에 있는 것만), 실행 예제(모델 카드의 transformers / llama.cpp / OpenVINO 코드),
 온디바이스(Raspberry Pi 5, Jetson, 노트북 GPU) 실행 가능성 1~2줄. 모르면 "확인 필요".
 
-### 2-3. `guide` (금) — 비교 가이드 만들기·갱신
+### 2-3. `guide` (금, 짝수 주) — 비교 가이드 만들기·갱신
 
 가이드는 `content/guides/<slug>.ko.md` / `.en.md` 에 있는, **제품군 하나를 한 표로 비교하는 페이지**다.
 URL은 `/guides/<slug>/` 로 고정이고, 새 제품이 나올 때마다 **같은 페이지를 갱신한다.**
@@ -254,6 +274,9 @@ grep -H '^hubTags:' content/guides/*.ko.md
 **가이드의 모든 수치는 출처가 있어야 한다.** 이 사이트의 글에 출처와 함께 있는 값이거나,
 이번 조사에서 새로 확인해 가이드의 `출처:` 줄에 링크를 추가한 값만 쓴다.
 
+**이미 발행된 가이드를 갱신할 때도 원본을 고치지 않는다.** 고친 전체 내용을 `<slug>-update` 초안으로 따로 만든다(3번).
+승인되면 `review-post` 가 원본에 덮어쓴다.
+
 ## 3. 파일 (두 벌)
 
 ### 글 (`hw` / `embedded` / `dev`)
@@ -280,7 +303,7 @@ cover:
   image: "/images/posts/<slug>.ko.png"   # en 파일은 .en.png
   alt: "커버 카드: <카드 수치를 문장으로>"
   relative: false
-draft: false
+draft: true                       # 항상 true. 발행은 운영자 승인 때 review-post 가 한다
 ---
 ```
 
@@ -307,8 +330,15 @@ cover:
   image: "/images/posts/guide-<slug>.ko.png"
   alt: "비교 가이드 카드: <카드 수치를 문장으로>"
   relative: false
+draft: true
 ---
 ```
+
+- **새 가이드**는 위 파일 이름 그대로 `draft: true` 로 만든다.
+- **기존 가이드 갱신**은 원본을 건드리지 않고 `content/guides/<slug>-update.ko.md` / `.en.md` 를 만든다.
+  원본 전체를 복사해 고친 뒤 front matter 를 이렇게 바꾼다:
+  `slug: "<slug>-update"`, `updateOf: "<slug>"`, `draft: true`, `date` 는 원본 그대로, `lastmod` 는 1번 명령 출력.
+  카드 수치가 바뀌면 커버를 `guide-<slug>-update.ko.png` / `.en.png` 로 새로 그리고 `cover.image` 도 그 이름으로 둔다.
 
 ## 4. 제목
 
@@ -326,7 +356,7 @@ cover:
 말하는지 한 줄로 드러내는 것이다.**
 
 ```bash
-for f in $(ls -t content/posts/*.ko.md | head -10); do sed -n 's/^title: //p' "$f"; done
+for f in $(ls content/posts/2*.ko.md | sort -r | head -10); do sed -n 's/^title: //p' "$f"; done
 ```
 
 **같은 유형이 최근 3편에 이미 있으면 다른 유형을 고른다.**
@@ -382,7 +412,7 @@ for f in $(ls -t content/posts/*.ko.md | head -10); do sed -n 's/^title: //p' "$
 | `NVIDIA가 8월 25일 Jetson Orin Nano 2를 발표했습니다.` | `로봇에 Jetson을 올려 본 사람이라면 "성능 2배"보다 먼저 전원부를 볼 겁니다.` |
 | `아두이노가 9월 9일 우노 미디어 캐리어를 공개했습니다.` | `카메라 하나 붙이자고 299달러짜리 보드를 살 필요가 있을까요?` |
 
-확인: `for f in $(ls -t content/posts/*.ko.md | head -5); do awk 'BEGIN{c=0} /^---$/{c++; next} c>=2 && NF {print; exit}' "$f"; done`
+확인: `for f in $(ls content/posts/2*.ko.md | sort -r | head -5); do awk 'BEGIN{c=0} /^---$/{c++; next} c>=2 && NF {print; exit}' "$f"; done`
 최근 글과 같은 문형이면 바꾼다.
 
 **② 소제목은 그 글의 주장이다.** 어느 글에나 붙일 수 있는 소제목은 쓰지 않는다.
@@ -390,7 +420,7 @@ for f in $(ls -t content/posts/*.ko.md | head -10); do sed -n 's/^title: //p' "$
 - 쓰지 않는다: `총평` `Verdict` `국내 출시 여부` `장단점` `장단점과 어떤 사용자에게 맞나` `오늘의 정리` `Wrap-up` `스펙 비교` `경쟁 제품 비교`
 - 이렇게: `## 40W 모드는 전원부부터 다시 짜야 한다` / `## 메모리 8GB는 그대로입니다` / `## 한국에서 사려면 직구뿐`
 - 제품명·저장소 이름을 그대로 쓰는 소제목(`## Orin Nano 2`, `## MiniCPM5-2B`)은 괜찮다.
-- 확인: `grep -h '^## ' $(ls -t content/posts/*.ko.md | head -5)` — 최근 글과 같은 소제목을 쓰지 않는다.
+- 확인: `grep -h '^## ' $(ls content/posts/2*.ko.md | sort -r | head -5)` — 최근 글과 같은 소제목을 쓰지 않는다.
 
 **③ 들어갈 내용은 그대로, 틀은 글마다 다르게.** 아래는 *빠지면 안 되는 내용*이지 *소제목 순서*가 아니다.
 
@@ -436,10 +466,13 @@ for f in $(ls -t content/posts/*.ko.md | head -10); do sed -n 's/^title: //p' "$
 - 글 링크는 ko `/YYYY/MM/DD/<slug>/`, en `/en/YYYY/MM/DD/<slug>/`.
 - 가이드를 갱신하면서 새 글을 쓰지 않는다. 금요일 결과물은 가이드 하나다.
 
-### 5-3. 이미 나간 글의 사실을 고칠 때 — 수정 기록
+### 5-3. 이미 나간 글이 틀렸을 때 — 정정 제안
 
-조사 중에 이미 발행된 글의 수치가 틀린 것을 발견하면 고쳐도 된다.
-단 **고친 사실을 숨기지 않는다.** 두 파일 모두 front matter 에 남긴다:
+조사 중에 이미 발행된 글의 수치가 틀린 것을 발견하면 **직접 고치지 않는다.** 발행된 글은 운영자가 확인한 것이므로
+고칠 때도 운영자 확인을 거친다. 실행 기록과 최종 보고(10번)에 **정정 제안**으로 적는다:
+틀린 글의 파일, 지금 값, 맞는 값, 출처 링크. 운영자가 승인하면 `review-post` 가 아래 형식으로 고친다.
+
+운영자 승인 뒤 고칠 때는 **고친 사실을 숨기지 않는다.** 두 파일 모두 front matter 에 남긴다:
 
 ```yaml
 lastmod: <1번 명령 출력>
@@ -449,7 +482,6 @@ updates:
 ```
 
 글 끝에 "수정 기록" 상자로 나간다. 새 출처는 해당 표 아래 `출처:` 줄에 추가한다. 제목(`title`)은 고치지 않는다.
-실행 기록에 무엇을 왜 고쳤는지 적고, 커밋 메시지는 `fix: <slug> <무엇>` 으로 따로 남긴다.
 
 ## 6. 이미지 — 커버 카드 (글·가이드마다 필수, 언어별 1장)
 
@@ -573,12 +605,12 @@ done
 # 글
 git add content/posts/YYYY-MM-DD-<slug>.ko.md content/posts/YYYY-MM-DD-<slug>.en.md \
         static/images/posts/<slug>*.png scripts/img-specs/<slug>*.json
-git -c user.name=Claude -c user.email=noreply@anthropic.com commit -m "post: <English title>"
+git -c user.name=Claude -c user.email=noreply@anthropic.com commit -m "draft: <English title>"
 
-# 가이드
+# 가이드 (갱신이면 <slug> 대신 <slug>-update)
 git add content/guides/<slug>.ko.md content/guides/<slug>.en.md \
         static/images/posts/guide-<slug>*.png scripts/img-specs/guide-<slug>*.json
-git -c user.name=Claude -c user.email=noreply@anthropic.com commit -m "guide: <new|update> <slug>"
+git -c user.name=Claude -c user.email=noreply@anthropic.com commit -m "draft guide: <new|update> <slug>"
 
 git push origin main
 ```
@@ -619,16 +651,16 @@ git push origin main
    - 실행을 찾지 못하거나 조회가 막힘 → `deploy: unknown (<이유>, 커밋 <해시>)`. 이유에는 막힌 도구와 에러 원문을 짧게 적는다.
 4. **`queued`·`pending`·"확인 예정"처럼 결과가 아닌 값은 기록에 쓰지 않는다.** 기록을 먼저 쓰고 나중에 채우는 방식은 쓰지 않는다.
 
-## 9. 실행 기록 (평일 매 실행, 발행하지 않은 날도. 토·일은 0번에서 이미 끝났다)
+## 9. 실행 기록 (월·수·금 매 실행, 초안을 만들지 않은 날도. 화·목·토·일은 0번에서 이미 끝났다)
 
 ```bash
 mkdir -p runlog
 # 파일명의 <mode>는 실제로 쓴 모드. 대체했으면 대체한 쪽을 쓴다(예: 금요일에 hw로 대체 -> -hw.md)
 cat > runlog/$(TZ=Asia/Seoul date +%F)-<mode>.md <<'EOF'
 - mode: <실제로 쓴 모드. 대체했으면 "dev (대체, 원래 guide)" 처럼 둘 다 적는다>
-- decision: published | updated | skipped
+- decision: drafted | skipped
 - reason: <skipped면 훑은 모드를 전부 적고 각각 왜 비었는지.
-           published면 고른 제품/프로젝트와 제외한 후보.
+           drafted면 고른 제품/프로젝트와 제외한 후보.
            제외 사유의 날짜(발표일·어제 글·최근 글)는 조사 결과나 파일 목록으로 확인한 것만 쓴다.
            guide면 고른 가이드와 이유, 바뀐 행·칸>
 - sources: <출처 링크 수 ko/en>
@@ -645,3 +677,21 @@ git push origin main
 어떤 단계에서든 실패하면 **거기서 멈추지 말고** 이 기록에 에러 원문을 적고 푸시한 뒤 끝낸다.
 이 기록 커밋이 만드는 두 번째 배포 실행은 기다리지 않아도 된다(글은 첫 실행에서 이미 반영된다).
 실행 결과 메시지의 마지막 줄에는 반드시 `decision / commit / deploy` 세 값을 그대로 적는다.
+
+## 10. 운영자에게 알릴 것 (최종 보고)
+
+초안을 만들었으면 최종 보고에 아래를 그대로 넣는다. 운영자는 이 메시지만 보고 검토한다.
+
+```
+초안: <한국어 제목>
+미리보기(한국어): https://preview.dibrain-blog.pages.dev/YYYY/MM/DD/<slug>/
+미리보기(영어):   https://preview.dibrain-blog.pages.dev/en/YYYY/MM/DD/<slug>/
+(가이드는 /guides/<slug>/, 갱신이면 /guides/<slug>-update/)
+확인할 점: <운영자가 판단해 주면 좋을 것 1~3개. 예: "전원 입력 범위는 공식 자료가 없어 '확인 필요'로 둠">
+승인: Claude 세션에서 "승인 <slug>" (덧붙일 말이 있으면 "승인 <slug> 메모: ...")
+수정: "수정 <slug>: <고칠 내용>" / 버리기: "반려 <slug>"
+```
+
+- 미리보기는 8-1의 배포가 성공해야 열린다. 배포가 실패했으면 그 사실을 첫 줄에 쓴다.
+- 5-3의 정정 제안이 있으면 같은 메시지에 따로 적는다.
+- 1번에서 검토 대기 초안 때문에 건너뛰었으면, 대기 중인 초안마다 위 형식의 미리보기 주소를 다시 적는다.

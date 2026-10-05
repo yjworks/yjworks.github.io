@@ -107,3 +107,14 @@
 .td-hub-date { margin-inline-start: 8px; font-size: 12.5px; color: var(--secondary); white-space: nowrap; }
 .post-meta .meta-ai { color: var(--td-accent); font-weight: 600; text-decoration: none; }
 .post-meta .meta-ai:hover { text-decoration: underline; }
+
+/* 운영자 검토: 승인 표시, 운영자 메모, 미리보기 초안 띠 */
+.post-meta .meta-reviewed { color: #0f8a5f; font-weight: 600; text-decoration: none; }
+:root[data-theme="dark"] .post-meta .meta-reviewed { color: #34d399; }
+.post-meta .meta-reviewed:hover { text-decoration: underline; }
+.td-review-note { margin: 0 0 24px; padding: 14px 18px; border-inline-start: 3px solid #0f8a5f; border-radius: 0 10px 10px 0; background: var(--entry); word-break: keep-all; }
+:root[data-theme="dark"] .td-review-note { border-inline-start-color: #34d399; }
+.td-review-note-title { display: flex; align-items: center; gap: 6px; margin: 0 0 6px; font-size: 13px; font-weight: 700; color: var(--secondary); }
+.td-review-note p { margin: 0; font-size: 15px; line-height: 1.7; }
+.td-draft { margin: 0 0 20px; padding: 10px 14px; border-radius: 10px; background: #fff4d6; color: #7a4b00; font-size: 14px; font-weight: 600; }
+:root[data-theme="dark"] .td-draft { background: #3a2d0a; color: #fcd34d; }

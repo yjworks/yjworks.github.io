@@ -4,7 +4,7 @@
     <h1 class="td-headline">{{ .Title | markdownify }}</h1>
     <p class="td-lede">{{ .Content | markdownify }}</p>
     <div class="td-meta-row">
-        <span class="td-pub">{{ partial "icon.html" (dict "name" "sparkles" "size" 14) }}<a href="{{ if $ko }}/about/{{ else }}/en/about/{{ end }}">{{ if $ko }}AI가 평일 매일 조사하고 씁니다{{ else }}Researched and written by AI, every weekday{{ end }}</a></span>
+        <span class="td-pub">{{ partial "icon.html" (dict "name" "sparkles" "size" 14) }}<a href="{{ if $ko }}/about/{{ else }}/en/about/{{ end }}">{{ if $ko }}AI가 조사해 쓰고, 운영자가 확인해 올립니다{{ else }}Researched and written by AI, reviewed by the operator{{ end }}</a></span>
         {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
     </div>
     {{ partial "topic_chips.html" (dict "showCount" false) }}
