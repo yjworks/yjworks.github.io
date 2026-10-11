@@ -1,0 +1,23 @@
+{
+ "kicker": "Deep Dive · Laptop · Global",
+ "date": "Oct 12, 2026",
+ "accent": "laptop",
+ "stats": [
+  {
+   "value": "$2,599",
+   "label": "US starting price"
+  },
+  {
+   "value": "6,144",
+   "label": "Max CUDA cores"
+  },
+  {
+   "value": "128GB",
+   "label": "Max unified memory"
+  },
+  {
+   "value": "Oct 16",
+   "label": "Ships"
+  }
+ ]
+}
