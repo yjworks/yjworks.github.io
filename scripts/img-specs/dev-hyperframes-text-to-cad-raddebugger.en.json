@@ -1,7 +1,23 @@
-{"kicker": "Dev Picks · GitHub",
- "date": "Oct 9, 2026",
+{
+ "kicker": "Dev Picks · GitHub",
+ "date": "Oct 16, 2026",
  "accent": "github",
- "stats": [{"value": "59,060", "label": "HyperFrames stars"},
-           {"value": "18,430", "label": "text-to-cad stars"},
-           {"value": "8,053", "label": "RAD Debugger stars"},
-           {"value": "Windows x64", "label": "RAD debugging support"}]}
+ "stats": [
+  {
+   "value": "64,569",
+   "label": "HyperFrames stars"
+  },
+  {
+   "value": "20,714",
+   "label": "text-to-cad stars"
+  },
+  {
+   "value": "8.6k",
+   "label": "RAD Debugger stars"
+  },
+  {
+   "value": "Windows x64",
+   "label": "RAD debugging support"
+  }
+ ]
+}
