@@ -1,0 +1,7 @@
+{"kicker": "Deep Dive · SBC · Global",
+ "date": "Oct 21, 2026",
+ "accent": "sbc",
+ "stats": [{"value": "$38.99", "label": "Board price"},
+           {"value": "320 MHz", "label": "Dual-core RISC-V"},
+           {"value": "16 MB", "label": "PSRAM"},
+           {"value": "7–24V", "label": "DC input"}]}
