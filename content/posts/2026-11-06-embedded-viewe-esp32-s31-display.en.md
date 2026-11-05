@@ -1,7 +1,7 @@
 ---
 title: "The First ESP32-S31 Board Takes 5V — and Also 7–24V"
 seoTitle: "VIEWE ESP32-S31 4.3-inch Board vs ESP32-S3: Wi-Fi 6, RS485, CAN, 7–24V Power"
-date: 2026-10-21T03:08:00+09:00
+date: 2026-11-06T06:11:34+09:00
 slug: "embedded-viewe-esp32-s31-display"
 summary: "Display maker VIEWE is selling a 4.3-inch touch dev board built on Espressif's new ESP32-S31 for $38.99. We look at what changed from the ESP32-S3 and what matters when you wire it into equipment: power input, RS485 and CAN."
 tags: ["SBC", "Global"]
@@ -10,7 +10,8 @@ cover:
   image: "/images/posts/embedded-viewe-esp32-s31-display.en.png"
   alt: "Cover card: VIEWE ESP32-S31 4.3-inch board $38.99, 320 MHz dual-core RISC-V, 16 MB PSRAM, 7–24V DC input"
   relative: false
-draft: true
+draft: false
+reviewed: "2026-11-06"
 ---
 
 If you have been building touchscreen products on the ESP32-S3, the obvious question about a new board is how much faster the chip is. On this one the more useful detail is that 5V from USB is not the only way to power it.
@@ -27,7 +28,7 @@ VIEWE began selling the 4.3-inch 800×480 touch board (PLCM-UES31S043H800V480C-U
 | Wi-Fi | 2.4 GHz Wi-Fi 6 | 2.4 GHz Wi-Fi 4 |
 | Bluetooth | 5.4 LE + Classic | 5 LE |
 | 802.15.4 (Thread, Zigbee) | Yes | No |
-| Price | $38.99 | — |
+| Price (VIEWE product page, Nov 6, 2026) | $38.99 | — |
 
 Sources: [VIEWE board GitHub](https://github.com/VIEWESMART/PLCM-UES31S043H800V480C-U), [CNX Software on the VIEWE board](https://www.cnx-software.com/2026/10/14/viewe-4-3-inch-esp32-s31-display-development-board/), [VIEWE product page](https://viewedisplay.com/product/4-3-inch-800x480-esp32-s31-wifi6-touch-smart-hmi-uart-display/), [S3 comparison (Hubtronics)](https://hubtronics.in/learn/esp32-s3-s31-comparison-guide)
 

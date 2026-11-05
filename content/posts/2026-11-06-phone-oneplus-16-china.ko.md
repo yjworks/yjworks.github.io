@@ -1,7 +1,7 @@
 ---
 title: "원플러스 16, 배터리는 9,000mAh인데 살 수 있는 곳은 중국뿐"
 seoTitle: "원플러스 16 vs 원플러스 15 스펙 비교: 9,000mAh·스냅드래곤 8 엘리트 익스트림 Gen 6·중국 가격"
-date: 2026-10-19T03:07:54+09:00
+date: 2026-11-06T06:11:34+09:00
 slug: "phone-oneplus-16-china"
 summary: "원플러스가 10월 12일 중국에서 공개한 원플러스 16의 배터리·칩·카메라·구성별 가격을 전작 원플러스 15와 비교하고, 국내 출시 가능성을 정리했습니다."
 tags: ["Smartphone", "Global"]
@@ -10,7 +10,8 @@ cover:
   image: "/images/posts/phone-oneplus-16-china.ko.png"
   alt: "커버 카드: 배터리 9,000mAh, 메인 카메라 2억 화소, 최대 주사율 185Hz, 시작가 5,999위안"
   relative: false
-draft: true
+draft: false
+reviewed: "2026-11-06"
 ---
 
 스마트폰 배터리 9,000mAh는 몇 해 전 보조배터리 수준의 숫자입니다. 원플러스가 10월 12일 중국에서 공개한 원플러스 16이 그 용량을 본체에 넣었는데, 정작 이 폰은 중국 밖에서 정식으로 살 길이 막혀 있습니다.
@@ -22,13 +23,13 @@ draft: true
 | 칩 | 스냅드래곤 8 엘리트 익스트림 Gen 6(2nm) | 스냅드래곤 8 엘리트 Gen 5 |
 | 디스플레이 | 6.78인치 AMOLED, 최대 185Hz | 6.78인치, 165Hz |
 | 배터리 | 9,000mAh | 7,300mAh |
-| 충전 | 유선 100W / 무선 50W | 유선 120W |
+| 충전 | 유선 100W / 무선 50W | 유선 120W / 무선 50W |
 | 카메라 | 2억 화소 메인(OIS) + 5천만 화소 3배 망원 + 5천만 화소 초광각, 전면 5천만 화소 | — |
 | 중국 가격 | 12GB·256GB 5,999위안 / 12GB·512GB 6,799위안 / 16GB·512GB 7,499위안 / 16GB·1TB 8,499위안 | — |
 
-출처: [Free Press Journal](https://www.freepressjournal.in/tech/oneplus-16-with-9000mah-battery-200-megapixel-camera-launched-price-specifications), [91mobiles](https://www.91mobiles.com/hub/oneplus-16-launched-china-price-specifications/), [ProPakistani](https://propakistani.pk/2026/10/13/oneplus-16-goes-overkill-with-9000mah-battery-and-snapdragon-8-elite-extreme-gen-6/), [NanoReview 비교](https://nanoreview.net/en/phone-compare/oneplus-16-vs-oneplus-15), [Android Authority](https://androidauthority.com/oneplus-16-battery-size-confirmed-3717911)
+출처: [Free Press Journal](https://www.freepressjournal.in/tech/oneplus-16-with-9000mah-battery-200-megapixel-camera-launched-price-specifications), [91mobiles](https://www.91mobiles.com/hub/oneplus-16-launched-china-price-specifications/), [ProPakistani](https://propakistani.pk/2026/10/13/oneplus-16-goes-overkill-with-9000mah-battery-and-snapdragon-8-elite-extreme-gen-6/), [NanoReview 비교](https://nanoreview.net/en/phone-compare/oneplus-16-vs-oneplus-15), [Android Authority](https://androidauthority.com/oneplus-16-battery-size-confirmed-3717911), [원플러스 15 리뷰(GSMArena)](https://www.gsmarena.com/oneplus_15-review-2898.php)
 
-> **아직 공개되지 않은 것:** 공식 무게·두께(매체마다 값이 달라 적지 않았습니다), 판매 개시일(당일 판매와 10월 31일 정식 판매로 보도가 갈립니다), 한국을 포함한 중국 밖 가격. 공식 자료가 나오면 이 글을 고칩니다.
+> **아직 공개되지 않은 것:** 공식 무게·두께(매체마다 값이 달라 적지 않았습니다), 판매 개시일(당일 판매와 10월 31일 정식 판매로 보도가 갈립니다), 한국을 포함한 중국 밖 가격. 중국 가격은 대부분 매체가 보도한 값이며, [Gizchina](https://www.gizchina.com/oneplus-phones/oneplus-16-unveiled-with-a-165hz-display-and-9000mah-battery)는 최저·최고 구성을 5,699위안·8,199위안으로 다르게 보도했습니다. 공식 자료가 나오면 이 글을 고칩니다.
 
 ## 용량이 늘어도 지속 시간은 달라질 수 있습니다
 

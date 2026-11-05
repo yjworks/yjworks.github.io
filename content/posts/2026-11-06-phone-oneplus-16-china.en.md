@@ -1,7 +1,7 @@
 ---
 title: "OnePlus 16 Packs a 9,000mAh Battery, but Only China Gets It"
 seoTitle: "OnePlus 16 vs OnePlus 15 Specs: 9,000mAh Battery, Snapdragon 8 Elite Extreme Gen 6, China Price"
-date: 2026-10-19T03:07:54+09:00
+date: 2026-11-06T06:11:34+09:00
 slug: "phone-oneplus-16-china"
 summary: "OnePlus unveiled the OnePlus 16 in China on October 12. Here is how its battery, chip, cameras and per-configuration prices compare with the OnePlus 15, and what we know about availability."
 tags: ["Smartphone", "Global"]
@@ -10,7 +10,8 @@ cover:
   image: "/images/posts/phone-oneplus-16-china.en.png"
   alt: "Cover card: 9,000mAh battery, 200MP main camera, up to 185Hz display, starts at CNY 5,999"
   relative: false
-draft: true
+draft: false
+reviewed: "2026-11-06"
 ---
 
 A 9,000mAh battery used to describe a power bank. OnePlus put that capacity inside the OnePlus 16, announced in China on October 12, and then confirmed buyers outside China will not get it.
@@ -22,13 +23,13 @@ A 9,000mAh battery used to describe a power bank. OnePlus put that capacity insi
 | Chip | Snapdragon 8 Elite Extreme Gen 6 (2nm) | Snapdragon 8 Elite Gen 5 |
 | Display | 6.78-inch AMOLED, up to 185Hz | 6.78-inch, 165Hz |
 | Battery | 9,000mAh | 7,300mAh |
-| Charging | 100W wired / 50W wireless | 120W wired |
+| Charging | 100W wired / 50W wireless | 120W wired / 50W wireless |
 | Cameras | 200MP main (OIS), 50MP 3x telephoto, 50MP ultrawide, 50MP front | — |
 | China price | 12GB/256GB CNY 5,999; 12GB/512GB CNY 6,799; 16GB/512GB CNY 7,499; 16GB/1TB CNY 8,499 | — |
 
-Sources: [Free Press Journal](https://www.freepressjournal.in/tech/oneplus-16-with-9000mah-battery-200-megapixel-camera-launched-price-specifications), [91mobiles](https://www.91mobiles.com/hub/oneplus-16-launched-china-price-specifications/), [ProPakistani](https://propakistani.pk/2026/10/13/oneplus-16-goes-overkill-with-9000mah-battery-and-snapdragon-8-elite-extreme-gen-6/), [NanoReview comparison](https://nanoreview.net/en/phone-compare/oneplus-16-vs-oneplus-15), [Android Authority](https://androidauthority.com/oneplus-16-battery-size-confirmed-3717911)
+Sources: [Free Press Journal](https://www.freepressjournal.in/tech/oneplus-16-with-9000mah-battery-200-megapixel-camera-launched-price-specifications), [91mobiles](https://www.91mobiles.com/hub/oneplus-16-launched-china-price-specifications/), [ProPakistani](https://propakistani.pk/2026/10/13/oneplus-16-goes-overkill-with-9000mah-battery-and-snapdragon-8-elite-extreme-gen-6/), [NanoReview comparison](https://nanoreview.net/en/phone-compare/oneplus-16-vs-oneplus-15), [Android Authority](https://androidauthority.com/oneplus-16-battery-size-confirmed-3717911), [OnePlus 15 review (GSMArena)](https://www.gsmarena.com/oneplus_15-review-2898.php)
 
-> **Not yet disclosed:** official weight and thickness (outlets disagree, so we left them out), the on-sale date (reports split between same-day sales and October 31), and any pricing outside China. We'll update this post when they are.
+> **Not yet disclosed:** official weight and thickness (outlets disagree, so we left them out), the on-sale date (reports split between same-day sales and October 31), and any pricing outside China. The China prices are the figures most outlets reported; [Gizchina](https://www.gizchina.com/oneplus-phones/oneplus-16-unveiled-with-a-165hz-display-and-9000mah-battery) listed the base and top configurations at CNY 5,699 and CNY 8,199 instead. We'll update this post when they are.
 
 ## More capacity does not guarantee more hours
 
