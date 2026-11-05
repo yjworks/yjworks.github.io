@@ -1,0 +1,7 @@
+{"kicker": "Dev Picks · Hugging Face",
+ "date": "Nov 6, 2026",
+ "accent": "ai",
+ "stats": [{"value": "2.2B", "label": "LFM3-Omni parameters"},
+           {"value": "1.1GB", "label": "LFM3-Omni Q4_K_M GGUF"},
+           {"value": "3.34B", "label": "Unlimited-OCR-2 parameters"},
+           {"value": "7.0x", "label": "Per-step speedup, 100 pages"}]}
