@@ -1,7 +1,7 @@
 ---
 title: "기기에 바로 올릴 쪽은 LFM3-Omni-2B입니다"
 seoTitle: "LFM3-Omni-2B·Unlimited-OCR-2 온디바이스 음성·긴 문서 OCR 모델 | Hugging Face 트렌딩"
-date: 2026-11-06T06:29:17+09:00
+date: 2026-11-06T07:09:08+09:00
 slug: "dev-lfm3-omni-unlimited-ocr-2"
 summary: "Hugging Face 트렌딩에서 듣고 보고 말하는 2.2B 옴니 모델 Liquid AI LFM3-Omni-2B와, 수백 쪽 문서를 한 번에 읽는 3.34B OCR 모델 Baidu Unlimited-OCR-2를 골랐습니다. 라이선스, 벤치마크, 실행 명령, 기기에 올릴 수 있는지를 정리했습니다."
 tags: ["Hugging Face"]
@@ -10,7 +10,8 @@ cover:
   image: "/images/posts/dev-lfm3-omni-unlimited-ocr-2.ko.png"
   alt: "커버 카드: LFM3-Omni-2B는 2.2B 파라미터에 Q4_K_M GGUF 1.1GB, Unlimited-OCR-2는 3.34B 파라미터에 100쪽 규모에서 단계당 7.0배 빠름"
   relative: false
-draft: true
+draft: false
+reviewed: "2026-11-06"
 ---
 
 음성 인식, 이미지 이해, 답변 생성, 음성 합성을 모델 네 개로 나눠 돌리는 기기라면 하나로 줄일 수 있을까요? 이번 주 Hugging Face 트렌딩에는 그 질문에 답하려는 2B급 모델과, 반대로 서버 GPU에서 수백 쪽 문서를 한 번에 읽으려는 3B급 OCR 모델이 함께 올라왔습니다.

@@ -1,7 +1,7 @@
 ---
 title: "LFM3-Omni-2B Is the One You Can Put on a Device Today"
 seoTitle: "LFM3-Omni-2B and Unlimited-OCR-2: On-Device Omni Model and Long-Document OCR | Hugging Face Trending"
-date: 2026-11-06T06:29:17+09:00
+date: 2026-11-06T07:09:08+09:00
 slug: "dev-lfm3-omni-unlimited-ocr-2"
 summary: "From this week's Hugging Face trending list: Liquid AI's LFM3-Omni-2B, a 2.2B model that listens, sees and speaks, and Baidu's Unlimited-OCR-2, a 3.34B OCR model that parses hundreds of pages in one pass. Licenses, benchmarks, run commands and whether they fit on edge hardware."
 tags: ["Hugging Face"]
@@ -10,7 +10,8 @@ cover:
   image: "/images/posts/dev-lfm3-omni-unlimited-ocr-2.en.png"
   alt: "Cover card: LFM3-Omni-2B has 2.2B parameters and a 1.1GB Q4_K_M GGUF; Unlimited-OCR-2 has 3.34B parameters and is 7.0x faster per decoding step at hundred-page scale"
   relative: false
-draft: true
+draft: false
+reviewed: "2026-11-06"
 ---
 
 If a device runs separate models for speech recognition, image understanding, chat and text-to-speech, can one model replace all four? This week's Hugging Face trending list has a 2B-class model built around that question, alongside a 3B-class OCR model that goes the other way: it wants a server GPU so it can read a few hundred pages in a single request.
