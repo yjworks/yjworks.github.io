@@ -1,7 +1,7 @@
 ---
 title: "Motorola Signature 27: GrapheneOS Is Still Just a Promise"
 seoTitle: "Motorola Signature 27 vs OnePlus 16 Specs and Price: 7,000mAh, 200MP Telephoto, $1,599.99"
-date: 2026-11-09T03:07:26+09:00
+date: 2026-11-09T06:17:19+09:00
 slug: "phone-motorola-signature-27"
 summary: "Motorola announced the Signature 27 on November 5. Here is how its chip, display, battery, cameras and US price compare with the OnePlus 16, which uses the same chip, and what is actually confirmed about GrapheneOS."
 tags: ["Smartphone", "Global"]
@@ -10,7 +10,8 @@ cover:
   image: "/images/posts/phone-motorola-signature-27.en.png"
   alt: "Cover card: 7,000mAh battery, 200MP telephoto camera, 12,000-nit peak brightness, US price $1,599.99"
   relative: false
-draft: true
+draft: false
+reviewed: "2026-11-09"
 ---
 
 Two phones, one Snapdragon 8 Elite Extreme Gen 6, and a 2,000mAh gap in battery size. Motorola's new flagship is the smaller one, so what is it spending its budget on?

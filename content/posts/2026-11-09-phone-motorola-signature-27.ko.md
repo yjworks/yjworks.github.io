@@ -1,7 +1,7 @@
 ---
 title: "시그니처 27, GrapheneOS는 아직 약속뿐"
 seoTitle: "모토로라 시그니처 27 vs 원플러스 16 스펙·가격 비교: 7,000mAh·200MP 망원·1,599.99달러"
-date: 2026-11-09T03:07:26+09:00
+date: 2026-11-09T06:17:19+09:00
 slug: "phone-motorola-signature-27"
 summary: "모토로라가 11월 5일 공개한 시그니처 27의 칩·디스플레이·배터리·카메라·미국 가격을 같은 칩을 쓰는 원플러스 16과 비교하고, 첫 GrapheneOS 기기라는 약속이 지금 어디까지 확인되는지 정리했습니다."
 tags: ["Smartphone", "Global"]
@@ -10,7 +10,8 @@ cover:
   image: "/images/posts/phone-motorola-signature-27.ko.png"
   alt: "커버 카드: 배터리 7,000mAh, 망원 카메라 2억 화소, 최대 밝기 12,000니트, 미국 가격 1,599.99달러"
   relative: false
-draft: true
+draft: false
+reviewed: "2026-11-09"
 ---
 
 같은 스냅드래곤 8 엘리트 익스트림 Gen 6을 쓰는데 한쪽은 배터리 9,000mAh, 다른 쪽은 7,000mAh입니다. 모토로라 시그니처 27은 그 차이를 메우려고 무엇을 내세웠을까요.
