@@ -1,0 +1,23 @@
+{
+ "kicker": "Dev Picks · GitHub",
+ "date": "Nov 20, 2026",
+ "accent": "github",
+ "stats": [
+  {
+   "value": "30,407",
+   "label": "Univer stars"
+  },
+  {
+   "value": "30,874",
+   "label": "Astryx stars"
+  },
+  {
+   "value": "7,257",
+   "label": "Modern Web Guidance gained this week"
+  },
+  {
+   "value": "9,053",
+   "label": "Modern Web Guidance stars"
+  }
+ ]
+}
