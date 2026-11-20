@@ -1,8 +1,8 @@
 ---
 title: "스마트워치, 배터리 시간보다 먼저 볼 것"
 seoTitle: "스마트워치 비교 2026: 애플워치 울트라4·갤럭시 워치 울트라2·픽셀 워치5·화웨이 워치6 스펙·가격"
-date: 2026-11-13T03:07:30+09:00
-lastmod: 2026-11-13T03:07:30+09:00
+date: 2026-11-20T10:30:15+09:00
+lastmod: 2026-11-20T10:30:15+09:00
 slug: "smartwatches"
 summary: "애플워치 울트라4·시리즈12, 갤럭시 워치 울트라2, 픽셀 워치5, 화웨이 워치6·워치6 프로를 운영체제·밝기·배터리·가격·국내 출시 기준으로 한 표에 모았습니다. 새 스마트워치가 나오면 갱신합니다."
 tags: ["Wearable"]
@@ -11,7 +11,8 @@ cover:
   image: "/images/posts/guide-smartwatches.ko.png"
   alt: "비교 가이드 카드: 스마트워치 5종, 최대 밝기 5,000니트(갤럭시 워치 울트라2), 최대 배터리 60시간(갤럭시 워치 울트라2), 최저가 $399(픽셀 워치5·애플워치 시리즈12)"
   relative: false
-draft: true
+draft: false
+reviewed: "2026-11-20"
 ---
 스마트워치는 시계보다 먼저 폰과 어떤 조합인지가 선택지를 갈라 놓습니다. 이 페이지는 DigitalBrain에서 다룬 스마트워치를 한 표에 모으고, 새 모델이 나오면 표와 판단 기준을 갱신합니다. 수치는 모두 각 심층 글의 출처에서 확인된 것이고, 확인되지 않은 칸은 "확인 필요"로 둡니다.
 
@@ -26,9 +27,11 @@ draft: true
 | 화웨이 워치6 | 화웨이 자체 OS, GMS 미탑재 | 확인 필요 | 확인 필요 | £399.99(영국) | 확인 필요 |
 | 화웨이 워치6 프로 | 화웨이 자체 OS, GMS 미탑재 | 3,500니트 | 확인 필요 | £599.99(영국) | 확인 필요 |
 
-출처: [Apple 울트라4 기술 사양](https://www.apple.com/apple-watch-ultra-4/specs/), [Apple Newsroom](https://www.apple.com/newsroom/2026/09/introducing-apple-watch-series-12-with-the-all-new-health-sensing-system/), [The Mac Observer](https://www.macobserver.com/tips/round-ups/apple-watch-ultra-4-full-specs-63-g-3000-nits-100-m-water-rating-satellite-battery/), [ZDNet Korea](https://zdnet.co.kr/view/?no=20260910083526), [이데일리](https://www.edaily.co.kr/News/Read?newsId=01548166645578808), [삼성전자 갤럭시 워치 울트라2 스펙](https://www.samsung.com/sec/watches/galaxy-watch/galaxy-watch-ultra2/specs/), [Samsung US](https://www.samsung.com/us/watches/galaxy-watch-ultra2/), [Droid Life(픽셀 워치5)](https://www.droid-life.com/2026/08/12/pixel-watch-5-official-at-399-with-huge-health-upgrades/), [GSMArena(픽셀 워치5)](https://www.gsmarena.com/google_pixel_watch_5-14860.php), [TechAdvisor(화웨이)](https://www.techadvisor.com/article/3225480/huawei-watch-6-official-as-pixel-watch-5-rival.html), [Gizmochina(화웨이)](https://www.gizmochina.com/2026/09/02/huawei-watch-6-and-watch-6-pro-launch-price-specs/)
+출처: [Apple 울트라4 기술 사양](https://www.apple.com/apple-watch-ultra-4/specs/), [Apple Newsroom](https://www.apple.com/newsroom/2026/09/introducing-apple-watch-series-12-with-the-all-new-health-sensing-system/), [The Mac Observer](https://www.macobserver.com/tips/round-ups/apple-watch-ultra-4-full-specs-63-g-3000-nits-100-m-water-rating-satellite-battery/), [ZDNet Korea](https://zdnet.co.kr/view/?no=20260910083526), [이데일리](https://www.edaily.co.kr/News/Read?newsId=01548166645578808), [삼성전자 갤럭시 워치 울트라2 스펙](https://www.samsung.com/sec/watches/galaxy-watch/galaxy-watch-ultra2/specs/), [Samsung US](https://www.samsung.com/us/watches/galaxy-watch-ultra2/), [Droid Life(픽셀 워치5)](https://www.droid-life.com/2026/08/12/pixel-watch-5-official-at-399-with-huge-health-upgrades/), [GSMArena(픽셀 워치5)](https://www.gsmarena.com/google_pixel_watch_5-14860.php), [TechAdvisor(화웨이)](https://www.techadvisor.com/article/3225480/huawei-watch-6-official-as-pixel-watch-5-rival.html), [Gizmochina(화웨이)](https://www.gizmochina.com/2026/09/02/huawei-watch-6-and-watch-6-pro-launch-price-specs/), [삼성전자 뉴스룸(국내 출고가)](https://news.samsung.com/kr/%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EC%9B%8C%EC%B9%98-%EC%9A%B8%ED%8A%B8%EB%9D%BC2%C2%B7%EC%9B%8C%EC%B9%989-%EA%B3%B5%EA%B0%9C)
 
 밝기와 배터리는 제조사 공개 수치라 측정 조건이 같다고 볼 수 없습니다. 애플이 내세운 울트라4의 25시간은 GPS 연속이 아니라 운동 중 저전력 모드 기준이라 표준 사용 수치와 섞지 않았습니다. 국내 출시 여부가 "확인 필요"인 모델은 공식 발표 자료에서 확인되지 않은 것입니다.
+
+표의 가격은 출시 정가입니다. 2026년 11월 20일 [구글 스토어](https://store.google.com/us/product/pixel_watch_5)에서는 픽셀 워치5가 100달러 할인된 299.99달러부터 팔리고 있어, 할인 여부는 구매 시점에 따로 확인해야 합니다.
 
 ## 폰부터 정합니다
 
@@ -45,4 +48,5 @@ draft: true
 
 ## 업데이트 기록
 
+- 2026-11-20: 발행 전 수치 재확인. 갤럭시 워치 울트라2 국내 출고가 출처(삼성전자 뉴스룸) 추가, 픽셀 워치5 할인가 안내 추가.
 - 2026-11-13: 첫 작성. 6종.

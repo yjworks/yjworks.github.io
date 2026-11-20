@@ -1,8 +1,8 @@
 ---
 title: "Smartwatches: Start With the Phone, Not the Battery"
 seoTitle: "Smartwatches Compared 2026: Apple Watch Ultra 4, Galaxy Watch Ultra 2, Pixel Watch 5, Huawei Watch 6"
-date: 2026-11-13T03:07:30+09:00
-lastmod: 2026-11-13T03:07:30+09:00
+date: 2026-11-20T10:30:15+09:00
+lastmod: 2026-11-20T10:30:15+09:00
 slug: "smartwatches"
 summary: "Apple Watch Ultra 4 and Series 12, Galaxy Watch Ultra 2, Pixel Watch 5 and Huawei Watch 6 and 6 Pro in one table: operating system, brightness, battery, price and Korea availability. Updated when a new smartwatch launches."
 tags: ["Wearable"]
@@ -11,7 +11,8 @@ cover:
   image: "/images/posts/guide-smartwatches.en.png"
   alt: "Guide card: five smartwatch lines, top brightness 5,000 nits (Galaxy Watch Ultra 2), longest battery 60 hours (Galaxy Watch Ultra 2), lowest price $399 (Pixel Watch 5, Apple Watch Series 12)"
   relative: false
-draft: true
+draft: false
+reviewed: "2026-11-20"
 ---
 The phone in your pocket narrows a smartwatch choice before any spec does. This page collects every smartwatch DigitalBrain has covered into one table and is updated when a new one launches. Every number comes from the sources in the linked deep dives; anything we couldn't confirm is marked TBC.
 
@@ -26,9 +27,11 @@ The phone in your pocket narrows a smartwatch choice before any spec does. This 
 | Huawei Watch 6 | Huawei's own OS, no GMS | TBC | TBC | £399.99 (UK) | TBC |
 | Huawei Watch 6 Pro | Huawei's own OS, no GMS | 3,500 nits | TBC | £599.99 (UK) | TBC |
 
-Sources: [Apple Ultra 4 specs](https://www.apple.com/apple-watch-ultra-4/specs/), [Apple Newsroom](https://www.apple.com/newsroom/2026/09/introducing-apple-watch-series-12-with-the-all-new-health-sensing-system/), [The Mac Observer](https://www.macobserver.com/tips/round-ups/apple-watch-ultra-4-full-specs-63-g-3000-nits-100-m-water-rating-satellite-battery/), [ZDNet Korea](https://zdnet.co.kr/view/?no=20260910083526), [Edaily](https://www.edaily.co.kr/News/Read?newsId=01548166645578808), [Samsung Galaxy Watch Ultra 2 specs](https://www.samsung.com/sec/watches/galaxy-watch/galaxy-watch-ultra2/specs/), [Samsung US](https://www.samsung.com/us/watches/galaxy-watch-ultra2/), [Droid Life (Pixel Watch 5)](https://www.droid-life.com/2026/08/12/pixel-watch-5-official-at-399-with-huge-health-upgrades/), [GSMArena (Pixel Watch 5)](https://www.gsmarena.com/google_pixel_watch_5-14860.php), [TechAdvisor (Huawei)](https://www.techadvisor.com/article/3225480/huawei-watch-6-official-as-pixel-watch-5-rival.html), [Gizmochina (Huawei)](https://www.gizmochina.com/2026/09/02/huawei-watch-6-and-watch-6-pro-launch-price-specs/)
+Sources: [Apple Ultra 4 specs](https://www.apple.com/apple-watch-ultra-4/specs/), [Apple Newsroom](https://www.apple.com/newsroom/2026/09/introducing-apple-watch-series-12-with-the-all-new-health-sensing-system/), [The Mac Observer](https://www.macobserver.com/tips/round-ups/apple-watch-ultra-4-full-specs-63-g-3000-nits-100-m-water-rating-satellite-battery/), [ZDNet Korea](https://zdnet.co.kr/view/?no=20260910083526), [Edaily](https://www.edaily.co.kr/News/Read?newsId=01548166645578808), [Samsung Galaxy Watch Ultra 2 specs](https://www.samsung.com/sec/watches/galaxy-watch/galaxy-watch-ultra2/specs/), [Samsung US](https://www.samsung.com/us/watches/galaxy-watch-ultra2/), [Droid Life (Pixel Watch 5)](https://www.droid-life.com/2026/08/12/pixel-watch-5-official-at-399-with-huge-health-upgrades/), [GSMArena (Pixel Watch 5)](https://www.gsmarena.com/google_pixel_watch_5-14860.php), [TechAdvisor (Huawei)](https://www.techadvisor.com/article/3225480/huawei-watch-6-official-as-pixel-watch-5-rival.html), [Gizmochina (Huawei)](https://www.gizmochina.com/2026/09/02/huawei-watch-6-and-watch-6-pro-launch-price-specs/), [Samsung Newsroom Korea (Korean price)](https://news.samsung.com/kr/%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-%EA%B0%A4%EB%9F%AD%EC%8B%9C-%EC%9B%8C%EC%B9%98-%EC%9A%B8%ED%8A%B8%EB%9D%BC2%C2%B7%EC%9B%8C%EC%B9%989-%EA%B3%B5%EA%B0%9C)
 
 Brightness and battery are maker figures, not measured under one standard. Apple's 25 hours for the Ultra 4 is an extended workout mode with low-power settings, not continuous GPS, so it is kept out of the standard-use column. TBC under Korea means the launch material didn't confirm it.
+
+Prices in the table are launch list prices. On November 20, 2026 the [Google Store](https://store.google.com/us/product/pixel_watch_5) had the Pixel Watch 5 at $299.99, $100 off, so check for discounts when you buy.
 
 ## Start from your phone
 
@@ -45,4 +48,5 @@ Brightness and battery are maker figures, not measured under one standard. Apple
 
 ## Update log
 
+- 2026-11-20: Figures re-checked before publishing. Added the Samsung Newsroom source for the Galaxy Watch Ultra2 Korean price and a note on the Pixel Watch 5 discount.
 - 2026-11-13: First version. Six models.
