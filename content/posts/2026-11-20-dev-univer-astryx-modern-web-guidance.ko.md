@@ -1,7 +1,7 @@
 ---
 title: "내 앱에 넣을 SDK 둘, 에이전트에 넣을 지침 하나"
 seoTitle: "Univer·Astryx·Modern Web Guidance 설치 방법 | GitHub 트렌딩"
-date: 2026-11-20T03:06:42+09:00
+date: 2026-11-20T10:30:15+09:00
 slug: "dev-univer-astryx-modern-web-guidance"
 summary: "이번 주 GitHub 주간 트렌딩에서 앱에 스프레드시트를 넣는 Univer, 에이전트용 디자인 시스템 Astryx, 코딩 에이전트의 낡은 웹 코드를 막아 주는 Chrome팀의 Modern Web Guidance를 골라 라이선스와 설치 명령, 현재 한계를 정리했습니다."
 tags: ["GitHub"]
@@ -10,7 +10,8 @@ cover:
   image: "/images/posts/dev-univer-astryx-modern-web-guidance.ko.png"
   alt: "커버 카드: Univer 스타 3만 407개, Astryx 스타 3만 874개, Modern Web Guidance 스타 9,053개와 주간 증가 7,257개"
   relative: false
-draft: true
+draft: false
+reviewed: "2026-11-20"
 ---
 
 코딩 에이전트에게 웹 화면을 맡기면, 결과물이 몇 해 전 방식으로 나오는 일이 흔합니다. 이번 주 GitHub 주간 트렌딩의 상위권에는 이 문제를 서로 다른 쪽에서 푸는 저장소가 올라와 있습니다. 하나는 앱 안에 오피스 편집기를 넣는 SDK, 하나는 에이전트가 쓰도록 만든 디자인 시스템, 하나는 에이전트에게 최신 웹 표준을 알려 주는 지침입니다.
@@ -25,7 +26,7 @@ draft: true
 
 출처: [GitHub Trending (weekly)](https://github.com/trending?since=weekly), [univer](https://github.com/dream-num/univer), [astryx](https://github.com/meta/astryx), [modern-web-guidance-src](https://github.com/GoogleChrome/modern-web-guidance-src)
 
-> **아직 확인하지 못한 것:** 세 저장소 모두 조회한 페이지에 최신 릴리스 이름과 날짜가 나오지 않아 확인하지 못했습니다. 사용할 때는 각 저장소의 릴리스·태그를 직접 보고 버전을 고정해야 합니다.
+최신 태그(2026년 11월 20일 확인): univer `v1.5.2`(11월 16일), astryx `v0.7.16`(11월 13일), modern-web-guidance-src `v1.0.1`(11월 16일). 쓸 때는 이 버전처럼 태그를 고정해 두는 편이 안전합니다.
 
 ## Univer: 앱 안에 스프레드시트를 넣는 SDK
 
@@ -72,7 +73,7 @@ npm install -D @astryxdesign/cli
 npx @astryxdesign/cli init
 ```
 
-컴포넌트 목록은 CLI로 볼 수 있습니다. README의 스크립트를 `package.json`에 넣으면 `npm run astryx -- component --list`로 실행합니다. "에이전트용"이라는 설명이 실제로 어떤 기능을 뜻하는지는 확인한 범위에서 구체적인 근거를 찾지 못했습니다.
+컴포넌트 목록은 CLI로 볼 수 있습니다. README의 스크립트를 `package.json`에 넣으면 `npm run astryx -- component --list`로 실행합니다. README가 말하는 "에이전트용"은 구체적으로 이렇습니다. `init` 을 한 번 돌리면 Astryx 사용 안내를 `AGENTS.md`/`CLAUDE.md` 에 저장해, 코딩 에이전트가 짐작하지 않고 같은 문서를 보고 컴포넌트를 쓰게 합니다.
 
 추천 대상: React 19로 새 프로젝트를 시작하면서 베타 단계의 디자인 시스템을 감수할 수 있는 팀.
 
@@ -80,7 +81,7 @@ npx @astryxdesign/cli init
 
 이번 주 증가폭이 가장 큰 것은 [modern-web-guidance-src](https://github.com/GoogleChrome/modern-web-guidance-src)입니다. 총 스타는 9,053개인데 한 주에 7,257개가 늘었습니다. Apache-2.0이고, README에 따르면 웹 플랫폼 모범 사례와 브라우저 호환성 데이터를 코딩 에이전트에 넣어 레거시 패턴 대신 최신 플랫폼 기능을 쓰게 하는 패키지의 소스 저장소입니다.
 
-Chrome 문서는 에이전트가 학습 데이터에 쌓인 옛 코드를 따라간다고 설명하고, [현대화 워크플로 문서](https://developer.chrome.com/docs/modern-web-guidance/modernization-workflow)에서 `legacy-scan` 명령이 약 200개 가이드 중 오탐 없이 기계적으로 찾을 수 있는 20% 정도만 다룬다고 밝힙니다. 같은 문서 계열에서 초기 평가로 최신 모범 사례 준수율이 37%p 올랐다고 하지만, 평가 조건은 확인하지 못했고 Chrome팀 자체 수치입니다. README는 이 프로젝트를 프리뷰 릴리스로 표시합니다.
+Chrome 문서는 에이전트가 학습 데이터에 쌓인 옛 코드를 따라간다고 설명하고, [현대화 워크플로 문서](https://developer.chrome.com/docs/modern-web-guidance/modernization-workflow)에서 `legacy-scan` 명령이 약 200개 가이드 중 오탐 없이 기계적으로 찾을 수 있는 20% 정도만 다룬다고 밝힙니다. [시작 문서](https://developer.chrome.com/docs/modern-web-guidance/get-started)는 초기 평가에서 이 지침을 쓴 에이전트가 최신 모범 사례를 37%p 더 자주 따랐다고 밝히지만, 프로젝트·모델·프롬프트에 따라 달라진다는 단서를 달았고 Chrome팀 자체 수치입니다. 11월 10일 `v1.0.0` 태그와 함께 [1.0 정식 버전](https://developer.chrome.com/blog/modern-web-guidance-v1)이 나왔습니다.
 
 ```bash
 npx modern-web-guidance@latest install
@@ -97,4 +98,4 @@ npx modern-web-guidance@latest legacy-scan .
 
 ## 앱에 넣는 것과 에이전트에 넣는 것은 부담이 다릅니다
 
-Univer와 Astryx는 제품 코드에 들어가는 의존성이라 라이선스 범위(Univer의 상용 모듈)와 베타 상태(Astryx)를 먼저 따져야 합니다. Modern Web Guidance는 명령 한 줄로 시험하고 `legacy-scan`으로 영향 범위를 먼저 볼 수 있어 진입 부담이 가장 작습니다. 세 곳 모두 릴리스 버전을 확인하지 못했으니, 쓰기로 했다면 버전을 고정한 뒤 시작하는 편이 안전합니다.
+Univer와 Astryx는 제품 코드에 들어가는 의존성이라 라이선스 범위(Univer의 상용 모듈)와 베타 상태(Astryx)를 먼저 따져야 합니다. Modern Web Guidance는 명령 한 줄로 시험하고 `legacy-scan`으로 영향 범위를 먼저 볼 수 있어 진입 부담이 가장 작습니다. 세 곳 모두 이번 주에도 태그가 새로 붙었을 만큼 빠르게 바뀌고 있으니, 쓰기로 했다면 버전을 고정한 뒤 시작하는 편이 안전합니다.
