@@ -1,7 +1,7 @@
 ---
 title: "RedMagic 12 Pro goes global: a bigger battery, slower charging"
 seoTitle: "RedMagic 12 Pro Global Specs & Price: 8,400mAh, 80W, 185Hz vs 11 Pro"
-date: 2026-11-16T03:07:41+09:00
+date: 2026-11-20T10:30:15+09:00
 slug: "phone-redmagic-12-pro-global"
 summary: "A look at the RedMagic 12 Pro that went global on November 3: chip, display, battery, cooling and European and US pricing, compared with the 11 Pro and the China version."
 tags: ["Smartphone", "Global"]
@@ -10,7 +10,8 @@ cover:
   image: "/images/posts/phone-redmagic-12-pro-global.en.png"
   alt: "Cover card: 8,400mAh battery, 185Hz display, 80W wired charging, 899 euro European price"
   relative: false
-draft: true
+draft: false
+reviewed: "2026-11-20"
 ---
 
 The battery grew 12%, but wired charging dropped from 120W to 80W. Is the RedMagic 12 Pro an upgrade or just a regional adjustment?
@@ -31,15 +32,15 @@ The phone went global on November 3, about three weeks after its China launch (p
 | Configs | 12GB/256GB, 16GB/512GB, 16GB/1TB | — |
 | European price | €899 / €999 / €1,199 | €699 (base) |
 
-Sources: [Gagadget](https://gagadget.com/en/732793-redmagic-12-pro-goes-global-and-it-costs-more-than-last-years/), [TechRepublic](https://www.techrepublic.com/article/news-redmagic-12-pro-global-price-specs/), [Notebookcheck](https://notebookcheck.net/RedMagic-12-Pro-launches-for-949-with-flagship-power-and-Steam-gaming.1440443.0.html)
+Sources: [Gagadget](https://gagadget.com/en/732793-redmagic-12-pro-goes-global-and-it-costs-more-than-last-years/), [TechRepublic](https://www.techrepublic.com/article/news-redmagic-12-pro-global-price-specs/), [Notebookcheck](https://notebookcheck.net/RedMagic-12-Pro-launches-for-949-with-flagship-power-and-Steam-gaming.1440443.0.html), [RedMagic global launch page](https://global.redmagic.gg/pages/redmagic-12-pro-launch)
 
 > **Not yet disclosed:** Korea availability and KRW price, the 11 Pro's chip and charging wattage, real-world battery life and thermal results. We'll update this post when they are.
 
 According to Gagadget, the global 12 Pro has a 12% larger battery than the 11 Pro but costs €200 more in Europe for the base model. Coverage describes it as the global version of the earlier China launch, with slower charging and lower trigger sampling than the China model.
 
-## US pricing splits between $899 and $949
+## RedMagic's global store starts at $899
 
-The US base model (12GB/256GB) is reported at either $899 or $949 depending on the outlet, and 16GB/512GB at $999 or $1,049. The UK price is £799. Check RedMagic's own store to see which is current. Per TechRepublic, software support is two major Android upgrades and three years of security updates, which it calls short for a flagship at this price.
+As of November 20, 2026, [RedMagic's global store](https://global.redmagic.gg/pages/redmagic-12-pro-launch) lists $899 for 12GB/256GB, $999 for 16GB/512GB and $1,199 for 16GB/1TB. Some outlets, including Notebookcheck, report $949 for the North American base model, so the price may differ by region. The UK price is £799. The same official page promises two major Android upgrades and three years of security updates, which TechRepublic calls short for a flagship at this price.
 
 It comes in Nightfreeze (translucent black) and Subzero (silver); the base model is Nightfreeze only. RedMagic advertises PC games and Steam access via its X-Gravity hub, a claim we could not verify.
 
