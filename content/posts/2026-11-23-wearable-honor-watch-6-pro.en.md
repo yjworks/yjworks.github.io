@@ -1,7 +1,7 @@
 ---
 title: "Honor Watch 6 Pro Trades Nearly Half the Battery for a Better Screen"
 seoTitle: "Honor Watch 6 Pro vs Watch 6: 515mAh, 18 Days, 5,500 Nits, €279 Pre-Sale"
-date: 2026-11-23T03:07:14+09:00
+date: 2026-11-23T16:12:16+09:00
 slug: "wearable-honor-watch-6-pro"
 summary: "Honor opened European pre-sales for the Watch 6 Pro on November 19. We compare it with the June Watch 6 on battery, endurance, materials and price. No Korea availability has been announced."
 tags: ["Wearable", "Global"]
@@ -10,7 +10,8 @@ cover:
   image: "/images/posts/wearable-honor-watch-6-pro.en.png"
   alt: "Cover card: Honor Watch 6 Pro 515mAh, up to 18 days, 5,500 nits, €279 pre-sale"
   relative: false
-draft: true
+draft: false
+reviewed: "2026-11-23"
 ---
 
 A "Pro" watch with roughly half the battery capacity of the standard model: what did Honor trade, and for what? Start there and the Watch 6 Pro spec sheet reads clearly.

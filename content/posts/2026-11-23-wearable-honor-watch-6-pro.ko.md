@@ -1,7 +1,7 @@
 ---
 title: "아너 워치6 프로, 배터리는 절반 가까이 줄었습니다"
 seoTitle: "아너 워치6 프로 vs 워치6 스펙·가격 비교: 515mAh·18일·유럽 279유로"
-date: 2026-11-23T03:07:14+09:00
+date: 2026-11-23T16:12:16+09:00
 slug: "wearable-honor-watch-6-pro"
 summary: "11월 19일 유럽 예약 판매를 시작한 아너 워치6 프로를 6월에 나온 워치6와 배터리 용량, 지속시간, 소재, 가격 기준으로 비교했습니다. 국내 판매 정보는 확인되지 않았습니다."
 tags: ["Wearable", "Global"]
@@ -10,7 +10,8 @@ cover:
   image: "/images/posts/wearable-honor-watch-6-pro.ko.png"
   alt: "커버 카드: 아너 워치6 프로 515mAh, 최대 18일, 5,500니트, 유럽 예약가 279유로"
   relative: false
-draft: true
+draft: false
+reviewed: "2026-11-23"
 ---
 
 프로 모델인데 배터리 용량은 일반 모델의 절반 남짓이라면, 무엇을 얻고 무엇을 내준 걸까요? 아너 워치6 프로의 공개된 스펙은 이 질문에서 출발하면 읽기 쉽습니다.
